@@ -5,7 +5,7 @@
  */
 import { useQuery } from "@tanstack/react-query";
 import { Col, Container, Row, Form, InputGroup } from "react-bootstrap";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import Plant from "../components/Plant";
 import Error from "../components/Error";
@@ -103,12 +103,12 @@ function Scheduler() {
     return selectedPlants.length === 0 ? data : selectedPlants;
   }, [data, selectedPlants]);
 
-  const monthIdx0 = (name) => {
+  const monthIdx0 = useCallback((name) => {
     const m = monthToNumber(name);
     return Number.isFinite(m) ? m - 1 : null;
-  };
+  }, []);
 
-  const rangeWithinYear0 = (startName, endName) => {
+  const rangeWithinYear0 = useCallback((startName, endName) => {
     const s = monthIdx0(startName);
     const e = monthIdx0(endName);
     if (s == null || e == null) return null;
@@ -116,7 +116,7 @@ function Scheduler() {
     const low = Math.min(s, e);
     const highExclusive = Math.max(s, e) + 1;
     return { low, highExclusive };
-  };
+  }, [monthIdx0]);
 
   const absoluteRows = useMemo(() => {
     return chartPlants
@@ -149,7 +149,7 @@ function Scheduler() {
         };
       })
       .filter(Boolean);
-  }, [chartPlants]);
+  }, [chartPlants, monthIdx0, rangeWithinYear0]);
 
   const yearsNeeded = useMemo(() => {
     let maxEnd = 0;

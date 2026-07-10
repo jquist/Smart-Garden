@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   CELL_SIZE_PX,
   getBoardBounds,
@@ -289,10 +289,10 @@ function GardenGrid({
     );
   }
 
-  function removePlantInstance(plantId) {
+  const removePlantInstance = useCallback((plantId) => {
     setPlantInstances((prev) => prev.filter((plant) => plant.id !== plantId));
     setSelectedPlantId((prev) => (prev === plantId ? null : prev));
-  }
+  }, [setPlantInstances]);
 
   function deleteSelectedPlant() {
     if (!selectedPlant) return;
@@ -321,7 +321,7 @@ function GardenGrid({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedPlantId, setPlantInstances]);
+  }, [removePlantInstance, selectedPlantId]);
 
   return (
     <div>
