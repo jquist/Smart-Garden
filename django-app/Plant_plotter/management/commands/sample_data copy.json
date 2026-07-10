@@ -1,0 +1,1838 @@
+{
+  "plants": [
+    {
+      "name": "asparagus",
+      "description": "Asparagus is a perennial plant and can take 2-3 years to establish before it starts producing shoots for harvest. Once established, asparagus can produce for 15-20 years or more with proper care. NOTE: asparagus are permanent plant and will remain ahrvestable for 15 years or more.",
+      "how to plant from indoors": "Sow seeds individuall in pots of compost 1cm deep. Keep stored in a room at 15-18°C.do not leave in direct sunlight",
+      "how to plant from outdoors": "make sure to accustom plants outside for 2-3 weeks before planting. make sure to plant after any danger of frost has passed. Plant 5cm deep.",
+      "plant_directly": false,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 30,
+      "depth": 5,
+      "time_to_germinate_indoors_start": "may",
+      "time_to_germinate_indoors_end": "june",
+      "time_to_germinate_indoors_period": 12,
+      "plant_start": "February",
+      "plant_end": "June",
+      "time_first_harvets": 24,
+      "harest_start": "May",
+      "harest_end": "June",
+      "companion_helps": [
+        "tomato",
+        "parsley"
+      ],
+      "companion_helped_by": [
+        "dill",
+        "coriander",
+        "tomato",
+        "parsley",
+        "basil"
+      ],
+      "plants_avoid": [
+        "onion",
+        "garlic",
+        "potato"
+      ]
+    },
+    {
+      "name": "eggplant",
+      "plant_directly": false,
+      "spacing_between_rows": 60,
+      "spacing_in_rows": 60,
+      "depth": 2,
+      "time_to_germinate_indoors_start": "may",
+      "time_to_germinate_indoors_end": "april",
+      "time_to_germinate_indoors_period": 2,
+      "plant_start": "june",
+      "plant_end": "july",
+      "time_first_harvets": 3,
+      "harest_start": "august",
+      "harest_end": "september",
+      "companion_helps": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "bell pepper",
+        "tomato"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "mint",
+        "thyme"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "barley",
+      "plant_directly": true,
+      "spacing_between_rows": 15,
+      "spacing_in_rows": 15,
+      "depth": 3,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "april",
+      "time_first_harvets": 3,
+      "harest_start": "july",
+      "harest_end": "august",
+      "companion_helps": [
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)",
+        "sweetcorn"
+      ],
+      "companion_helped_by": [
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)",
+        "mustard"
+      ],
+      "plants_avoid": [
+        "sunflower",
+        "broccoli",
+        "florence fennel"
+      ]
+    },
+    {
+      "name": "basil",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 1,
+      "time_to_germinate_indoors_start": "april",
+      "time_to_germinate_indoors_end": "june",
+      "time_to_germinate_indoors_period": 2,
+      "plant_start": "june",
+      "plant_end": "august",
+      "time_first_harvets": 1,
+      "harest_start": "july",
+      "harest_end": "september",
+      "companion_helps": [
+        "tomato",
+        "bell pepper",
+        "oregano",
+        "asparagus",
+        "grape vine"
+      ],
+      "companion_helped_by": [
+        "chamomile"
+      ],
+      "plants_avoid": [
+        "thyme"
+      ]
+    },
+    {
+      "name": "beetroot",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 10,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "july",
+      "time_first_harvets": 2,
+      "harest_start": "august",
+      "harest_end": "december",
+      "companion_helps": [
+        "green bean (bush)",
+        "cabbage",
+        "lettuce",
+        "onion",
+        "broccoli",
+        "brussel sprouts",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "green bean (bush)",
+        "onion",
+        "garlic",
+        "mint"
+      ],
+      "plants_avoid": [
+        "green bean (pole)"
+      ]
+    },
+    {
+      "name": "bell pepper",
+      "plant_directly": false,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 45,
+      "depth": 1,
+      "time_to_germinate_indoors_start": "january",
+      "time_to_germinate_indoors_end": "march",
+      "time_to_germinate_indoors_period": 3,
+      "plant_start": "april",
+      "plant_end": "june",
+      "time_first_harvets": 3,
+      "harest_start": "august",
+      "harest_end": "october",
+      "companion_helps": [
+        "okra"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "tomato",
+        "okra",
+        "sunflower",
+        "onion",
+        "basil",
+        "mustard"
+      ],
+      "plants_avoid": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "kale",
+        "cabbage",
+        "brussel sprouts"
+      ]
+    },
+    {
+      "name": "blackberries",
+      "plant_directly": true,
+      "spacing_between_rows": 240,
+      "spacing_in_rows": 120,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "january",
+      "plant_end": "february",
+      "time_first_harvets": 12,
+      "harest_start": "july",
+      "harest_end": "september",
+      "companion_helps": [
+        "thyme",
+        "chamomile",
+        "lettuce",
+        "spinach"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "pea",
+        "garlic",
+        "onion",
+        "chives"
+      ],
+      "plants_avoid": [
+        "raspberries",
+        "tomato",
+        "potato",
+        "bell pepper",
+        "florence fennel"
+      ]
+    },
+    {
+      "name": "blueberries",
+      "plant_directly": false,
+      "spacing_between_rows": 75,
+      "spacing_in_rows": 45,
+      "depth": 1,
+      "time_to_germinate_indoors_start": "december",
+      "time_to_germinate_indoors_end": "february",
+      "time_to_germinate_indoors_period": 24,
+      "plant_start": "december",
+      "plant_end": "february",
+      "time_first_harvets": 12,
+      "harest_start": "july",
+      "harest_end": "september",
+      "companion_helps": [],
+      "companion_helped_by": [
+        "strawberry"
+      ],
+      "plants_avoid": [
+        "tomato"
+      ]
+    },
+    {
+      "name": "broccoli",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0.5,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "may",
+      "plant_end": "september",
+      "time_first_harvets": 2,
+      "harest_start": "july",
+      "harest_end": "december",
+      "companion_helps": [
+        "lettuce"
+      ],
+      "companion_helped_by": [
+        "beetroot",
+        "dill",
+        "onion",
+        "tomato",
+        "turnip"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "brussel sprouts",
+      "plant_directly": true,
+      "spacing_between_rows": 75,
+      "spacing_in_rows": 60,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "december",
+      "time_first_harvets": 5,
+      "harest_start": "january",
+      "harest_end": "december",
+      "companion_helps": [],
+      "companion_helped_by": [
+        "sage",
+        "thyme"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "cabbage",
+      "plant_directly": true,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 45,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "november",
+      "time_first_harvets": 3,
+      "harest_start": "november",
+      "harest_end": "august",
+      "companion_helps": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "celery"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "chamomile",
+        "dill",
+        "coriander",
+        "onion",
+        "beetroot",
+        "mint",
+        "rosemary",
+        "sage",
+        "thyme"
+      ],
+      "plants_avoid": [
+        "grape vine"
+      ]
+    },
+    {
+      "name": "carrot",
+      "plant_directly": true,
+      "spacing_between_rows": 25,
+      "spacing_in_rows": 6,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "september",
+      "time_first_harvets": 2,
+      "harest_start": "january",
+      "harest_end": "december",
+      "companion_helps": [
+        "tomato",
+        "garlic",
+        "green bean (pole)",
+        "green bean (bush)",
+        "leek",
+        "lettuce",
+        "onion"
+      ],
+      "companion_helped_by": [
+        "lettuce",
+        "onion",
+        "garlic",
+        "chives",
+        "leek",
+        "shallot",
+        "rosemary",
+        "sage",
+        "green bean (pole)",
+        "green bean (bush)"
+      ],
+      "plants_avoid": [
+        "dill",
+        "parsnip",
+        "radish"
+      ]
+    },
+    {
+      "name": "cauliflower",
+      "plant_directly": true,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 45,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "november",
+      "time_first_harvets": 3,
+      "harest_start": "october",
+      "harest_end": "may",
+      "companion_helps": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "celery",
+        "spinach",
+        "pea"
+      ],
+      "companion_helped_by": [
+        "sunflower",
+        "spinach",
+        "pea"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "celery",
+      "plant_directly": false,
+      "spacing_between_rows": 27,
+      "spacing_in_rows": 27,
+      "depth": 0,
+      "time_to_germinate_indoors_start": "february",
+      "time_to_germinate_indoors_end": "may",
+      "time_to_germinate_indoors_period": 3,
+      "plant_start": "april",
+      "plant_end": "july",
+      "time_first_harvets": 3,
+      "harest_start": "august",
+      "harest_end": "november",
+      "companion_helps": [
+        "green bean (bush)",
+        "cucumber",
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "leek",
+        "tomato",
+        "cauliflower",
+        "cabbage",
+        "green bean (bush)"
+      ],
+      "plants_avoid": [
+        "sweetcorn"
+      ]
+    },
+    {
+      "name": "chili",
+      "plant_directly": false,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 45,
+      "depth": 1,
+      "time_to_germinate_indoors_start": "january",
+      "time_to_germinate_indoors_end": "april",
+      "time_to_germinate_indoors_period": 3,
+      "plant_start": "april",
+      "plant_end": "july",
+      "time_first_harvets": 2,
+      "harest_start": "july",
+      "harest_end": "october",
+      "companion_helps": [
+        "okra"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "tomato",
+        "okra",
+        "sunflower",
+        "onion",
+        "basil",
+        "mustard"
+      ],
+      "plants_avoid": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "kale",
+        "cabbage",
+        "brussel sprouts"
+      ]
+    },
+    {
+      "name": "chives",
+      "plant_directly": true,
+      "spacing_between_rows": 15,
+      "spacing_in_rows": 10,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "april",
+      "plant_end": "august",
+      "time_first_harvets": 1,
+      "harest_start": "july",
+      "harest_end": "november",
+      "companion_helps": [
+        "carrot",
+        "grape vine",
+        "tomato",
+        "cabbage",
+        "mustard",
+        "broccoli",
+        "brussel sprouts",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "carrot"
+      ],
+      "plants_avoid": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "pea"
+      ]
+    },
+    {
+      "name": "coriander",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 10,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "april",
+      "plant_end": "october",
+      "time_first_harvets": 1,
+      "harest_start": "june",
+      "harest_end": "march",
+      "companion_helps": [
+        "spinach",
+        "lettuce",
+        "tomato",
+        "asparagus"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "pea"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "cucumber",
+      "plant_directly": false,
+      "spacing_between_rows": 90,
+      "spacing_in_rows": 90,
+      "depth": 3,
+      "time_to_germinate_indoors_start": "april",
+      "time_to_germinate_indoors_end": "april",
+      "time_to_germinate_indoors_period": 2,
+      "plant_start": "june",
+      "plant_end": "june",
+      "time_first_harvets": 2,
+      "harest_start": "september",
+      "harest_end": null,
+      "companion_helps": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "lettuce"
+      ],
+      "companion_helped_by": [
+        "radish",
+        "sunflower",
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)",
+        "chamomile",
+        "beetroot",
+        "carrot",
+        "dill",
+        "onion",
+        "garlic",
+        "celery",
+        "spinach"
+      ],
+      "plants_avoid": [
+        "potato"
+      ]
+    },
+    {
+      "name": "dill",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 25,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "may",
+      "plant_end": "june",
+      "time_first_harvets": 1,
+      "harest_start": "september",
+      "harest_end": "october",
+      "companion_helps": [
+        "cabbage",
+        "sweetcorn",
+        "lettuce",
+        "onion",
+        "cucumber",
+        "broccoli",
+        "brussel sprouts",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "florence fennel"
+      ],
+      "plants_avoid": [
+        "carrot"
+      ]
+    },
+    {
+      "name": "garlic",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "december",
+      "time_first_harvets": 7,
+      "harest_start": "august",
+      "harest_end": "may",
+      "companion_helps": [
+        "beetroot",
+        "tomato",
+        "cucumber",
+        "lettuce",
+        "celery",
+        "pea",
+        "potato",
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "pea"
+      ],
+      "plants_avoid": [
+        "grape vine"
+      ]
+    },
+    {
+      "name": "grape vine",
+      "plant_directly": true,
+      "spacing_between_rows": 90,
+      "spacing_in_rows": 60,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "december",
+      "plant_end": "february",
+      "time_first_harvets": 24,
+      "harest_start": "july",
+      "harest_end": "september",
+      "companion_helps": [],
+      "companion_helped_by": [
+        "basil",
+        "green bean (pole)",
+        "green bean (bush)",
+        "chives",
+        "mustard",
+        "oregano",
+        "pea",
+        "blackberries"
+      ],
+      "plants_avoid": [
+        "cabbage",
+        "garlic",
+        "radish"
+      ]
+    },
+    {
+      "name": "green bean (pole)",
+      "plant_directly": true,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 15,
+      "depth": 2,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "may",
+      "plant_end": "may",
+      "time_first_harvets": 2,
+      "harest_start": "september",
+      "harest_end": "october",
+      "companion_helps": [],
+      "companion_helped_by": [
+        "radish",
+        "sweetcorn"
+      ],
+      "plants_avoid": [
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ]
+    },
+    {
+      "name": "green bean (bush)",
+      "plant_directly": false,
+      "spacing_between_rows": 20,
+      "spacing_in_rows": 20,
+      "depth": 3,
+      "time_to_germinate_indoors_start": "march",
+      "time_to_germinate_indoors_end": "july",
+      "time_to_germinate_indoors_period": 1,
+      "plant_start": "may",
+      "plant_end": "september",
+      "time_first_harvets": 2,
+      "harest_start": "june",
+      "harest_end": "october",
+      "companion_helps": [
+        "asparagus",
+        "sweetcorn",
+        "tomato"
+      ],
+      "companion_helped_by": [
+        "celery",
+        "strawberry"
+      ],
+      "plants_avoid": [
+        "soya bean",
+        "green bean (pole)",
+        "green bean (bush)"
+      ]
+    },
+    {
+      "name": "horseradish",
+      "plant_directly": true,
+      "spacing_between_rows": 75,
+      "spacing_in_rows": 75,
+      "depth": 2,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "may",
+      "plant_end": "october",
+      "time_first_harvets": 8,
+      "harest_start": "october",
+      "harest_end": "october",
+      "companion_helps": [
+        "eggplant",
+        "cucumber",
+        "lettuce",
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)"
+      ],
+      "companion_helped_by": [
+        "lettuce"
+      ],
+      "plants_avoid": [
+        "grape vine"
+      ]
+    },
+    {
+      "name": "kale",
+      "plant_directly": true,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 45,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "december",
+      "time_first_harvets": 2,
+      "harest_start": "november",
+      "harest_end": "august",
+      "companion_helps": [
+        "beetroot",
+        "carrot",
+        "dill",
+        "mint",
+        "rosemary",
+        "onion",
+        "leek"
+      ],
+      "companion_helped_by": [
+        "garlic",
+        "onion",
+        "chives",
+        "leek",
+        "dill",
+        "thyme",
+        "sage",
+        "rosemary",
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)"
+      ],
+      "plants_avoid": [
+        "broccoli",
+        "cauliflower",
+        "cabbage",
+        "brussel sprouts",
+        "strawberry",
+        "tomato",
+        "green bean (pole)"
+      ]
+    },
+    {
+      "name": "leek",
+      "plant_directly": true,
+      "spacing_between_rows": 20,
+      "spacing_in_rows": 15,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "december",
+      "time_first_harvets": 6,
+      "harest_start": "october",
+      "harest_end": "august",
+      "companion_helps": [
+        "carrot",
+        "celery",
+        "onion",
+        "tomato"
+      ],
+      "companion_helped_by": [
+        "carrot"
+      ],
+      "plants_avoid": [
+        "swiss chard"
+      ]
+    },
+    {
+      "name": "lemon grass",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0.6,
+      "time_to_germinate_indoors_start": "september",
+      "time_to_germinate_indoors_end": "september",
+      "time_to_germinate_indoors_period": 2,
+      "plant_start": "november",
+      "plant_end": "november",
+      "time_first_harvets": 3,
+      "harest_start": "august",
+      "harest_end": "november",
+      "companion_helps": [
+        "eggplant"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": []
+    },
+    {
+      "name": "lettuce",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "august",
+      "time_first_harvets": 1,
+      "harest_start": "august",
+      "harest_end": "april",
+      "companion_helps": [
+        "beetroot",
+        "green bean (pole)",
+        "green bean (bush)",
+        "okra",
+        "onion",
+        "radish",
+        "broccoli",
+        "carrot"
+      ],
+      "companion_helped_by": [
+        "radish",
+        "beetroot",
+        "dill",
+        "onion",
+        "green bean (pole)",
+        "green bean (bush)",
+        "carrot",
+        "cucumber",
+        "strawberry",
+        "broccoli",
+        "thyme"
+      ],
+      "plants_avoid": [
+        "celery",
+        "cabbage",
+        "parsley"
+      ]
+    },
+    {
+      "name": "mint",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "april",
+      "plant_end": "october",
+      "time_first_harvets": 1,
+      "harest_start": "july",
+      "harest_end": "november",
+      "companion_helps": [
+        "kale",
+        "cabbage",
+        "broccoli",
+        "tomato",
+        "bell pepper",
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)"
+      ],
+      "companion_helped_by": [
+        "chamomile",
+        "oregano"
+      ],
+      "plants_avoid": [
+        "parsley",
+        "basil",
+        "sage",
+        "rosemary",
+        "thyme",
+        "strawberry"
+      ]
+    },
+    {
+      "name": "mustard",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 20,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "december",
+      "time_first_harvets": 1,
+      "harest_start": "january",
+      "harest_end": "december",
+      "companion_helps": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "cabbage",
+        "cauliflower",
+        "grape vine",
+        "radish",
+        "brussel sprouts",
+        "turnip"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": []
+    },
+    {
+      "name": "okra",
+      "plant_directly": false,
+      "spacing_between_rows": 50,
+      "spacing_in_rows": 45,
+      "depth": 2,
+      "time_to_germinate_indoors_start": "april",
+      "time_to_germinate_indoors_end": "april",
+      "time_to_germinate_indoors_period": 2,
+      "plant_start": "june",
+      "plant_end": "june",
+      "time_first_harvets": 2,
+      "harest_start": "september",
+      "harest_end": "september",
+      "companion_helps": [
+        "sweet potato",
+        "tomato",
+        "bell pepper"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "lettuce",
+        "summer squash",
+        "sweet potato",
+        "bell pepper"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "onion",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "december",
+      "time_first_harvets": 4,
+      "harest_start": "october",
+      "harest_end": "august",
+      "companion_helps": [
+        "beetroot",
+        "cabbage",
+        "broccoli",
+        "carrot",
+        "lettuce",
+        "cucumber",
+        "bell pepper",
+        "strawberry",
+        "brussel sprouts",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "carrot",
+        "beetroot",
+        "dill",
+        "lettuce",
+        "strawberry",
+        "chamomile",
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "plants_avoid": [
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)"
+      ]
+    },
+    {
+      "name": "oregano",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 23,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "june",
+      "plant_end": "september",
+      "time_first_harvets": 2,
+      "harest_start": "march",
+      "harest_end": "december",
+      "companion_helps": [
+        "grape vine",
+        "tomato",
+        "bell pepper",
+        "pumpkin"
+      ],
+      "companion_helped_by": [
+        "basil"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "parsley",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "may",
+      "plant_end": "may",
+      "time_first_harvets": 2,
+      "harest_start": "october",
+      "harest_end": "october",
+      "companion_helps": [
+        "asparagus",
+        "sweetcorn",
+        "tomato"
+      ],
+      "companion_helped_by": [
+        "asparagus"
+      ],
+      "plants_avoid": [
+        "onion",
+        "garlic",
+        "lettuce"
+      ]
+    },
+    {
+      "name": "parsnip",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 10,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "june",
+      "time_first_harvets": 4,
+      "harest_start": "october",
+      "harest_end": "april",
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": []
+    },
+    {
+      "name": "pea",
+      "plant_directly": true,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 5,
+      "depth": 4,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "may",
+      "time_first_harvets": 2,
+      "harest_start": "august",
+      "harest_end": "november",
+      "companion_helps": [
+        "turnip",
+        "cauliflower",
+        "garlic"
+      ],
+      "companion_helped_by": [
+        "turnip",
+        "cauliflower",
+        "garlic",
+        "mint"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "peppermint",
+      "plant_directly": true,
+      "spacing_between_rows": 20,
+      "spacing_in_rows": 20,
+      "depth": 0.3,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "may",
+      "plant_end": "september",
+      "time_first_harvets": 1,
+      "harest_start": "july",
+      "harest_end": "august",
+      "companion_helps": [
+        "onion",
+        "garlic",
+        "cabbage",
+        "pea",
+        "tomato",
+        "broccoli",
+        "brussel sprouts",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": []
+    },
+    {
+      "name": "potato",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 20,
+      "depth": 15,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "august",
+      "time_first_harvets": 3,
+      "harest_start": "june",
+      "harest_end": "march",
+      "companion_helps": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "sweetcorn",
+        "pea",
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "horseradish",
+        "green bean (pole)",
+        "green bean (bush)",
+        "pea",
+        "onion",
+        "garlic",
+        "thyme"
+      ],
+      "plants_avoid": [
+        "carrot",
+        "cucumber",
+        "pumpkin",
+        "raspberries",
+        "summer squash",
+        "sunflower",
+        "tomato"
+      ]
+    },
+    {
+      "name": "pumpkin",
+      "plant_directly": false,
+      "spacing_between_rows": 90,
+      "spacing_in_rows": 90,
+      "depth": 2,
+      "time_to_germinate_indoors_start": "march",
+      "time_to_germinate_indoors_end": "may",
+      "time_to_germinate_indoors_period": 1,
+      "plant_start": "apirl",
+      "plant_end": "june",
+      "time_first_harvets": 3,
+      "harest_start": "august",
+      "harest_end": "october",
+      "companion_helps": [
+        "sweetcorn",
+        "green bean (pole)",
+        "green bean (bush)"
+      ],
+      "companion_helped_by": [
+        "oregano",
+        "radish"
+      ],
+      "plants_avoid": [
+        "potato"
+      ]
+    },
+    {
+      "name": "radish",
+      "plant_directly": true,
+      "spacing_between_rows": 15,
+      "spacing_in_rows": 10,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "october",
+      "time_first_harvets": 1,
+      "harest_start": "january",
+      "harest_end": "december",
+      "companion_helps": [
+        "eggplant",
+        "cucumber",
+        "lettuce",
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)"
+      ],
+      "companion_helped_by": [
+        "lettuce"
+      ],
+      "plants_avoid": [
+        "grape vine"
+      ]
+    },
+    {
+      "name": "raspberries",
+      "plant_directly": true,
+      "spacing_between_rows": 240,
+      "spacing_in_rows": 120,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "december",
+      "plant_end": "march",
+      "time_first_harvets": 5,
+      "harest_start": "september",
+      "harest_end": "october",
+      "companion_helps": [
+        "lettuce",
+        "spinach",
+        "chives",
+        "thyme"
+      ],
+      "companion_helped_by": [
+        "garlic",
+        "onion",
+        "chives",
+        "pea",
+        "green bean (bush)",
+        "green bean (pole)"
+      ],
+      "plants_avoid": [
+        "blackberries",
+        "tomato",
+        "potato",
+        "bell pepper",
+        "florence fennel",
+        "strawberry"
+      ]
+    },
+    {
+      "name": "rosemary",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "january",
+      "plant_end": "december",
+      "time_first_harvets": 2,
+      "harest_start": "february",
+      "harest_end": "december",
+      "companion_helps": [
+        "cabbage",
+        "green bean (pole)",
+        "green bean (bush)",
+        "carrot",
+        "thyme",
+        "broccoli",
+        "brussel sprouts",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "sage",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "june",
+      "plant_end": "september",
+      "time_first_harvets": 2,
+      "harest_start": "january",
+      "harest_end": "december",
+      "companion_helps": [
+        "rosemary",
+        "cabbage",
+        "green bean (pole)",
+        "green bean (bush)",
+        "brussel sprouts",
+        "carrot",
+        "strawberry",
+        "tomato",
+        "broccoli",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "onion",
+        "garlic"
+      ]
+    },
+    {
+      "name": "shallot",
+      "plant_directly": true,
+      "spacing_between_rows": 40,
+      "spacing_in_rows": 25,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "december",
+      "time_first_harvets": 4,
+      "harest_start": "august",
+      "harest_end": "may",
+      "companion_helps": [
+        "carrot",
+        "beetroot",
+        "lettuce",
+        "strawberry",
+        "kale",
+        "cabbage",
+        "broccoli"
+      ],
+      "companion_helped_by": [
+        "carrot",
+        "chamomile",
+        "beetroot"
+      ],
+      "plants_avoid": [
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)",
+        "sage",
+        "asparagus"
+      ]
+    },
+    {
+      "name": "soya bean",
+      "plant_directly": false,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 15,
+      "depth": 5,
+      "time_to_germinate_indoors_start": "april",
+      "time_to_germinate_indoors_end": "may",
+      "time_to_germinate_indoors_period": 1,
+      "plant_start": "june",
+      "plant_end": "july",
+      "time_first_harvets": 1,
+      "harest_start": "august",
+      "harest_end": "september",
+      "companion_helps": [],
+      "companion_helped_by": [
+        "sweetcorn",
+        "sunflower"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "spinach",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 8,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "april",
+      "plant_end": "august",
+      "time_first_harvets": 2,
+      "harest_start": "june",
+      "harest_end": "october",
+      "companion_helps": [
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [
+        "strawberry",
+        "pea",
+        "green bean (pole)",
+        "green bean (bush)"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "strawberry",
+      "plant_directly": true,
+      "spacing_between_rows": 90,
+      "spacing_in_rows": 30,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "december",
+      "plant_end": "february",
+      "time_first_harvets": 4,
+      "harest_start": "june",
+      "harest_end": "july",
+      "companion_helps": [
+        "green bean (bush)",
+        "lettuce",
+        "onion",
+        "spinach"
+      ],
+      "companion_helped_by": [
+        "green bean (bush)",
+        "onion",
+        "sage",
+        "thyme"
+      ],
+      "plants_avoid": [
+        "tomato",
+        "potato",
+        "eggplant",
+        "bell pepper",
+        "okra",
+        "mint",
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ]
+    },
+    {
+      "name": "summer squash",
+      "plant_directly": true,
+      "spacing_between_rows": 90,
+      "spacing_in_rows": 90,
+      "depth": 2,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "may",
+      "plant_end": "may",
+      "time_first_harvets": 3,
+      "harest_start": "september",
+      "harest_end": "october",
+      "companion_helps": [
+        "sweetcorn",
+        "green bean (pole)",
+        "green bean (bush)",
+        "okra"
+      ],
+      "companion_helped_by": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "radish"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "sunflower",
+      "plant_directly": false,
+      "spacing_between_rows": 50,
+      "spacing_in_rows": 50,
+      "depth": 1.5,
+      "time_to_germinate_indoors_start": "march, may",
+      "time_to_germinate_indoors_end": "march, may",
+      "time_to_germinate_indoors_period": 1,
+      "plant_start": "april",
+      "plant_end": "july",
+      "time_first_harvets": 3,
+      "harest_start": "august",
+      "harest_end": "november",
+      "companion_helps": [
+        "bell pepper",
+        "sweetcorn",
+        "cucumber",
+        "soya bean",
+        "tomato"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "green bean (pole)"
+      ]
+    },
+    {
+      "name": "sweet potato",
+      "plant_directly": true,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 30,
+      "depth": 10,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "april",
+      "plant_end": "june",
+      "time_first_harvets": 3,
+      "harest_start": "august",
+      "harest_end": "october",
+      "companion_helps": [
+        "okra"
+      ],
+      "companion_helped_by": [
+        "okra"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "thyme",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 23,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "june",
+      "plant_end": "september",
+      "time_first_harvets": 7,
+      "harest_start": "may",
+      "harest_end": "december",
+      "companion_helps": [
+        "cabbage",
+        "eggplant",
+        "potato",
+        "strawberry",
+        "tomato",
+        "broccoli",
+        "brussel sprouts",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": []
+    },
+    {
+      "name": "tomato",
+      "plant_directly": false,
+      "spacing_between_rows": 60,
+      "spacing_in_rows": 45,
+      "depth": 4,
+      "time_to_germinate_indoors_start": "february",
+      "time_to_germinate_indoors_end": "may",
+      "time_to_germinate_indoors_period": 10,
+      "plant_start": "april",
+      "plant_end": "july",
+      "time_first_harvets": 11,
+      "harest_start": "july",
+      "harest_end": "october",
+      "companion_helps": [
+        "celery",
+        "bell pepper",
+        "asparagus"
+      ],
+      "companion_helped_by": [
+        "asparagus",
+        "basil",
+        "green bean (pole)",
+        "green bean (bush)",
+        "oregano",
+        "parsley",
+        "onion",
+        "garlic",
+        "leek",
+        "celery",
+        "coriander",
+        "chives",
+        "sweetcorn",
+        "dill",
+        "mustard",
+        "carrot",
+        "eggplant",
+        "mint",
+        "okra",
+        "sage",
+        "thyme",
+        "cucumber",
+        "summer squash"
+      ],
+      "plants_avoid": [
+        "sweetcorn",
+        "chili",
+        "pea",
+        "dill",
+        "potato",
+        "beetroot",
+        "rosemary",
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ]
+    },
+    {
+      "name": "turnip",
+      "plant_directly": true,
+      "spacing_between_rows": 23,
+      "spacing_in_rows": 30,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "april",
+      "plant_end": "august",
+      "time_first_harvets": 10,
+      "harest_start": "july",
+      "harest_end": "november",
+      "companion_helps": [
+        "pea",
+        "broccoli"
+      ],
+      "companion_helped_by": [
+        "pea"
+      ],
+      "plants_avoid": [
+        "mustard"
+      ]
+    },
+    {
+      "name": "sweetcorn",
+      "plant_directly": true,
+      "spacing_between_rows": 60,
+      "spacing_in_rows": 45,
+      "depth": 2,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "april",
+      "plant_end": "may",
+      "time_first_harvets": 14,
+      "harest_start": "august",
+      "harest_end": "september",
+      "companion_helps": [
+        "green bean (pole)",
+        "green bean (bush)",
+        "soya bean",
+        "tomato"
+      ],
+      "companion_helped_by": [
+        "sunflower",
+        "dill",
+        "green bean (pole)",
+        "green bean (bush)",
+        "pea",
+        "soya bean",
+        "parsley",
+        "potato",
+        "mustard"
+      ],
+      "plants_avoid": [
+        "tomato",
+        "celery"
+      ]
+    },
+    {
+      "name": "swiss chard",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 15,
+      "depth": 2,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "august",
+      "plant_end": "july",
+      "time_first_harvets": 11,
+      "harest_start": "july",
+      "harest_end": "october",
+      "companion_helps": [
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": []
+    },
+    {
+      "name": "florence fennel",
+      "plant_directly": true,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 27,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "june",
+      "plant_end": "june",
+      "time_first_harvets": 4,
+      "harest_start": "november",
+      "harest_end": "november",
+      "companion_helps": [
+        "dill"
+      ],
+      "companion_helped_by": [
+        "dill"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "kohlrabi",
+      "plant_directly": true,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 20,
+      "depth": 1,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "march",
+      "plant_end": "october",
+      "time_first_harvets": 2,
+      "harest_start": "june",
+      "harest_end": "april",
+      "companion_helps": [
+        "onion",
+        "beetroot",
+        "cucumber"
+      ],
+      "companion_helped_by": [
+        "beetroot",
+        "cucumber"
+      ],
+      "plants_avoid": []
+    },
+    {
+      "name": "chamomile",
+      "plant_directly": true,
+      "spacing_between_rows": 20,
+      "spacing_in_rows": 20,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": null,
+      "plant_start": "june",
+      "plant_end": "september",
+      "time_first_harvets": 10,
+      "harest_start": "august",
+      "harest_end": "december",
+      "companion_helps": [
+        "broccoli",
+        "brussel sprouts",
+        "cabbage",
+        "cauliflower",
+        "kohlrabi",
+        "radish",
+        "turnip",
+        "cucumber",
+        "onion"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": []
+    }
+  ]
+}
+

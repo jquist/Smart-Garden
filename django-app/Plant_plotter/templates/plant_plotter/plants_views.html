@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% block content %}
+{%for p in plant %}
+<div class="container-fluid p-5 rounded border">
+        <div class="row">
+            <div class="col-sm-4">
+                
+            </div>
+            <div class="col-sm-8">
+                <h4>{{p.name}}</h4>
+                <p></p>
+            </div>
+
+        </div>
+    </div>
+    <p></p>
+{%endfor%}
+{% endblock content %}

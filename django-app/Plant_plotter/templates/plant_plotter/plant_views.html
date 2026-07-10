@@ -1,0 +1,64 @@
+{% extends "base.html"%}
+{%load i18n%}
+{% block content %}
+    <!--Buttons if logged-->
+    <p></p>
+    <div class="container-fluid p-5  rounded border"><h1>{{plant.name}}</h1></div>
+    
+   <div class="container-fluid p-5  rounded border">
+        <div class="row">
+            <div class="col-sm-8">
+                <p>plant_directly:{{plant.plant_directly}}</p>
+                <p>Spacing between rows:{{plant.spacing_between_rows}}</p>
+                <p>Spacing in the rows:{{plant.spacing_in_rows}}</p>
+                <p>How deep does the seed need to be planted:{{plant.depth}}</p>
+                <p>what is the first month of germination indoors?:{{plant.time_to_germinate_indoors_start}}</p>
+                <p>what is the last month of germination indoors?:{{plant.time_to_germinate_indoors_end}}</p>
+                <p>how long does it take to germinate before planting outside?:{{plant.time_to_germinate_indoors_period}}</p>
+                <p>when is th efirst month you can start planting:{{plant.plant_start}}</p>
+                <p>When is the last month you can plant it:{{plant.plant_end}}</p>
+                <p>How long to first harvest:{{plant.time_first_harvets}}</p>
+                <p>When does the harvest season start:{{plant.harest_start}}</p>
+                <p>When does the harvest season end:{{plant.harest_end}}</p>
+                <p></p>
+
+            </div>
+
+        </div>
+    </div>
+    <p></p>
+    <div class="container-fluid p-5  rounded border">
+    {% if empty == False %}
+    <h4>Companion plants that help {{plant.name}}</h4>
+
+        {% for t in other_plant_helps %}
+            <p>{{ forloop.counter }}. {{ t.other_plant.name }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No companion</h3>
+    {% endif %}
+
+    {% if empty == False %}
+    <h4>Companion plants that are helped by {{plant.name}}</h4>
+
+        {% for t in other_plant_helps_by %}
+            <p>{{ forloop.counter }}. {{ t.other_plant.name }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No companion</h3>
+    {% endif %}
+
+    {% if empty == False %}
+    <h4>Companion plants that should be avoided planting with {{plant.name}}</h4>
+
+        {% for t in avoid %}
+            <p>{{ forloop.counter }}. {{ t.other_plant.name }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No Avoids</h3>
+    {% endif %}
+    </div>
+
+
+{% endblock content %}
+

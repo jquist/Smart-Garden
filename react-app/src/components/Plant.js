@@ -1,0 +1,22 @@
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+function Plant({ data,disableLink }) {
+  if (disableLink) 
+      return (
+        <Card>
+          <Card.Title>{data.name}</Card.Title>
+        </Card>
+      );
+  return (
+    <Link to={`/plant/${data.id}`} className="plant-link">
+      <Card className="plant-card">
+        <Card.Body className="plant-card-body">
+          <Card.Title>{data.name}</Card.Title>
+        </Card.Body>
+      </Card>
+    </Link>
+  );
+}
+
+export default Plant;
