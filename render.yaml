@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: smart-garden-api
+    runtime: python
+    rootDir: django-app
+    plan: free
+    buildCommand: pip install -r requirement.txt && python manage.py collectstatic --noinput
+    startCommand: python manage.py migrate && python manage.py seed --skip-if-plants-exist && gunicorn Plant_plotter_settings.wsgi:application --bind 0.0.0.0:$PORT --workers 3 --timeout 180
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+      - key: CSRF_TRUSTED_ORIGINS
+        sync: false

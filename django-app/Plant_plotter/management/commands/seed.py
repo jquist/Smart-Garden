@@ -11,8 +11,19 @@ ROOT_DIR = os.path.dirname(__file__)
 
 class Command(BaseCommand):
     help = 'Insert sample data into database for tests'
+
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '--skip-if-plants-exist',
+            action='store_true',
+            help='Do not seed when the database already contains plants.',
+        )
     
     def handle(self, *args, **options):
+        if options['skip_if_plants_exist'] and Plant.objects.exists():
+            print('plant seed skipped because plants already exist')
+            return
+
         with open(ROOT_DIR + "/sample_data.json") as json_file:
             sample_data = json.load(json_file)
 
