@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { API } from "../../constants";
+import PlantBadges from "../PlantBadges";
 
 function asList(data) {
   if (Array.isArray(data)) return data;
@@ -49,6 +50,15 @@ function CRPanel({
       ...recommendations.secondary.map((item) => item.name),
     ];
   }, [recommendations]);
+
+  const plantsByName = useMemo(() => {
+    return new Map(
+      plantsData.map((plant) => [
+        String(plant.name || "").toLowerCase(),
+        plant,
+      ])
+    );
+  }, [plantsData]);
 
   function calculateFitCounts(names) {
     const counts = {};
@@ -217,6 +227,7 @@ function CRPanel({
           const canFit = fitCountsByName[item.name];
           const hasFitCount = typeof canFit === "number";
           const disabled = hasFitCount && canFit <= 0;
+          const plantData = plantsByName.get(String(item.name).toLowerCase());
 
           return (
             <label
@@ -228,6 +239,7 @@ function CRPanel({
             >
               <div>
                 <strong>{item.name}</strong>
+                {plantData && <PlantBadges plant={plantData} maxRoles={2} />}
                 <div className="small text-muted">
                   Helps {item.score} selected plant{item.score === 1 ? "" : "s"}
                 </div>

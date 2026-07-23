@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { API } from "../../constants";
+import PlantBadges from "../PlantBadges";
+import { CATEGORY_OPTIONS } from "../plantLabels";
 
 function PlantsPanel({
   plantInstances,
@@ -10,6 +12,7 @@ function PlantsPanel({
 }) {
   const [open, setOpen] = useState(true);
   const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
 
   const { data = [], isPending, error } = useQuery({
     queryKey: ["canvasPlants"],
@@ -51,10 +54,16 @@ function PlantsPanel({
 
     return data
       .filter((plant) =>
-        !q || String(plant.name || "").toLowerCase().includes(q)
+        (!category || plant.plant_category === category) &&
+        (!q ||
+          String(plant.name || "").toLowerCase().includes(q) ||
+          String(plant.plant_category || "").toLowerCase().includes(q) ||
+          (plant.plant_roles || []).some((role) =>
+            String(role).toLowerCase().includes(q)
+          ))
       )
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [data, search]);
+  }, [data, search, category]);
 
   return (
     <div className="card p-3 mb-3">
@@ -69,13 +78,27 @@ function PlantsPanel({
 
       {open && (
         <>
-          <input
-            type="text"
-            className="form-control my-3"
-            placeholder="Search plants..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+          <div className="d-flex flex-column gap-2 my-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search plants, roles, or labels..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <select
+              className="form-select"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              aria-label="Filter plants by type"
+            >
+              {CATEGORY_OPTIONS.map((option) => (
+                <option key={option.value || "all"} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
 
           <div className="small text-muted mb-3">
             Drag into a box or use + to add. - removes from the same shared plant list.
@@ -104,6 +127,7 @@ function PlantsPanel({
                   <div className="d-flex justify-content-between align-items-center gap-2">
                     <div>
                       <strong>{plant.name}</strong>
+                      <PlantBadges plant={plant} maxRoles={2} />
                       <div className="small text-muted">
                         {plant.spacing_between_rows || 0}cm spacing
                       </div>

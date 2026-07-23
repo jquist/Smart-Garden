@@ -1,11 +1,15 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import PlantBadges from "./PlantBadges";
 
 function Plant({ data,disableLink }) {
   if (disableLink) 
       return (
         <Card>
-          <Card.Title>{data.name}</Card.Title>
+          <Card.Body>
+            <Card.Title>{data.name}</Card.Title>
+            <PlantBadges plant={data} />
+          </Card.Body>
         </Card>
       );
   return (
@@ -13,6 +17,7 @@ function Plant({ data,disableLink }) {
       <Card className="plant-card">
         <Card.Body className="plant-card-body">
           <Card.Title>{data.name}</Card.Title>
+          <PlantBadges plant={data} />
         </Card.Body>
       </Card>
     </Link>

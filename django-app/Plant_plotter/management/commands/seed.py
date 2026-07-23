@@ -31,6 +31,8 @@ class Command(BaseCommand):
         for data in sample_data['plants'] :
             kwargs = {
                 'name': data['name'],
+                'plant_category': data.get('plant_category', 'vegetable'),
+                'plant_roles': data.get('plant_roles', []),
                 'plant_directly': data['plant_directly'],
                 'spacing_between_rows': data['spacing_between_rows'],
                 'spacing_in_rows': data['spacing_in_rows'],

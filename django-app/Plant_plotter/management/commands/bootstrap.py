@@ -22,13 +22,12 @@ class Command(BaseCommand):
             sample_data = json.load(json_file)
 
         j=1
-        a=1
-        b=1
-        c=1
         for plant in sample_data['plants']:
             kwargs = { 
                 "id": j,
                 "name":plant['name'],
+                "plant_category":plant.get("plant_category", "vegetable"),
+                "plant_roles":plant.get("plant_roles", []),
                 "plant_directly":plant["plant_directly"],
                 "spacing_between_rows":plant["spacing_between_rows"],
                 "spacing_in_rows":plant["spacing_in_rows"],
@@ -43,27 +42,28 @@ class Command(BaseCommand):
                 "harest_end":plant["harest_end"],
             }
             Plant(**kwargs).save()
-            i = 0
-            for companion_helps in plant['companion_helps']:
-                Companion_helpslistItem(id=a,plant=Plant.objects.get(name=companion_helps),
-                            plant=Plant.objects.get(name=plant['name']),position = i).save()
-                i = i + 1
-                a +=1
-            t = 0
-            for companion_helped_by in plant['companion_helped_by']:
-                Companion_helped_bylistItem(id=b,plant=Plant.objects.get(name=companion_helped_by),
-                            plant=Plant.objects.get(name=plant['name']),position = t).save()
-                t = t + 1
-                b +=1
-
-            k = 0
-            for plants_avoid in plant['plants_avoid']:
-                Plants_avoidlistItem(id=c,plant=Plant.objects.get(name=plants_avoid),
-                            plant=Plant.objects.get(name=plant['name']),position = k).save()
-                k = k + 1
-                c +=1
-                
             j+=1
+
+        for plant in sample_data['plants']:
+            plant_obj = Plant.objects.get(name=plant['name'])
+            for other_name in plant.get('companion_helps', []):
+                other_obj = Plant.objects.get(name=other_name)
+                Companion_helpslistItem.objects.get_or_create(
+                    plant=plant_obj,
+                    other_plant=other_obj,
+                )
+            for other_name in plant.get('companion_helped_by', []):
+                other_obj = Plant.objects.get(name=other_name)
+                Companion_helped_bylistItem.objects.get_or_create(
+                    plant=plant_obj,
+                    other_plant=other_obj,
+                )
+            for other_name in plant.get('plants_avoid', []):
+                other_obj = Plant.objects.get(name=other_name)
+                Plants_avoidlistItem.objects.get_or_create(
+                    plant=plant_obj,
+                    other_plant=other_obj,
+                )
 
         print('Seeding done.')
 
