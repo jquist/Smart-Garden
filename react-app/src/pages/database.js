@@ -16,8 +16,7 @@ function Database() {
 	const { isPending, data, error } = useQuery({
 		queryKey: ['plantData'],
 		queryFn: async () => {
-			debugger;
-			const response = await fetch(`${API}plant`)
+			const response = await fetch(`${API}plant/`)
 			return await response.json();
 		},
 	})

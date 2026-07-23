@@ -7,7 +7,11 @@ class PlantViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Plant.objects.all()
+    queryset = Plant.objects.prefetch_related(
+        "companion_helps",
+        "companion_helped_by",
+        "plants_avoid",
+    ).all()
     serializer_class = PlantSerializer
 
 

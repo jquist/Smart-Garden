@@ -21,13 +21,13 @@ class PlantSerializer(serializers.ModelSerializer):
         return self.context["request"].build_absolute_uri('/api/plant/' + str(obj.id))
 
     def get_companion_helps_names(self, obj):
-        return list(obj.companion_helps.values_list("name", flat=True))
+        return [plant.name for plant in obj.companion_helps.all()]
 
     def get_companion_helped_by_names(self, obj):
-        return list(obj.companion_helped_by.values_list("name", flat=True))
+        return [plant.name for plant in obj.companion_helped_by.all()]
 
     def get_plants_avoid_names(self, obj):
-        return list(obj.plants_avoid.values_list("name", flat=True))
+        return [plant.name for plant in obj.plants_avoid.all()]
 
 class Companion_helpslistItemSerializer(serializers.ModelSerializer):
     other_plant_name = serializers.CharField(source="other_plant.name", read_only=True)

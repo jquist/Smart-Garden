@@ -14,7 +14,7 @@ function PlantsPanel({
   const { data = [], isPending, error } = useQuery({
     queryKey: ["canvasPlants"],
     queryFn: async () => {
-      const response = await fetch(`${API}plant`);
+      const response = await fetch(`${API}plant/`);
       if (!response.ok) {
         throw new Error("Failed to load plants");
       }

@@ -74,7 +74,7 @@ function Scheduler() {
   const { isPending, data, error } = useQuery({
     queryKey: ["plantData"],
     queryFn: async () => {
-      const response = await fetch(`${API}plant`);
+      const response = await fetch(`${API}plant/`);
       return await response.json();
     },
   });
