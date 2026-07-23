@@ -7,8 +7,8 @@ function Error(props) {
 	return (
 		<Container fluid className="vh-100 d-flex justify-content-center align-items-center">
 			<Row>
-				<Col className="text-center">
-					<h1>Error 1</h1>
+				<Col className="text-center error-card">
+					<h1>Something went wrong</h1>
 					<h2>{message}</h2>
 				</Col>
 			</Row>

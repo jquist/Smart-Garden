@@ -26,9 +26,13 @@ export const CATEGORY_OPTIONS = [
 export const ROLE_LABELS = {
   aromatic_pest_confuser: "Aromatic",
   beneficial_insect_plant: "Beneficial insects",
+  creeping_perennial: "Creeping perennial",
   cover_crop: "Cover crop",
+  deep_rooted_perennial: "Deep-rooted",
   edible: "Edible",
   flowering: "Flowering",
+  green_manure: "Green manure",
+  ground_cover: "Ground cover",
   hedgerow: "Hedgerow",
   invasive: "Invasive",
   living_mulch: "Living mulch",
@@ -37,11 +41,14 @@ export const ROLE_LABELS = {
   perennial_plant: "Perennial",
   pollinator: "Pollinator",
   problem_plant: "Problem plant",
+  seeding_annual: "Self-seeding",
   shrub: "Shrub",
   soil_improver: "Soil improver",
   trap_crop: "Trap crop",
   tree: "Tree",
+  toxic: "Toxic",
   weed: "Weed",
+  weed_suppressor: "Weed suppressor",
   wildlife_support: "Wildlife support",
 };
 

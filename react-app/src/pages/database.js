@@ -49,8 +49,19 @@ function Database() {
 	if (error) return <Error message="Could not load Plant" />
 
 	return (
-		<Container>
-            <Row className="mb-3">
+		<Container fluid className="px-0">
+            <header className="page-header">
+                <div>
+                    <p className="page-kicker">Plant database</p>
+                    <h1 className="page-title">Find the right plants for the plan.</h1>
+                    <p className="page-subtitle">
+                        Search by name, category, or growing role, then open a plant for spacing and companion details.
+                    </p>
+                </div>
+            </header>
+
+            <div className="toolbar-panel">
+            <Row className="g-3 align-items-center">
                 <Col xs={12} md={5}>
                 <InputGroup>
                     <Form.Control
@@ -77,11 +88,12 @@ function Database() {
                 </Col>
 
                 <Col xs={12} md={3} className="d-flex align-items-center mt-2 mt-md-0">
-                <small className="text-muted">
+                <small className="selected-count">
                     Showing {filtered.length} of {data?.length ?? 0}
                 </small>
                 </Col>
             </Row>
+            </div>
 
             <Row className="g-3">
             {filtered.map((b) => (
@@ -90,6 +102,12 @@ function Database() {
                 </Col>
             ))}
             </Row>
+
+            {filtered.length === 0 && (
+                <div className="empty-state">
+                    No plants match the current filters.
+                </div>
+            )}
 		</Container>
 	);
 }

@@ -50,10 +50,34 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "living_mulch",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Black / Bristle Oats",
@@ -78,8 +102,33 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
-        "soil_improver"
-      ]
+        "green_manure",
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Bindweed",
+        "Cleavers",
+        "Common Chickweed",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Buckwheat",
@@ -162,8 +211,26 @@
       "plant_roles": [
         "beneficial_insect_plant",
         "cover_crop",
-        "soil_improver"
-      ]
+        "green_manure",
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Cereal Rye",
@@ -193,8 +260,33 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
-        "soil_improver"
-      ]
+        "green_manure",
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Bindweed",
+        "Cleavers",
+        "Common Chickweed",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Chicory Cover Crop",
@@ -222,7 +314,10 @@
       "plant_roles": [
         "cover_crop",
         "soil_improver"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Crimson Clover",
@@ -267,9 +362,27 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Fenugreek",
@@ -297,7 +410,10 @@
         "cover_crop",
         "nitrogen_fixer",
         "soil_improver"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Forage Pea",
@@ -332,9 +448,27 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Forage Radish",
@@ -362,9 +496,27 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "soil_improver",
-        "trap_crop"
-      ]
+        "trap_crop",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Italian Ryegrass",
@@ -391,8 +543,33 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
-        "soil_improver"
-      ]
+        "green_manure",
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Bindweed",
+        "Cleavers",
+        "Common Chickweed",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Lucerne / Alfalfa",
@@ -431,7 +608,10 @@
         "cover_crop",
         "nitrogen_fixer",
         "soil_improver"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Mustard Green Manure",
@@ -473,8 +653,26 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
-        "soil_improver"
-      ]
+        "green_manure",
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Red Clover",
@@ -530,10 +728,41 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "living_mulch",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Sainfoin",
@@ -585,7 +814,10 @@
         "cover_crop",
         "nitrogen_fixer",
         "soil_improver"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "White Clover",
@@ -637,10 +869,41 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "living_mulch",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Winter Field Bean",
@@ -675,9 +938,27 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Winter Tares / Vetch",
@@ -707,9 +988,27 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Yellow Trefoil",
@@ -760,10 +1059,34 @@
       "plant_category": "cover_crop",
       "plant_roles": [
         "cover_crop",
+        "green_manure",
         "living_mulch",
         "nitrogen_fixer",
-        "soil_improver"
-      ]
+        "soil_improver",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Aster",
@@ -832,7 +1155,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Bee Balm",
@@ -901,7 +1227,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Calendula",
@@ -992,7 +1321,10 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chamomile (Flower)",
@@ -1079,7 +1411,10 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chrysanthemum",
@@ -1165,7 +1500,10 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cornflower",
@@ -1235,7 +1573,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cosmos",
@@ -1304,7 +1645,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Dianthus",
@@ -1390,7 +1734,10 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Echinacea",
@@ -1459,7 +1806,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Field Poppy",
@@ -1528,7 +1878,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Foxglove",
@@ -1597,7 +1950,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "French Marigold",
@@ -1686,7 +2042,10 @@
         "flowering",
         "pollinator",
         "trap_crop"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hollyhock",
@@ -1755,7 +2114,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lavender (Flower)",
@@ -1841,7 +2203,10 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lupin",
@@ -1911,7 +2276,10 @@
         "flowering",
         "nitrogen_fixer",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Mexican/Southern Marigold",
@@ -1946,7 +2314,10 @@
         "flowering",
         "pollinator",
         "trap_crop"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Nasturtium",
@@ -2039,8 +2410,31 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator",
-        "trap_crop"
-      ]
+        "trap_crop",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Petunia",
@@ -2126,7 +2520,10 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Phacelia",
@@ -2211,8 +2608,25 @@
       "plant_roles": [
         "beneficial_insect_plant",
         "flowering",
-        "pollinator"
-      ]
+        "pollinator",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Cleavers",
+        "Common Chickweed",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Red Dead-nettle",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Sunflower",
@@ -2285,7 +2699,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sweet Alyssum",
@@ -2371,8 +2788,31 @@
       "plant_roles": [
         "beneficial_insect_plant",
         "flowering",
-        "pollinator"
-      ]
+        "pollinator",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Sweet Pea",
@@ -2404,7 +2844,10 @@
         "flowering",
         "nitrogen_fixer",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Viola/Pansy",
@@ -2430,8 +2873,27 @@
       "plant_category": "flower",
       "plant_roles": [
         "flowering",
-        "pollinator"
-      ]
+        "ground_cover",
+        "pollinator",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Yarrow",
@@ -2517,7 +2979,10 @@
         "beneficial_insect_plant",
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Zinnia",
@@ -2589,7 +3054,10 @@
       "plant_roles": [
         "flowering",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Alpine Strawberry",
@@ -2650,8 +3118,32 @@
       "plants_avoid": [],
       "plant_category": "fruit",
       "plant_roles": [
-        "edible"
-      ]
+        "edible",
+        "ground_cover",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Apple",
@@ -2722,26 +3214,47 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
         "Potato",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "fruit",
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Apricot",
@@ -2804,7 +3317,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Autumn-fruiting Raspberry",
@@ -2866,7 +3382,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Blackberry",
@@ -2928,7 +3447,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Blackcurrant",
@@ -2992,7 +3514,10 @@
       "plant_roles": [
         "edible",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Blueberry",
@@ -3057,7 +3582,10 @@
       "plant_roles": [
         "edible",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cherry",
@@ -3122,7 +3650,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Damson",
@@ -3186,7 +3717,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Fig",
@@ -3249,7 +3783,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Gooseberry",
@@ -3312,7 +3849,10 @@
       "plant_roles": [
         "edible",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Grape",
@@ -3377,7 +3917,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Honeyberry",
@@ -3440,7 +3983,10 @@
       "plant_roles": [
         "edible",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Jostaberry",
@@ -3503,7 +4049,10 @@
       "plant_roles": [
         "edible",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Kiwi Fruit",
@@ -3567,7 +4116,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Loganberry",
@@ -3629,7 +4181,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Nectarine",
@@ -3692,7 +4247,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Peach",
@@ -3755,7 +4313,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Pear",
@@ -3827,7 +4388,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Plum",
@@ -3894,7 +4458,10 @@
       "plant_roles": [
         "edible",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Raspberry",
@@ -3955,25 +4522,46 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
         "Potato",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Redcurrant",
@@ -4035,7 +4623,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Strawberry",
@@ -4104,6 +4695,7 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Broccoli",
         "Brussels Sprouts",
@@ -4113,31 +4705,51 @@
         "Chinese Cabbage",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
         "Kale",
         "Kohlrabi",
+        "Lesser Celandine",
         "Mizuna",
         "Mustard Greens",
         "Oxalis",
         "Pak Choi",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
         "Rocket",
+        "Rosebay Willowherb",
         "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
         "Spring Cabbage",
         "Sprouting Broccoli",
+        "Stinging Nettle",
         "Swede",
         "Turnip"
       ],
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Tayberry",
@@ -4199,7 +4811,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Whitecurrant",
@@ -4261,7 +4876,10 @@
       "plant_category": "fruit",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Basil",
@@ -4328,7 +4946,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Bay Laurel",
@@ -4358,7 +4979,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Borage",
@@ -4453,7 +5077,10 @@
         "beneficial_insect_plant",
         "edible",
         "pollinator"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Caraway",
@@ -4483,7 +5110,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chamomile (Herb)",
@@ -4539,7 +5169,10 @@
       "plant_roles": [
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chervil",
@@ -4598,7 +5231,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chives",
@@ -4693,7 +5329,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Coriander",
@@ -4753,7 +5392,70 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
+    },
+    {
+      "name": "Creeping Thyme",
+      "plant_category": "herb",
+      "plant_roles": [
+        "aromatic_pest_confuser",
+        "edible",
+        "ground_cover",
+        "pollinator",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Annual Meadow Grass",
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Cleavers",
+        "Common Chickweed",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Fat Hen",
+        "Groundsel",
+        "Hairy Bittercress",
+        "Herb Robert",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell"
+      ],
+      "weed_management_notes": "",
+      "plant_directly": false,
+      "spacing_between_rows": 25,
+      "spacing_in_rows": 25,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [
+        "Broccoli",
+        "Cabbage",
+        "Kale",
+        "Tomato"
+      ],
+      "companion_helped_by": [],
+      "plants_avoid": []
     },
     {
       "name": "Dill",
@@ -4814,7 +5516,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "French Tarragon",
@@ -4843,7 +5548,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Garlic Chives",
@@ -4881,7 +5589,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Herb Fennel",
@@ -5001,7 +5712,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hyssop",
@@ -5030,7 +5744,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lavender (Herb)",
@@ -5090,7 +5807,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lemon Balm",
@@ -5122,7 +5842,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lemon Thyme",
@@ -5167,7 +5890,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lovage",
@@ -5198,7 +5924,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Mint",
@@ -5260,7 +5989,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Oregano",
@@ -5316,7 +6048,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Parsley",
@@ -5377,7 +6112,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Peppermint",
@@ -5407,7 +6145,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Rosemary",
@@ -5456,7 +6197,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sage",
@@ -5501,7 +6245,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sorrel",
@@ -5530,7 +6277,10 @@
       "plant_category": "herb",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Spearmint",
@@ -5560,7 +6310,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Summer Savory",
@@ -5591,7 +6344,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sweet Marjoram",
@@ -5621,7 +6377,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Thai Basil",
@@ -5652,7 +6411,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Thyme",
@@ -5712,7 +6474,10 @@
         "aromatic_pest_confuser",
         "beneficial_insect_plant",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Winter Savory",
@@ -5743,7 +6508,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Agapanthus",
@@ -5765,7 +6533,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Allium",
@@ -5787,7 +6558,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Anemone",
@@ -5809,7 +6583,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Astilbe",
@@ -5831,7 +6608,52 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
+    },
+    {
+      "name": "Aubrieta",
+      "plant_category": "ornamental",
+      "plant_roles": [
+        "flowering",
+        "ground_cover",
+        "pollinator",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb"
+      ],
+      "weed_management_notes": "",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": []
     },
     {
       "name": "Azalea",
@@ -5854,7 +6676,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Begonia",
@@ -5876,7 +6701,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Berberis",
@@ -5899,7 +6727,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Bergenia",
@@ -5920,8 +6751,33 @@
       "plants_avoid": [],
       "plant_category": "ornamental",
       "plant_roles": [
-        "ornamental"
-      ]
+        "ground_cover",
+        "ornamental",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Enchanter's Nightshade",
+        "Green Alkanet",
+        "Ground Elder",
+        "Herb Bennet / Wood Avens",
+        "Horsetail / Mare's Tail",
+        "Lesser Celandine",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Stinging Nettle"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Box",
@@ -5944,7 +6800,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Buddleja",
@@ -5967,7 +6826,58 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
+    },
+    {
+      "name": "Bugle / Ajuga",
+      "plant_category": "ornamental",
+      "plant_roles": [
+        "flowering",
+        "ground_cover",
+        "pollinator",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Enchanter's Nightshade",
+        "Green Alkanet",
+        "Ground Elder",
+        "Herb Bennet / Wood Avens",
+        "Horsetail / Mare's Tail",
+        "Lesser Celandine",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Stinging Nettle"
+      ],
+      "weed_management_notes": "",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": []
     },
     {
       "name": "Busy Lizzie",
@@ -5989,7 +6899,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Camellia",
@@ -6012,7 +6925,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Catmint",
@@ -6034,7 +6950,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cherry Laurel",
@@ -6058,7 +6977,10 @@
         "hedgerow",
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Choisya",
@@ -6081,7 +7003,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Clematis",
@@ -6103,7 +7028,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cotoneaster",
@@ -6126,7 +7054,52 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
+    },
+    {
+      "name": "Creeping Phlox",
+      "plant_category": "ornamental",
+      "plant_roles": [
+        "flowering",
+        "ground_cover",
+        "pollinator",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb"
+      ],
+      "weed_management_notes": "",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": []
     },
     {
       "name": "Crocosmia",
@@ -6148,7 +7121,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Crocus",
@@ -6170,7 +7146,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cyclamen",
@@ -6192,7 +7171,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Daffodil",
@@ -6214,7 +7196,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Dahlia",
@@ -6236,7 +7221,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Delphinium",
@@ -6258,7 +7246,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "English Bluebell",
@@ -6280,7 +7271,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Escallonia",
@@ -6303,7 +7297,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Euonymus",
@@ -6326,7 +7323,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Fern",
@@ -6348,7 +7348,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Forsythia",
@@ -6371,7 +7374,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Fuchsia",
@@ -6393,7 +7399,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Geranium",
@@ -6415,7 +7424,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Gladiolus",
@@ -6441,7 +7453,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Grape Hyacinth",
@@ -6463,7 +7478,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hardy Geranium",
@@ -6484,8 +7502,33 @@
       "plants_avoid": [],
       "plant_category": "ornamental",
       "plant_roles": [
-        "ornamental"
-      ]
+        "ground_cover",
+        "ornamental",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Enchanter's Nightshade",
+        "Green Alkanet",
+        "Ground Elder",
+        "Herb Bennet / Wood Avens",
+        "Horsetail / Mare's Tail",
+        "Lesser Celandine",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Stinging Nettle"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Hebe",
@@ -6508,7 +7551,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Helenium",
@@ -6530,7 +7576,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hellebore",
@@ -6552,7 +7601,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Heuchera",
@@ -6574,7 +7626,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Holly",
@@ -6597,7 +7652,10 @@
       "plant_roles": [
         "hedgerow",
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Honeysuckle",
@@ -6619,7 +7677,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hosta",
@@ -6641,7 +7702,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hyacinth",
@@ -6663,7 +7727,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hydrangea",
@@ -6686,7 +7753,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Iris",
@@ -6708,7 +7778,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Japanese Maple",
@@ -6731,7 +7804,10 @@
       "plant_roles": [
         "ornamental",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Jasmine",
@@ -6753,7 +7829,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lady's Mantle",
@@ -6774,8 +7853,33 @@
       "plants_avoid": [],
       "plant_category": "ornamental",
       "plant_roles": [
-        "ornamental"
-      ]
+        "ground_cover",
+        "ornamental",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Enchanter's Nightshade",
+        "Green Alkanet",
+        "Ground Elder",
+        "Herb Bennet / Wood Avens",
+        "Horsetail / Mare's Tail",
+        "Lesser Celandine",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Stinging Nettle"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Lavatera",
@@ -6797,7 +7901,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lilac",
@@ -6819,7 +7926,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lobelia",
@@ -6841,7 +7951,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Magnolia",
@@ -6864,7 +7977,58 @@
       "plant_roles": [
         "ornamental",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
+    },
+    {
+      "name": "Pachysandra",
+      "plant_category": "ornamental",
+      "plant_roles": [
+        "ground_cover",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Bramble / Wild Blackberry",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Enchanter's Nightshade",
+        "Green Alkanet",
+        "Ground Elder",
+        "Herb Bennet / Wood Avens",
+        "Horsetail / Mare's Tail",
+        "Japanese Knotweed",
+        "Lesser Celandine",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Stinging Nettle"
+      ],
+      "weed_management_notes": "",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": []
     },
     {
       "name": "Pansy",
@@ -6886,7 +8050,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Penstemon",
@@ -6908,7 +8075,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Peony",
@@ -6930,7 +8100,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Photinia 'Red Robin'",
@@ -6953,7 +8126,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Primrose",
@@ -6975,7 +8151,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Privet",
@@ -6999,7 +8178,10 @@
         "hedgerow",
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Pulmonaria",
@@ -7021,7 +8203,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Pyracantha",
@@ -7045,7 +8230,10 @@
         "hedgerow",
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Rhododendron",
@@ -7068,7 +8256,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Rose",
@@ -7096,7 +8287,58 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
+    },
+    {
+      "name": "Rubus tricolor",
+      "plant_category": "ornamental",
+      "plant_roles": [
+        "ground_cover",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Bramble / Wild Blackberry",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Enchanter's Nightshade",
+        "Green Alkanet",
+        "Ground Elder",
+        "Herb Bennet / Wood Avens",
+        "Horsetail / Mare's Tail",
+        "Japanese Knotweed",
+        "Lesser Celandine",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Stinging Nettle"
+      ],
+      "weed_management_notes": "",
+      "plant_directly": false,
+      "spacing_between_rows": 60,
+      "spacing_in_rows": 60,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": []
     },
     {
       "name": "Rudbeckia",
@@ -7118,7 +8360,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Salvia",
@@ -7140,7 +8385,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sedum",
@@ -7161,8 +8409,27 @@
       "plants_avoid": [],
       "plant_category": "ornamental",
       "plant_roles": [
-        "ornamental"
-      ]
+        "ground_cover",
+        "ornamental",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Horsetail / Mare's Tail",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb"
+      ],
+      "weed_management_notes": ""
     },
     {
       "name": "Skimmia",
@@ -7185,7 +8452,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Snapdragon",
@@ -7207,7 +8477,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Snowdrop",
@@ -7229,7 +8502,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Spiraea",
@@ -7252,7 +8528,10 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Tulip",
@@ -7274,7 +8553,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Verbena",
@@ -7296,7 +8578,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Viburnum tinus",
@@ -7319,7 +8604,59 @@
       "plant_roles": [
         "ornamental",
         "shrub"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
+    },
+    {
+      "name": "Vinca minor / Periwinkle",
+      "plant_category": "ornamental",
+      "plant_roles": [
+        "flowering",
+        "ground_cover",
+        "weed_suppressor"
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [
+        "Bindweed",
+        "Bramble / Wild Blackberry",
+        "Broad-leaved Dock",
+        "Common Plantain",
+        "Couch Grass",
+        "Creeping Buttercup",
+        "Creeping Thistle",
+        "Curled Dock",
+        "Dandelion",
+        "Enchanter's Nightshade",
+        "Green Alkanet",
+        "Ground Elder",
+        "Herb Bennet / Wood Avens",
+        "Horsetail / Mare's Tail",
+        "Japanese Knotweed",
+        "Lesser Celandine",
+        "Oxalis",
+        "Ragwort",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Stinging Nettle"
+      ],
+      "weed_management_notes": "",
+      "plant_directly": false,
+      "spacing_between_rows": 45,
+      "spacing_in_rows": 45,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": []
     },
     {
       "name": "Wisteria",
@@ -7341,7 +8678,10 @@
       "plant_category": "ornamental",
       "plant_roles": [
         "ornamental"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Amelanchier",
@@ -7363,7 +8703,10 @@
       "plant_category": "tree_shrub",
       "plant_roles": [
         "perennial_plant"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cornelian Cherry",
@@ -7426,7 +8769,10 @@
       "plant_roles": [
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Crab Apple",
@@ -7489,7 +8835,10 @@
       "plant_roles": [
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Elder",
@@ -7517,7 +8866,10 @@
         "hedgerow",
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Field Maple",
@@ -7540,7 +8892,10 @@
       "plant_roles": [
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Flowering Cherry",
@@ -7563,7 +8918,10 @@
       "plant_roles": [
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hazel",
@@ -7590,7 +8948,10 @@
         "hedgerow",
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Olive Tree",
@@ -7613,7 +8974,10 @@
       "plant_roles": [
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Silver Birch",
@@ -7636,7 +9000,10 @@
       "plant_roles": [
         "perennial_plant",
         "tree"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Asparagus",
@@ -7671,7 +9038,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Aubergine",
@@ -7748,7 +9118,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Beetroot",
@@ -7781,26 +9154,47 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Broad Bean",
@@ -7875,7 +9269,10 @@
       "plant_roles": [
         "edible",
         "nitrogen_fixer"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Broccoli",
@@ -7906,6 +9303,7 @@
         "Chives",
         "Chrysanthemum",
         "Coriander",
+        "Creeping Thyme",
         "Crimson Clover",
         "Dianthus",
         "Dill",
@@ -7942,7 +9340,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Brussels Sprouts",
@@ -7999,7 +9400,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Butternut Squash",
@@ -8077,7 +9481,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cabbage",
@@ -8113,6 +9520,7 @@
         "Chrysanthemum",
         "Coriander",
         "Cornflower",
+        "Creeping Thyme",
         "Crimson Clover",
         "Dianthus",
         "Dill",
@@ -8152,30 +9560,51 @@
         "Annual Meadow Grass",
         "Bindweed",
         "Blueberry",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Mustard Green Manure",
         "Mustard Greens",
         "Oxalis",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
         "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle",
         "Strawberry",
         "Tomato"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Calabrese",
@@ -8235,7 +9664,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cardoon",
@@ -8264,7 +9696,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Carrot",
@@ -8313,29 +9748,50 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cereal Rye",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
         "Dill",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
         "Parsnip",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cauliflower",
@@ -8393,7 +9849,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Celeriac",
@@ -8424,7 +9883,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Celery",
@@ -8459,7 +9921,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chard",
@@ -8489,7 +9954,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chicory",
@@ -8518,7 +9986,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chilli Pepper",
@@ -8595,7 +10066,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Chinese Cabbage",
@@ -8653,7 +10127,10 @@
       "plant_roles": [
         "edible",
         "trap_crop"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Courgette",
@@ -8725,27 +10202,48 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
         "Potato",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Cucumber",
@@ -8827,29 +10325,50 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
         "Potato",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
         "Rosemary",
         "Sage",
-        "Shepherd's Purse"
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Endive",
@@ -8878,7 +10397,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Florence Fennel",
@@ -8997,7 +10519,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "French Bean",
@@ -9095,37 +10620,58 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Chives",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
         "Garlic",
         "Garlic Chives",
         "Gladiolus",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
         "Kohlrabi",
         "Leek",
+        "Lesser Celandine",
         "Onion",
         "Oxalis",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
         "Shallot",
         "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
         "Spring Onion / Salad Onion",
+        "Stinging Nettle",
         "Sweet Pea"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible",
         "nitrogen_fixer"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Garlic",
@@ -9166,7 +10712,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Globe Artichoke",
@@ -9195,7 +10744,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Jerusalem Artichoke",
@@ -9225,7 +10777,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Kale",
@@ -9253,6 +10808,7 @@
         "Chives",
         "Chrysanthemum",
         "Coriander",
+        "Creeping Thyme",
         "Dianthus",
         "Dill",
         "French Bean",
@@ -9283,7 +10839,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Kohlrabi",
@@ -9342,7 +10901,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lamb's Lettuce",
@@ -9371,7 +10933,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Land Cress",
@@ -9399,7 +10964,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Leek",
@@ -9439,7 +11007,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Lettuce",
@@ -9486,27 +11057,48 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
         "Jerusalem Artichoke",
+        "Lesser Celandine",
         "Oxalis",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Marrow",
@@ -9582,7 +11174,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Marsh Samphire",
@@ -9609,7 +11204,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Melon",
@@ -9688,7 +11286,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Mizuna",
@@ -9746,7 +11347,10 @@
       "plant_roles": [
         "edible",
         "trap_crop"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Mustard Greens",
@@ -9805,7 +11409,10 @@
       "plant_roles": [
         "edible",
         "trap_crop"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "New Zealand Spinach",
@@ -9834,7 +11441,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Oca",
@@ -9863,7 +11473,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Okra",
@@ -9925,7 +11538,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Onion",
@@ -9975,33 +11591,54 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad Bean",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
         "Forage Pea",
         "French Bean",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
         "Pea",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
         "Runner Bean",
         "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle",
         "Winter Field Bean"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Pak Choi",
@@ -10059,7 +11696,10 @@
       "plant_roles": [
         "edible",
         "trap_crop"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Parsnip",
@@ -10089,7 +11729,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Patty Pan Squash",
@@ -10165,7 +11808,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Pea",
@@ -10237,35 +11883,56 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Chives",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
         "Garlic",
         "Garlic Chives",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
         "Leek",
+        "Lesser Celandine",
         "Onion",
         "Oxalis",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
         "Shallot",
         "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
         "Spring Onion / Salad Onion",
+        "Stinging Nettle",
         "Sweet Pea"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible",
         "nitrogen_fixer"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Potato",
@@ -10302,28 +11969,46 @@
         "Apple",
         "Asparagus",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Butternut Squash",
         "Cherry",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
         "Courgette",
+        "Creeping Buttercup",
         "Creeping Thistle",
         "Cucumber",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Melon",
         "Oxalis",
+        "Prickly Sow-thistle",
         "Pumpkin",
+        "Ragwort",
         "Raspberry",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
         "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle",
         "Sunflower",
         "Tomato",
         "Watermelon"
@@ -10331,7 +12016,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Pumpkin",
@@ -10409,7 +12097,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Radicchio",
@@ -10438,7 +12129,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Radish",
@@ -10486,7 +12180,10 @@
       "plant_roles": [
         "edible",
         "trap_crop"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Rhubarb",
@@ -10517,7 +12214,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Rocket",
@@ -10577,7 +12277,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Runner Bean",
@@ -10668,7 +12371,10 @@
       "plant_roles": [
         "edible",
         "nitrogen_fixer"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Salsify",
@@ -10697,7 +12403,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Scorzonera",
@@ -10726,7 +12435,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Shallot",
@@ -10762,7 +12474,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Spinach",
@@ -10793,26 +12508,47 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Spinach Beet / Perpetual Spinach",
@@ -10841,7 +12577,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Spring Cabbage",
@@ -10898,7 +12637,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Spring Onion / Salad Onion",
@@ -10937,7 +12679,10 @@
       "plant_roles": [
         "aromatic_pest_confuser",
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sprouting Broccoli",
@@ -10994,7 +12739,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Swede",
@@ -11051,7 +12799,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sweet Pepper",
@@ -11131,7 +12882,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sweetcorn",
@@ -11223,26 +12977,47 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
+        "Lesser Celandine",
         "Oxalis",
-        "Shepherd's Purse"
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
+        "Rosebay Willowherb",
+        "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
+        "Stinging Nettle"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Tomato",
@@ -11287,6 +13062,7 @@
         "Coriander",
         "Cornflower",
         "Cosmos",
+        "Creeping Thyme",
         "Crimson Clover",
         "Dianthus",
         "Dill",
@@ -11341,6 +13117,7 @@
       "plants_avoid": [
         "Annual Meadow Grass",
         "Bindweed",
+        "Bramble / Wild Blackberry",
         "Broad-leaved Dock",
         "Broccoli",
         "Brussels Sprouts",
@@ -11350,34 +13127,54 @@
         "Chinese Cabbage",
         "Cleavers",
         "Common Chickweed",
+        "Common Plantain",
         "Couch Grass",
+        "Creeping Buttercup",
         "Creeping Thistle",
+        "Curled Dock",
         "Dandelion",
+        "Enchanter's Nightshade",
         "Fat Hen",
         "Florence Fennel",
+        "Green Alkanet",
         "Ground Elder",
+        "Groundsel",
         "Hairy Bittercress",
+        "Herb Bennet / Wood Avens",
         "Herb Fennel",
+        "Herb Robert",
         "Horsetail / Mare's Tail",
         "Japanese Knotweed",
         "Kale",
         "Kohlrabi",
+        "Lesser Celandine",
         "Mizuna",
         "Mustard Greens",
         "Oxalis",
         "Pak Choi",
         "Potato",
+        "Prickly Sow-thistle",
+        "Ragwort",
+        "Red Dead-nettle",
+        "Ribwort Plantain",
         "Rocket",
+        "Rosebay Willowherb",
         "Shepherd's Purse",
+        "Smooth Sow-thistle",
+        "Speedwell",
         "Spring Cabbage",
         "Sprouting Broccoli",
+        "Stinging Nettle",
         "Swede",
         "Turnip"
       ],
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Turnip",
@@ -11435,7 +13232,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Watercress",
@@ -11465,7 +13265,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Watermelon",
@@ -11543,7 +13346,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Yacon",
@@ -11572,7 +13378,10 @@
       "plant_category": "vegetable",
       "plant_roles": [
         "edible"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Blackthorn",
@@ -11599,7 +13408,10 @@
       "plant_roles": [
         "hedgerow",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Common Knapweed",
@@ -11668,7 +13480,10 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Dog Rose",
@@ -11695,7 +13510,10 @@
       "plant_roles": [
         "hedgerow",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Field Scabious",
@@ -11764,7 +13582,10 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Guelder Rose",
@@ -11790,7 +13611,10 @@
       "plant_roles": [
         "hedgerow",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Hawthorn",
@@ -11817,7 +13641,10 @@
       "plant_roles": [
         "hedgerow",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Oxeye Daisy",
@@ -11886,7 +13713,10 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Red Campion",
@@ -11955,7 +13785,10 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Rowan",
@@ -11982,7 +13815,10 @@
         "hedgerow",
         "tree",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Sea Holly",
@@ -12051,7 +13887,10 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Teasel",
@@ -12120,7 +13959,10 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Viper's Bugloss",
@@ -12189,7 +14031,10 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Wild Marjoram",
@@ -12258,12 +14103,81 @@
       "plant_roles": [
         "pollinator",
         "wildlife_support"
-      ]
+      ],
+      "weed_suppressors": [],
+      "weeds_suppressed": [],
+      "weed_management_notes": ""
     },
     {
       "name": "Annual Meadow Grass",
       "plant_category": "weed",
       "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "weed"
+      ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Fast-seeding annual grass. Keep bare soil covered and remove before seed heads mature.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Bindweed",
+      "plant_category": "weed",
+      "plant_roles": [
+        "creeping_perennial",
+        "deep_rooted_perennial",
         "problem_plant",
         "weed"
       ],
@@ -12298,15 +14212,45 @@
         "Strawberry",
         "Sweetcorn",
         "Tomato"
-      ]
+      ],
+      "weed_management_notes": "Deep-rooted twining perennial. Suppressors help after repeated root removal, but dense cover alone will not clear it.",
+      "weed_suppressors": [
+        "Aubrieta",
+        "Bergenia",
+        "Black / Bristle Oats",
+        "Bugle / Ajuga",
+        "Cereal Rye",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Italian Ryegrass",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover"
+      ],
+      "weeds_suppressed": []
     },
     {
-      "name": "Bindweed",
+      "name": "Bramble / Wild Blackberry",
       "plant_category": "weed",
       "plant_roles": [
+        "deep_rooted_perennial",
         "problem_plant",
-        "weed"
+        "weed",
+        "wildlife_support"
       ],
+      "weed_suppressors": [
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Woody perennial. Cut and remove crowns before replanting with dense ground cover.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12344,6 +14288,7 @@
       "name": "Broad-leaved Dock",
       "plant_category": "weed",
       "plant_roles": [
+        "deep_rooted_perennial",
         "problem_plant",
         "weed"
       ],
@@ -12378,13 +14323,37 @@
         "Strawberry",
         "Sweetcorn",
         "Tomato"
-      ]
+      ],
+      "weed_management_notes": "Deep tap-rooted perennial. Remove the root crown before using dense cover to stop seedlings returning.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Aubrieta",
+        "Bergenia",
+        "Birdsfoot Trefoil",
+        "Bugle / Ajuga",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Nasturtium",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Sweet Alyssum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
     },
     {
       "name": "Cleavers",
       "plant_category": "weed",
       "plant_roles": [
         "problem_plant",
+        "seeding_annual",
         "weed"
       ],
       "plant_directly": false,
@@ -12418,15 +14387,126 @@
         "Strawberry",
         "Sweetcorn",
         "Tomato"
-      ]
+      ],
+      "weed_management_notes": "Fast annual climber. Pull young plants before seed and keep beds covered with quick green manure.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
     },
     {
       "name": "Common Chickweed",
       "plant_category": "weed",
       "plant_roles": [
         "problem_plant",
+        "seeding_annual",
         "weed"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Mat-forming annual. Quick cover crops and living mulch work well because it exploits open soil.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Common Plantain",
+      "plant_category": "weed",
+      "plant_roles": [
+        "deep_rooted_perennial",
+        "problem_plant",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Aubrieta",
+        "Bergenia",
+        "Birdsfoot Trefoil",
+        "Bugle / Ajuga",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Nasturtium",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Sweet Alyssum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Rosette perennial of compacted soil. Ease compaction and use dense ground cover.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12464,9 +14544,93 @@
       "name": "Couch Grass",
       "plant_category": "weed",
       "plant_roles": [
+        "creeping_perennial",
         "problem_plant",
         "weed"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Creeping grass with wiry rhizomes. Remove rhizomes first, then use dense cover to prevent re-establishment.",
+      "weed_suppressors": [
+        "Aubrieta",
+        "Bergenia",
+        "Black / Bristle Oats",
+        "Bugle / Ajuga",
+        "Cereal Rye",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Italian Ryegrass",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Creeping Buttercup",
+      "plant_category": "weed",
+      "plant_roles": [
+        "creeping_perennial",
+        "problem_plant",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Aubrieta",
+        "Bergenia",
+        "Black / Bristle Oats",
+        "Bugle / Ajuga",
+        "Cereal Rye",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Italian Ryegrass",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Creeping perennial that roots at runners. Remove runners and improve dense ground cover.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12504,10 +14668,98 @@
       "name": "Creeping Thistle",
       "plant_category": "weed",
       "plant_roles": [
+        "creeping_perennial",
+        "deep_rooted_perennial",
+        "pollinator",
         "problem_plant",
         "weed",
         "wildlife_support"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Deep-rooted perennial. Repeated cutting weakens it; cover crops help stop seedlings and bare-soil regrowth.",
+      "weed_suppressors": [
+        "Aubrieta",
+        "Bergenia",
+        "Black / Bristle Oats",
+        "Bugle / Ajuga",
+        "Cereal Rye",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Italian Ryegrass",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Curled Dock",
+      "plant_category": "weed",
+      "plant_roles": [
+        "deep_rooted_perennial",
+        "problem_plant",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Aubrieta",
+        "Bergenia",
+        "Birdsfoot Trefoil",
+        "Bugle / Ajuga",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Nasturtium",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Sweet Alyssum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Deep tap-rooted perennial. Remove crowns and prevent bare soil where seedlings establish.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12545,10 +14797,86 @@
       "name": "Dandelion",
       "plant_category": "weed",
       "plant_roles": [
+        "deep_rooted_perennial",
         "problem_plant",
         "weed",
         "wildlife_support"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Tap-rooted perennial. Remove crowns in beds and keep soil shaded with living mulch.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Aubrieta",
+        "Bergenia",
+        "Birdsfoot Trefoil",
+        "Bugle / Ajuga",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Nasturtium",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Sweet Alyssum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Enchanter's Nightshade",
+      "plant_category": "weed",
+      "plant_roles": [
+        "creeping_perennial",
+        "problem_plant",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Bergenia",
+        "Bugle / Ajuga",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Shade-tolerant perennial with brittle roots. Remove roots, then use shade ground cover.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12587,8 +14915,85 @@
       "plant_category": "weed",
       "plant_roles": [
         "problem_plant",
+        "seeding_annual",
         "weed"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Fast annual seed-setter. Smother young seedlings with quick summer green manures.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Green Alkanet",
+      "plant_category": "weed",
+      "plant_roles": [
+        "deep_rooted_perennial",
+        "pollinator",
+        "problem_plant",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Bergenia",
+        "Bugle / Ajuga",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Deep-rooted perennial that seeds freely. Remove roots and prevent bare-soil seedling flushes.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12626,9 +15031,85 @@
       "name": "Ground Elder",
       "plant_category": "weed",
       "plant_roles": [
+        "creeping_perennial",
         "problem_plant",
         "weed"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Creeping perennial. Remove rhizomes before planting dense shade-tolerant ground cover.",
+      "weed_suppressors": [
+        "Bergenia",
+        "Bugle / Ajuga",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Groundsel",
+      "plant_category": "weed",
+      "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Quick annual seed-setter. Hoe or pull early and keep soil covered.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12667,8 +15148,150 @@
       "plant_category": "weed",
       "plant_roles": [
         "problem_plant",
+        "seeding_annual",
         "weed"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Explosive seedpods spread quickly. Keep soil covered and remove rosettes before flowering.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Herb Bennet / Wood Avens",
+      "plant_category": "weed",
+      "plant_roles": [
+        "deep_rooted_perennial",
+        "problem_plant",
+        "weed",
+        "wildlife_support"
+      ],
+      "weed_suppressors": [
+        "Bergenia",
+        "Bugle / Ajuga",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Perennial weed of borders and shade. Dense ground cover helps after crown removal.",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ]
+    },
+    {
+      "name": "Herb Robert",
+      "plant_category": "weed",
+      "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "weed",
+        "wildlife_support"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Annual seed-spreader. Pull before seed and keep gaps planted.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12706,6 +15329,8 @@
       "name": "Horsetail / Mare's Tail",
       "plant_category": "weed",
       "plant_roles": [
+        "creeping_perennial",
+        "deep_rooted_perennial",
         "problem_plant",
         "weed"
       ],
@@ -12740,16 +15365,98 @@
         "Strawberry",
         "Sweetcorn",
         "Tomato"
-      ]
+      ],
+      "weed_management_notes": "Very deep perennial. Improve dense planting after control, but do not rely on suppressor plants alone.",
+      "weed_suppressors": [
+        "Aubrieta",
+        "Bergenia",
+        "Black / Bristle Oats",
+        "Bugle / Ajuga",
+        "Cereal Rye",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Italian Ryegrass",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover"
+      ],
+      "weeds_suppressed": []
     },
     {
       "name": "Japanese Knotweed",
       "plant_category": "weed",
       "plant_roles": [
+        "creeping_perennial",
+        "deep_rooted_perennial",
         "invasive",
         "problem_plant",
         "weed"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Invasive regulated plant. Do not compost or move contaminated soil; use specialist control advice.",
+      "weed_suppressors": [
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Lesser Celandine",
+      "plant_category": "weed",
+      "plant_roles": [
+        "creeping_perennial",
+        "problem_plant",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Bergenia",
+        "Bugle / Ajuga",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Spring perennial with small tubers. Remove before it dies back and cover soil after control.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12787,9 +15494,354 @@
       "name": "Oxalis",
       "plant_category": "weed",
       "plant_roles": [
+        "creeping_perennial",
+        "problem_plant",
+        "seeding_annual",
+        "weed"
+      ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Persistent creeping or bulb-forming weed. Dense cover helps after careful removal of roots and bulbils.",
+      "weed_suppressors": [
+        "Aubrieta",
+        "Bergenia",
+        "Black / Bristle Oats",
+        "Bugle / Ajuga",
+        "Cereal Rye",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Italian Ryegrass",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Prickly Sow-thistle",
+      "plant_category": "weed",
+      "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Annual or short-lived weed. Remove before seed and use quick cover crops in open beds.",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ]
+    },
+    {
+      "name": "Ragwort",
+      "plant_category": "weed",
+      "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "toxic",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Aubrieta",
+        "Bergenia",
+        "Birdsfoot Trefoil",
+        "Bugle / Ajuga",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Nasturtium",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Sweet Alyssum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Toxic biennial or perennial weed. Remove safely before seed, especially near grazing animals.",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ]
+    },
+    {
+      "name": "Red Dead-nettle",
+      "plant_category": "weed",
+      "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "weed",
+        "wildlife_support"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Early-flowering annual. Pull before seed where unwanted; keep soil covered.",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ]
+    },
+    {
+      "name": "Ribwort Plantain",
+      "plant_category": "weed",
+      "plant_roles": [
+        "deep_rooted_perennial",
+        "problem_plant",
+        "weed",
+        "wildlife_support"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Aubrieta",
+        "Bergenia",
+        "Birdsfoot Trefoil",
+        "Bugle / Ajuga",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Nasturtium",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Sweet Alyssum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Rosette perennial with a strong root. Remove crowns and cover open soil.",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ]
+    },
+    {
+      "name": "Rosebay Willowherb",
+      "plant_category": "weed",
+      "plant_roles": [
+        "creeping_perennial",
+        "pollinator",
         "problem_plant",
         "weed"
       ],
+      "weed_suppressors": [
+        "Aubrieta",
+        "Bergenia",
+        "Black / Bristle Oats",
+        "Bugle / Ajuga",
+        "Cereal Rye",
+        "Creeping Phlox",
+        "Creeping Thyme",
+        "Hardy Geranium",
+        "Italian Ryegrass",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Red Clover",
+        "Rubus tricolor",
+        "Sedum",
+        "Vinca minor / Periwinkle",
+        "Viola/Pansy",
+        "White Clover"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Tall perennial that spreads by rhizomes and wind-blown seed. Remove before seeding and cover open ground.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,
@@ -12828,8 +15880,213 @@
       "plant_category": "weed",
       "plant_roles": [
         "problem_plant",
+        "seeding_annual",
         "weed"
       ],
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ],
+      "weed_management_notes": "Fast annual brassica-family weed. Quick cover crops reduce open soil where it germinates.",
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": []
+    },
+    {
+      "name": "Smooth Sow-thistle",
+      "plant_category": "weed",
+      "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Annual or short-lived weed. Remove before seed and cover bare soil.",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ]
+    },
+    {
+      "name": "Speedwell",
+      "plant_category": "weed",
+      "plant_roles": [
+        "problem_plant",
+        "seeding_annual",
+        "weed"
+      ],
+      "weed_suppressors": [
+        "Alpine Strawberry",
+        "Birdsfoot Trefoil",
+        "Black / Bristle Oats",
+        "Buckwheat",
+        "Cereal Rye",
+        "Creeping Thyme",
+        "Crimson Clover",
+        "Forage Pea",
+        "Forage Radish",
+        "Italian Ryegrass",
+        "Mustard Green Manure",
+        "Nasturtium",
+        "Phacelia",
+        "Red Clover",
+        "Sweet Alyssum",
+        "White Clover",
+        "Winter Field Bean",
+        "Winter Tares / Vetch",
+        "Yellow Trefoil"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Low annual or perennial mat-former. Dense ground cover reduces seedling establishment.",
+      "plant_directly": false,
+      "spacing_between_rows": 30,
+      "spacing_in_rows": 30,
+      "depth": 0,
+      "time_to_germinate_indoors_start": null,
+      "time_to_germinate_indoors_end": null,
+      "time_to_germinate_indoors_period": 0,
+      "plant_start": null,
+      "plant_end": null,
+      "time_first_harvets": 0,
+      "harest_start": null,
+      "harest_end": null,
+      "companion_helps": [],
+      "companion_helped_by": [],
+      "plants_avoid": [
+        "Apple",
+        "Beetroot",
+        "Cabbage",
+        "Carrot",
+        "Courgette",
+        "Cucumber",
+        "French Bean",
+        "Lettuce",
+        "Onion",
+        "Pea",
+        "Potato",
+        "Raspberry",
+        "Spinach",
+        "Strawberry",
+        "Sweetcorn",
+        "Tomato"
+      ]
+    },
+    {
+      "name": "Stinging Nettle",
+      "plant_category": "weed",
+      "plant_roles": [
+        "creeping_perennial",
+        "problem_plant",
+        "weed",
+        "wildlife_support"
+      ],
+      "weed_suppressors": [
+        "Bergenia",
+        "Bugle / Ajuga",
+        "Hardy Geranium",
+        "Lady's Mantle",
+        "Pachysandra",
+        "Rubus tricolor",
+        "Vinca minor / Periwinkle"
+      ],
+      "weeds_suppressed": [],
+      "weed_management_notes": "Rhizomatous perennial and wildlife plant. Keep only where wanted; suppress regrowth after root removal.",
       "plant_directly": false,
       "spacing_between_rows": 30,
       "spacing_in_rows": 30,

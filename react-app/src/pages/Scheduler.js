@@ -244,10 +244,23 @@ function Scheduler() {
   if (error) return <Error message="Could not load plants" />;
 
   return (
-    <Container fluid className="p-2">
-      <Row className="g-4">
-        <Col md={6}>
-          <div style={{ height: PANEL_H, overflowY: "auto" }}>
+    <Container fluid className="px-0">
+      <header className="page-header">
+        <div>
+          <p className="page-kicker">Season planner</p>
+          <h1 className="page-title">Track planting windows at a glance.</h1>
+          <p className="page-subtitle">
+            Select crops to narrow the timeline, or leave everything unselected to review the whole database.
+          </p>
+        </div>
+        <div className="selected-count">
+          Selected: {selectedPlants.length}
+        </div>
+      </header>
+
+      <div className="scheduler-grid">
+        <section className="chart-panel">
+          <div className="scroll-panel" style={{ height: PANEL_H }}>
             {Array.from({ length: yearsNeeded }).map((_, i) => {
               const yearData = sliceYear(absoluteRows, i);
 
@@ -304,23 +317,18 @@ function Scheduler() {
               };
 
               return (
-                <div key={i} style={{ height: 320, marginBottom: 16 }}>
+                <div key={i} className="content-panel mb-3" style={{ height: 320 }}>
                   <AgCharts options={options} />
                 </div>
               );
             })}
           </div>
+        </section>
 
-          <div className="mt-2 text-muted">
-            Selected: {selectedPlants.length}
-          </div>
-        </Col>
-
-        <Col md={6}>
-          <Row className="mb-3">
-            <Col xs={12}>
+        <section className="content-panel">
+          <div className="mb-3">
               <InputGroup>
-                <InputGroup.Text>🔎</InputGroup.Text>
+                <InputGroup.Text>Search</InputGroup.Text>
                 <Form.Control
                   type="text"
                   placeholder="Search plants (e.g. tomato, basil)..."
@@ -328,10 +336,9 @@ function Scheduler() {
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </InputGroup>
-            </Col>
-          </Row>
+          </div>
 
-          <div style={{ flex: 1, overflowY: "auto", paddingRight: 6 }}>
+          <div className="scroll-panel" style={{ maxHeight: PANEL_H }}>
             <Row className="g-3">
               {filtered.map((p) => (
                 <Col key={p.id} xs={12} md={6}>
@@ -342,7 +349,7 @@ function Scheduler() {
                         onClick={() => removePlant(p.id)}
                         aria-label={`Remove ${p.name} from graph`}
                       >
-                        −
+                        -
                       </button>
                     ) : (
                       <button
@@ -361,9 +368,14 @@ function Scheduler() {
                 </Col>
               ))}
             </Row>
+            {filtered.length === 0 && (
+              <div className="empty-state">
+                No plants match the current search.
+              </div>
+            )}
           </div>
-        </Col>
-      </Row>
+        </section>
+      </div>
     </Container>
   );
 }

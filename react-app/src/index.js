@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { QueryClientProvider, QueryClient} from "@tanstack/react-query";
 import { BrowserRouter as Router } from "react-router-dom";
+import './styles.css';
 
 const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));

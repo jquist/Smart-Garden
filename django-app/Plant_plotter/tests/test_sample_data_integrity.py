@@ -42,9 +42,13 @@ ALLOWED_CATEGORIES = {
 ALLOWED_ROLES = {
     "aromatic_pest_confuser",
     "beneficial_insect_plant",
+    "creeping_perennial",
     "cover_crop",
+    "deep_rooted_perennial",
     "edible",
     "flowering",
+    "green_manure",
+    "ground_cover",
     "hedgerow",
     "invasive",
     "living_mulch",
@@ -53,11 +57,14 @@ ALLOWED_ROLES = {
     "perennial_plant",
     "pollinator",
     "problem_plant",
+    "seeding_annual",
     "shrub",
     "soil_improver",
     "trap_crop",
     "tree",
+    "toxic",
     "weed",
+    "weed_suppressor",
     "wildlife_support",
 }
 
@@ -79,18 +86,36 @@ EXPECTED_WEEDS = {
     "Annual Meadow Grass",
     "Bindweed",
     "Broad-leaved Dock",
+    "Bramble / Wild Blackberry",
     "Cleavers",
     "Common Chickweed",
+    "Common Plantain",
     "Couch Grass",
+    "Creeping Buttercup",
     "Creeping Thistle",
+    "Curled Dock",
     "Dandelion",
+    "Enchanter's Nightshade",
     "Fat Hen",
+    "Green Alkanet",
     "Ground Elder",
+    "Groundsel",
     "Hairy Bittercress",
+    "Herb Bennet / Wood Avens",
+    "Herb Robert",
     "Horsetail / Mare's Tail",
     "Japanese Knotweed",
+    "Lesser Celandine",
     "Oxalis",
+    "Prickly Sow-thistle",
+    "Ragwort",
+    "Red Dead-nettle",
+    "Ribwort Plantain",
+    "Rosebay Willowherb",
     "Shepherd's Purse",
+    "Smooth Sow-thistle",
+    "Speedwell",
+    "Stinging Nettle",
 }
 
 
@@ -161,6 +186,8 @@ class SampleDataIntegrityTest(unittest.TestCase):
                 "companion_helps",
                 "companion_helped_by",
                 "plants_avoid",
+                "weed_suppressors",
+                "weeds_suppressed",
             ):
                 for other_name in plant.get(field, []):
                     if other_name not in self.name_set:
@@ -268,6 +295,44 @@ class SampleDataIntegrityTest(unittest.TestCase):
         self.assertEqual(missing_weeds, [])
         self.assertEqual(bad_labels, [])
         self.assertEqual(weed_companions, [])
+
+    def test_weed_suppression_relationships_are_valid_and_reciprocal(self):
+        plants_by_name = {plant["name"]: plant for plant in self.plants}
+        suppressor_issues = []
+        reciprocal_issues = []
+        missing_notes = []
+
+        suppresses = {
+            (plant["name"], weed_name)
+            for plant in self.plants
+            for weed_name in plant.get("weeds_suppressed", [])
+        }
+        suppressed_by = {
+            (weed["name"], suppressor_name)
+            for weed in self.plants
+            for suppressor_name in weed.get("weed_suppressors", [])
+        }
+
+        for weed_name in EXPECTED_WEEDS:
+            weed = plants_by_name[weed_name]
+            if not weed.get("weed_management_notes"):
+                missing_notes.append(weed_name)
+            for suppressor_name in weed.get("weed_suppressors", []):
+                suppressor = plants_by_name[suppressor_name]
+                if "weed_suppressor" not in suppressor.get("plant_roles", []):
+                    suppressor_issues.append((weed_name, suppressor_name))
+                if (suppressor_name, weed_name) not in suppresses:
+                    reciprocal_issues.append((weed_name, suppressor_name))
+
+        for suppressor_name, weed_name in suppresses:
+            if plants_by_name[weed_name].get("plant_category") != "weed":
+                suppressor_issues.append((suppressor_name, weed_name))
+            if (weed_name, suppressor_name) not in suppressed_by:
+                reciprocal_issues.append((suppressor_name, weed_name))
+
+        self.assertEqual(missing_notes, [])
+        self.assertEqual(suppressor_issues, [])
+        self.assertEqual(reciprocal_issues, [])
 
     def test_spacing_used_by_canvas_is_never_zero(self):
         zero_spacing = [

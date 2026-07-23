@@ -63,11 +63,11 @@ function BoxesPanel({
     <div className="card p-3 mb-3">
       <button
         type="button"
-        className="btn btn-link text-decoration-none p-0 d-flex justify-content-between align-items-center w-100"
+        className="btn btn-link panel-toggle text-decoration-none p-0 d-flex justify-content-between align-items-center w-100"
         onClick={() => setOpen((prev) => !prev)}
       >
         <h5 className="mb-0">Boxes</h5>
-        <span>{open ? "▲" : "▼"}</span>
+        <span>{open ? "Hide" : "Show"}</span>
       </button>
 
       {!open && (
@@ -102,7 +102,7 @@ function BoxesPanel({
           </div>
 
           {selectedBox && (
-            <div className="border rounded p-2 mb-3">
+            <div className="panel-section p-2 mb-3">
               <div className="mb-2">
                 <strong>Selected:</strong> {selectedBox.type}
               </div>

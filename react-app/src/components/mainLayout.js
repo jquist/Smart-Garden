@@ -1,33 +1,41 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar} from 'react-bootstrap';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 
 function MainLayout({ children }) {
 	return (
-		<div>
-			<Navbar bg="dark" variant="dark" className='p-3'>
+		<div className="app-shell">
+			<Navbar expand="md" className="app-navbar py-3">
+				<Container fluid className="px-3 px-lg-4">
+					<NavLink to="/" className="brand-lockup text-decoration-none">
+						<span className="brand-mark">SG</span>
+						<span>
+							Smart Garden
+							<span className="brand-subtitle">Planning workspace</span>
+						</span>
+					</NavLink>
 
-					
-					<Navbar.Brand as={Link} to="/" className="text-white text-decoration-none">
-						Plant plotter
-					</Navbar.Brand>
-					<Navbar.Brand as={Link} to="/database" className="text-white text-decoration-none">
-						Database
-					</Navbar.Brand>
-					<Navbar.Brand as={Link} to="/Scheduler" className="text-white text-decoration-none">
-						Scheduler
-					</Navbar.Brand>
-					<Navbar.Brand as={Link} to="/Canvas" className="text-white text-decoration-none">
-						Canvas
-					</Navbar.Brand>
-					
-
+					<nav className="app-nav ms-md-auto" aria-label="Primary navigation">
+						<NavLink to="/" end className="app-nav-link">
+							Home
+						</NavLink>
+						<NavLink to="/database" className="app-nav-link">
+							Plants
+						</NavLink>
+						<NavLink to="/scheduler" className="app-nav-link">
+							Schedule
+						</NavLink>
+						<NavLink to="/canvas" className="app-nav-link">
+							Canvas
+						</NavLink>
+					</nav>
+				</Container>
 			</Navbar>
-			<Container fluid className="mt-4">
+
+			<Container fluid as="main" className="app-content">
 				<Outlet />
 			</Container>
-
 		</div>
 	);
 }

@@ -484,7 +484,7 @@ function FreeMoveCanvas() {
 
       const details = Object.entries(addedByName)
         .sort((a, b) => a[0].localeCompare(b[0]))
-        .map(([name, count]) => `${name} × ${count}`)
+        .map(([name, count]) => `${name} x ${count}`)
         .join(", ");
 
       setFillMessage(
@@ -639,7 +639,7 @@ function FreeMoveCanvas() {
 
       const details = Object.entries(addedByName)
         .sort((a, b) => a[0].localeCompare(b[0]))
-        .map(([name, count]) => `${name} × ${count}`)
+        .map(([name, count]) => `${name} x ${count}`)
         .join(", ");
 
       setFillMessage(`Companion fill added ${addedCount} plant${addedCount === 1 ? "" : "s"}: ${details}.`);
@@ -684,9 +684,22 @@ function FreeMoveCanvas() {
   }
 
   return (
-    <div className="container-fluid py-3">
-      <div className="row g-3">
-        <div className="col-12 col-lg-9">
+    <div className="canvas-page">
+      <header className="page-header">
+        <div>
+          <p className="page-kicker">Garden canvas</p>
+          <h1 className="page-title">Place beds, crops, and companion groups.</h1>
+          <p className="page-subtitle">
+            Drag plants into beds, lock important placements, then use autosort to explore cleaner arrangements.
+          </p>
+        </div>
+        <div className="selected-count">
+          {plantInstances.length} plant{plantInstances.length === 1 ? "" : "s"} placed
+        </div>
+      </header>
+
+      <div className="planner-layout">
+        <div className="garden-panel">
           <GardenGrid
             boxes={boxes}
             setBoxes={setBoxes}
@@ -711,7 +724,7 @@ function FreeMoveCanvas() {
 
               <div className="mb-3">
                 <strong>Removed:</strong>{" "}
-                {notPlacedSummary.map((item) => `${item.name} × ${item.count}`).join(", ")}
+                {notPlacedSummary.map((item) => `${item.name} x ${item.count}`).join(", ")}
               </div>
 
               <button
@@ -731,7 +744,7 @@ function FreeMoveCanvas() {
           )}
         </div>
 
-        <div className="col-12 col-lg-3">
+        <aside className="planner-sidebar">
           <SortingPanel
             sortOptions={sortOptions}
             setSortOptions={setSortOptions}
@@ -790,7 +803,7 @@ function FreeMoveCanvas() {
                   return (
                     <div
                       key={item.name}
-                      className="border rounded p-2 d-flex justify-content-between align-items-center gap-2"
+                      className="panel-section p-2 d-flex justify-content-between align-items-center gap-2"
                     >
                       <div>
                         <strong>{item.name}</strong>
@@ -833,7 +846,7 @@ function FreeMoveCanvas() {
             onAddPlant={handleAddPlant}
             onRemovePlant={handleRemovePlant}
           />
-        </div>
+        </aside>
       </div>
     </div>
   );

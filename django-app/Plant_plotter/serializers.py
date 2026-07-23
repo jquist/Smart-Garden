@@ -10,7 +10,8 @@ class PlantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plant
         fields = [
-            'id', 'url', 'name', 'plant_category', 'plant_roles', 'plant_directly', 'spacing_between_rows',
+            'id', 'url', 'name', 'plant_category', 'plant_roles', 'weed_suppressors',
+            'weeds_suppressed', 'weed_management_notes', 'plant_directly', 'spacing_between_rows',
             'spacing_in_rows', 'depth', 'time_to_germinate_indoors_start',
             'time_to_germinate_indoors_end', 'time_to_germinate_indoors_period',
             'plant_start', 'plant_end', 'time_first_harvets', 'harest_start', 'harest_end',

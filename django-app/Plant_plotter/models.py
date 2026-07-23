@@ -11,6 +11,9 @@ class Plant(models.Model):
     name= models.CharField(max_length=512)
     plant_category = models.CharField(max_length=64, default="vegetable")
     plant_roles = models.JSONField(default=list, blank=True)
+    weed_suppressors = models.JSONField(default=list, blank=True)
+    weeds_suppressed = models.JSONField(default=list, blank=True)
+    weed_management_notes = models.TextField(blank=True, default="")
     plant_directly= models.BooleanField() #true,
     spacing_between_rows= models.PositiveIntegerField(default=0) #20,
     spacing_in_rows= models.PositiveIntegerField(default=0) #20,

@@ -5,8 +5,8 @@ import PlantBadges from "./PlantBadges";
 function Plant({ data,disableLink }) {
   if (disableLink) 
       return (
-        <Card>
-          <Card.Body>
+        <Card className="plant-card">
+          <Card.Body className="plant-card-body">
             <Card.Title>{data.name}</Card.Title>
             <PlantBadges plant={data} />
           </Card.Body>

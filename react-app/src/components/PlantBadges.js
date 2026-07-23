@@ -5,21 +5,22 @@ function PlantBadges({ plant, maxRoles = 3 }) {
   const roles = rolesForPlant(plant);
   const visibleRoles = roles.slice(0, maxRoles);
   const hiddenRoleCount = Math.max(roles.length - visibleRoles.length, 0);
+  const isWeed = plant?.plant_category === "weed";
 
   return (
-    <div className="d-flex flex-wrap gap-1 mt-2">
-      <Badge bg={plant?.plant_category === "weed" ? "danger" : "success"}>
+    <div className="plant-badges">
+      <Badge bg="light" className={`plant-badge ${isWeed ? "plant-badge-weed" : "plant-badge-category"}`}>
         {labelForCategory(plant?.plant_category)}
       </Badge>
 
       {visibleRoles.map((role) => (
-        <Badge key={role} bg="secondary">
+        <Badge key={role} bg="light" className="plant-badge plant-badge-role">
           {labelForRole(role)}
         </Badge>
       ))}
 
       {hiddenRoleCount > 0 && (
-        <Badge bg="light" text="dark">
+        <Badge bg="light" className="plant-badge plant-badge-more">
           +{hiddenRoleCount}
         </Badge>
       )}

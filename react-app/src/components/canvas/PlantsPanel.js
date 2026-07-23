@@ -69,11 +69,11 @@ function PlantsPanel({
     <div className="card p-3 mb-3">
       <button
         type="button"
-        className="btn btn-link text-decoration-none p-0 d-flex justify-content-between align-items-center w-100"
+        className="btn btn-link panel-toggle text-decoration-none p-0 d-flex justify-content-between align-items-center w-100"
         onClick={() => setOpen((prev) => !prev)}
       >
         <h5 className="mb-0">Plants</h5>
-        <span>{open ? "▲" : "▼"}</span>
+        <span>{open ? "Hide" : "Show"}</span>
       </button>
 
       {open && (
@@ -101,7 +101,7 @@ function PlantsPanel({
           </div>
 
           <div className="small text-muted mb-3">
-            Drag into a box or use + to add. - removes from the same shared plant list.
+            Drag into a box or use + to add. Use - to remove from the same shared plant list.
           </div>
 
           {isPending && <p>Loading plants...</p>}
@@ -116,7 +116,7 @@ function PlantsPanel({
                   key={plant.id}
                   draggable
                   onDragStart={(e) => handleDragStart(e, plant)}
-                  className={`border rounded p-2 mb-2 ${
+                  className={`panel-section p-2 mb-2 ${
                     count > 0 ? "border-primary bg-light" : ""
                   }`}
                   style={{

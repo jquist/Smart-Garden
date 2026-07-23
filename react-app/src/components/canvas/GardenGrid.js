@@ -325,9 +325,9 @@ function GardenGrid({
 
   return (
     <div>
-      <div className="d-flex flex-wrap align-items-center justify-content-between mb-2 gap-2">
+      <div className="garden-board-toolbar d-flex flex-wrap align-items-center justify-content-between gap-2">
         <div className="small text-muted">
-          <strong>Scale:</strong> 1 square = {CELL_SIZE_CM}cm × {CELL_SIZE_CM}cm
+          <strong>Scale:</strong> 1 square = {CELL_SIZE_CM}cm x {CELL_SIZE_CM}cm
         </div>
 
         <div className="d-flex align-items-center gap-2">
@@ -346,15 +346,7 @@ function GardenGrid({
 
       <div
         ref={boardRef}
-        style={{
-          position: "relative",
-          width: "100%",
-          minHeight: "800px",
-          overflow: "auto",
-          border: "1px solid #ccc",
-          borderRadius: "12px",
-          background: "#f8f9fa",
-        }}
+        className="garden-board"
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
@@ -363,15 +355,14 @@ function GardenGrid({
         onDrop={handleDrop}
       >
         <div
+          className="garden-board-inner"
           style={{
-            position: "relative",
             width: "100%",
             minWidth: `${bounds.cols * scaledCellSize}px`,
-            height: `${Math.max(bounds.rows * scaledCellSize, 800)}px`,
-            backgroundColor: "#ffffff",
+            height: `${Math.max(bounds.rows * scaledCellSize, 760)}px`,
             backgroundImage: `
-              linear-gradient(to right, rgba(0,0,0,0.16) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(0,0,0,0.16) 1px, transparent 1px)
+              linear-gradient(to right, rgba(31,42,36,0.12) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(31,42,36,0.12) 1px, transparent 1px)
             `,
             backgroundSize: `${scaledCellSize}px ${scaledCellSize}px`,
           }}
@@ -380,6 +371,7 @@ function GardenGrid({
             <div
               key={box.id}
               onMouseDown={(e) => handleMouseDownBox(e, box)}
+              className="garden-box"
               style={{
                 position: "absolute",
                 left: box.x * scaledCellSize,
@@ -388,9 +380,8 @@ function GardenGrid({
                 height: box.h * scaledCellSize,
                 border:
                   box.id === selectedBoxId
-                    ? "3px solid #0d6efd"
-                    : "2px solid #8c5a43",
-                backgroundColor: "rgba(255,255,255,0.2)",
+                    ? "3px solid #3467a6"
+                    : "2px solid #7d624e",
                 boxSizing: "border-box",
                 cursor: draggingBoxId === box.id ? "grabbing" : "move",
                 zIndex: 2,
@@ -404,8 +395,8 @@ function GardenGrid({
                   bottom: -7,
                   width: 14,
                   height: 14,
-                  borderRadius: "50%",
-                  background: "#0d6efd",
+                  borderRadius: "8px",
+                  background: "#3467a6",
                   border: "2px solid white",
                   cursor: "nwse-resize",
                   boxShadow: "0 0 0 1px rgba(0,0,0,0.15)",
@@ -440,7 +431,7 @@ function GardenGrid({
                   e.stopPropagation();
                   removePlantInstance(plant.id);
                 }}
-                title={`${plant.name}${plant.locked ? " (locked)" : ""} — left click lock/unlock and select for delete, right click remove`}
+                title={`${plant.name}${plant.locked ? " (locked)" : ""} - left click lock/unlock and select for delete, right click remove`}
                 style={{
                   position: "absolute",
                   left: plant.col * scaledCellSize,
@@ -448,12 +439,12 @@ function GardenGrid({
                   width: widthPx,
                   height: heightPx,
                   background: plant.locked
-                    ? "rgba(255,193,7,0.35)"
-                    : "rgba(13,110,253,0.22)",
+                    ? "rgba(255,194,62,0.35)"
+                    : "rgba(47,111,78,0.22)",
                   border: plant.locked
-                    ? "3px solid #ffc107"
-                    : "2px solid rgba(13,110,253,0.65)",
-                  outline: selectedPlantId === plant.id ? "3px solid #dc3545" : "none",
+                    ? "3px solid #d9a616"
+                    : "2px solid rgba(47,111,78,0.72)",
+                  outline: selectedPlantId === plant.id ? "3px solid #3467a6" : "none",
                   outlineOffset: "2px",
                   borderRadius: "6px",
                   boxSizing: "border-box",
@@ -467,6 +458,7 @@ function GardenGrid({
                 }}
               >
                 <div
+                  className="plant-tile-label"
                   style={{
                     width: seedSize,
                     height: seedSize,
@@ -490,11 +482,6 @@ function GardenGrid({
                       12,
                       Math.min(32, Math.round(Math.min(widthPx, heightPx) * 0.2))
                     )}px`,
-                    fontWeight: 800,
-                    color: "#1f1f1f",
-                    lineHeight: 1,
-                    letterSpacing: "0.5px",
-                    textShadow: "0 1px 2px rgba(255,255,255,0.8)",
                     padding: "0 6px",
                     boxSizing: "border-box",
                     whiteSpace: "nowrap",
@@ -507,18 +494,17 @@ function GardenGrid({
 
                 {plant.locked && (
                   <div
+                    className="locked-pill"
                     style={{
                       position: "absolute",
                       top: 4,
                       right: 4,
                       fontSize: "12px",
-                      background: "rgba(255,255,255,0.9)",
-                      borderRadius: "999px",
                       padding: "1px 6px",
                       lineHeight: 1.2,
                     }}
                   >
-                    🔒
+                    Locked
                   </div>
                 )}
               </div>

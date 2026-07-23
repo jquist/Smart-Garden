@@ -19,11 +19,11 @@ function SortingPanel({
     <div className="card p-3 mb-3">
       <button
         type="button"
-        className="btn btn-link text-decoration-none p-0 d-flex justify-content-between align-items-center w-100"
+        className="btn btn-link panel-toggle text-decoration-none p-0 d-flex justify-content-between align-items-center w-100"
         onClick={() => setOpen((prev) => !prev)}
       >
         <h5 className="mb-0">Sorting</h5>
-        <span>{open ? "▲" : "▼"}</span>
+        <span>{open ? "Hide" : "Show"}</span>
       </button>
 
       {open && (
@@ -166,7 +166,7 @@ function SortingPanel({
         />
         <label className="form-check-label">Optimal search</label>
         <small className="text-muted d-block ms-5 mb-3">
-          Recommended for larger boxes with lots of empty space — helps grouping and spacing behave as expected.
+          Recommended for larger boxes with lots of empty space - helps grouping and spacing behave as expected.
         </small>
       </div>
 

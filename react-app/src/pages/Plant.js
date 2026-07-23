@@ -35,6 +35,20 @@ function RelationshipList({ items, emptyText }) {
 	);
 }
 
+function NameList({ names, emptyText }) {
+	if (!Array.isArray(names) || names.length === 0) {
+		return <p className="text-muted">{emptyText}</p>;
+	}
+
+	return (
+		<ul className="mb-0">
+			{names.map((name) => (
+				<li key={name}>{name}</li>
+			))}
+		</ul>
+	);
+}
+
 function Plant() {
 	const { id } = useParams();
 	const plantQuery = useQuery({
@@ -95,24 +109,25 @@ function Plant() {
 	];
 
 	return (
-		<Container fluid>
+		<Container fluid className="px-0">
 			<Breadcrumb>
 			  <Breadcrumb.Item href="/database">Plants</Breadcrumb.Item>
 			  <Breadcrumb.Item active>{data?.name}</Breadcrumb.Item>
 			</Breadcrumb>
 
-			<Row className="mb-4">
-				<Col>
-					<h1>{data?.name}</h1>
+			<header className="page-header">
+				<div>
+					<p className="page-kicker">Plant profile</p>
+					<h1 className="page-title">{data?.name}</h1>
 					<PlantBadges plant={data} maxRoles={8} />
-				</Col>
-			</Row>
+				</div>
+			</header>
 
-			<Row className="mb-4">
+			<Row className="mb-4 content-panel">
 				<Col md={8} lg={6}>
-					<dl className="row">
+					<dl className="row detail-list g-3">
 						{plantDetails.map(([label, value]) => (
-							<div key={label} className="col-12 col-md-6 mb-2">
+							<div key={label} className="col-12 col-md-6">
 								<dt>{label}</dt>
 								<dd>{value}</dd>
 							</div>
@@ -123,27 +138,67 @@ function Plant() {
 
 			<Row className="g-4">
 				<Col md={4}>
+					<div className="content-panel relationship-panel h-100">
 					<h3>Plants that help this plant</h3>
 					<RelationshipList
 						items={helpsByList}
 						emptyText="No reliable helper companions listed yet."
 					/>
+					</div>
 				</Col>
 				<Col md={4}>
+					<div className="content-panel relationship-panel h-100">
 					<h3>Plants this plant helps</h3>
 					<RelationshipList
 						items={helpsList}
 						emptyText="No plants listed as helped by this one yet."
 					/>
+					</div>
 				</Col>
 				<Col md={4}>
+					<div className="content-panel relationship-panel h-100">
 					<h3>Plants to keep away</h3>
 					<RelationshipList
 						items={avoidList}
 						emptyText="No avoid relationships listed."
 					/>
+					</div>
 				</Col>
 			</Row>
+
+			{(data?.plant_category === "weed" || data?.weed_management_notes || data?.weed_suppressors?.length > 0) && (
+				<Row className="g-4 mt-1">
+					<Col md={6}>
+						<div className="content-panel relationship-panel h-100">
+							<h3>Weed control notes</h3>
+							<p>{data?.weed_management_notes || "No weed control notes listed."}</p>
+						</div>
+					</Col>
+					<Col md={6}>
+						<div className="content-panel relationship-panel h-100">
+							<h3>Useful suppressor plants</h3>
+							<NameList
+								names={data?.weed_suppressors}
+								emptyText="No suppressor plants listed."
+							/>
+						</div>
+					</Col>
+				</Row>
+			)}
+
+			{data?.weeds_suppressed?.length > 0 && (
+				<Row className="g-4 mt-1">
+					<Col md={6}>
+						<div className="content-panel relationship-panel h-100">
+							<h3>Weeds this plant can suppress</h3>
+							<NameList
+								names={data?.weeds_suppressed}
+								emptyText="No suppressed weeds listed."
+							/>
+						</div>
+					</Col>
+				</Row>
+			)}
 		</Container>
 	)
 }

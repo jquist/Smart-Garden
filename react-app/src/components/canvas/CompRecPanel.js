@@ -232,7 +232,7 @@ function CRPanel({
           return (
             <label
               key={item.name}
-              className={`border rounded p-2 mb-2 d-flex justify-content-between align-items-center ${
+              className={`panel-section p-2 mb-2 d-flex justify-content-between align-items-center ${
                 disabled ? "text-muted" : ""
               }`}
               style={{ cursor: disabled || isSorting ? "not-allowed" : "pointer" }}
@@ -270,11 +270,11 @@ function CRPanel({
       <div className="d-flex justify-content-between align-items-center gap-2">
         <button
           type="button"
-          className="btn btn-link text-decoration-none p-0 d-flex justify-content-between align-items-center flex-grow-1"
+          className="btn btn-link panel-toggle text-decoration-none p-0 d-flex justify-content-between align-items-center flex-grow-1"
           onClick={() => setOpen((prev) => !prev)}
         >
           <h5 className="mb-0">Companion recommendations</h5>
-          <span className="ms-2">{open ? "▲" : "▼"}</span>
+          <span className="ms-2">{open ? "Hide" : "Show"}</span>
         </button>
 
         <button
