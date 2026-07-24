@@ -61,6 +61,13 @@ def plant_kwargs(data):
     }
 
 
+def plants_by_name(names):
+    plants = {}
+    for plant in Plant.objects.filter(name__in=names).order_by("id"):
+        plants.setdefault(plant.name, plant)
+    return plants
+
+
 class Command(BaseCommand):
     help = "Insert or refresh sample plant data"
 
@@ -97,7 +104,7 @@ class Command(BaseCommand):
             Plant.objects.all().delete()
 
         sample_names = [data["name"] for data in sample_plants]
-        existing_plants = Plant.objects.in_bulk(sample_names, field_name="name")
+        existing_plants = plants_by_name(sample_names)
         plants_to_create = []
         plants_to_update = []
 
@@ -125,12 +132,12 @@ class Command(BaseCommand):
                 batch_size=500,
             )
 
-        plants_by_name = Plant.objects.in_bulk(sample_names, field_name="name")
+        seed_plants_by_name = plants_by_name(sample_names)
         created_count = len(plants_to_create)
         updated_count = len(plants_to_update)
 
         if options["update_existing"]:
-            seed_ids = [plant.id for plant in plants_by_name.values()]
+            seed_ids = [plant.id for plant in seed_plants_by_name.values()]
             Companion_helpslistItem.objects.filter(plant_id__in=seed_ids).delete()
             Companion_helped_bylistItem.objects.filter(plant_id__in=seed_ids).delete()
             Plants_avoidlistItem.objects.filter(plant_id__in=seed_ids).delete()
@@ -141,9 +148,9 @@ class Command(BaseCommand):
 
         help_items = []
         for data in sample_plants:
-            plant_obj = plants_by_name[data["name"]]
+            plant_obj = seed_plants_by_name[data["name"]]
             for other_name in data.get("companion_helps", []):
-                other_obj = plants_by_name[other_name]
+                other_obj = seed_plants_by_name[other_name]
                 help_items.append(
                     Companion_helpslistItem(
                         plant=plant_obj,
@@ -159,9 +166,9 @@ class Command(BaseCommand):
 
         helped_by_items = []
         for data in sample_plants:
-            plant_obj = plants_by_name[data["name"]]
+            plant_obj = seed_plants_by_name[data["name"]]
             for other_name in data.get("companion_helped_by", []):
-                other_obj = plants_by_name[other_name]
+                other_obj = seed_plants_by_name[other_name]
                 helped_by_items.append(
                     Companion_helped_bylistItem(
                         plant=plant_obj,
@@ -177,9 +184,9 @@ class Command(BaseCommand):
 
         avoid_items = []
         for data in sample_plants:
-            plant_obj = plants_by_name[data["name"]]
+            plant_obj = seed_plants_by_name[data["name"]]
             for other_name in data.get("plants_avoid", []):
-                other_obj = plants_by_name[other_name]
+                other_obj = seed_plants_by_name[other_name]
                 avoid_items.append(
                     Plants_avoidlistItem(
                         plant=plant_obj,
