@@ -85,7 +85,7 @@ def signup_view(request):
         return JsonResponse({"error": "That email is already linked to an account."}, status=400)
 
     try:
-        validate_password(password)
+        validate_password(password, User(username=username, email=email))
     except DjangoValidationError as error:
         return JsonResponse({"error": " ".join(error.messages)}, status=400)
 

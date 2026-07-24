@@ -5,11 +5,13 @@
  */
 import { useQuery } from "@tanstack/react-query";
 import { Col, Container, Row, Form, InputGroup } from "react-bootstrap";
-import { useCallback, useMemo, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import Plant from "../components/Plant";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
+import { apiFetch, useAuth } from "../auth/AuthContext";
 import { API } from "../constants";
 
 import { AgCharts } from "ag-charts-react";
@@ -66,9 +68,40 @@ const monthToNumber = (month) => {
   return map[clean] ?? null;
 };
 
+function normalisePlantName(name) {
+  return String(name || "").trim().toLowerCase();
+}
+
+function planTypeLabel(planType) {
+  return planType === "weed" ? "Weed control" : "Garden planner";
+}
+
+function canvasPathForPlan(plan) {
+  return plan.plan_type === "weed"
+    ? `/weed-control?plan=${plan.id}`
+    : `/canvas?plan=${plan.id}`;
+}
+
+function getProjectPlantSummary(plan) {
+  const instances = Array.isArray(plan?.plant_instances) ? plan.plant_instances : [];
+  const counts = new Map();
+
+  for (const instance of instances) {
+    if (!instance?.name) continue;
+    const key = normalisePlantName(instance.name);
+    const current = counts.get(key) || { name: instance.name, count: 0 };
+    counts.set(key, { ...current, count: current.count + 1 });
+  }
+
+  return Array.from(counts.values()).sort((a, b) => a.name.localeCompare(b.name));
+}
+
 function Scheduler() {
   const PANEL_H = "calc(100vh - 110px)";
 
+  const [searchParams] = useSearchParams();
+  const projectId = searchParams.get("plan") || "";
+  const { user } = useAuth();
   const [search, setSearch] = useState("");
 
   const { isPending, data, error } = useQuery({
@@ -79,7 +112,38 @@ function Scheduler() {
     },
   });
 
+  const {
+    data: project,
+    isPending: projectPending,
+    error: projectError,
+  } = useQuery({
+    queryKey: ["gardenPlan", projectId],
+    enabled: Boolean(user && projectId),
+    retry: false,
+    queryFn: async () => apiFetch(`garden-plans/${encodeURIComponent(projectId)}/`),
+  });
+
   const [selectedIds, setSelectedIds] = useState(() => new Set());
+
+  const projectPlantSummary = useMemo(
+    () => getProjectPlantSummary(project),
+    [project]
+  );
+
+  const projectPlantNameSet = useMemo(
+    () => new Set(projectPlantSummary.map((item) => normalisePlantName(item.name))),
+    [projectPlantSummary]
+  );
+
+  useEffect(() => {
+    if (!project || !Array.isArray(data)) return;
+
+    const projectPlantIds = data
+      .filter((plant) => projectPlantNameSet.has(normalisePlantName(plant.name)))
+      .map((plant) => plant.id);
+
+    setSelectedIds(new Set(projectPlantIds));
+  }, [data, project, projectPlantNameSet]);
 
   const filtered = useMemo(() => {
     if (!Array.isArray(data)) return [];
@@ -100,8 +164,9 @@ function Scheduler() {
 
   const chartPlants = useMemo(() => {
     if (!Array.isArray(data)) return [];
-    return selectedPlants.length === 0 ? data : selectedPlants;
-  }, [data, selectedPlants]);
+    if (selectedPlants.length > 0) return selectedPlants;
+    return project ? [] : data;
+  }, [data, project, selectedPlants]);
 
   const monthIdx0 = useCallback((name) => {
     const m = monthToNumber(name);
@@ -254,9 +319,59 @@ function Scheduler() {
           </p>
         </div>
         <div className="selected-count">
-          Selected: {selectedPlants.length}
+          {project ? "Project plants" : "Selected"}: {selectedPlants.length}
         </div>
       </header>
+
+      {projectId && !user && (
+        <div className="alert alert-warning">
+          Log in from the top bar to open this saved project in the scheduler.
+        </div>
+      )}
+
+      {projectId && user && projectPending && (
+        <div className="alert alert-info">Loading project plant list...</div>
+      )}
+
+      {projectId && user && projectError && (
+        <div className="alert alert-danger">
+          Could not load that saved project.
+        </div>
+      )}
+
+      {project && (
+        <section className="project-focus-panel mb-3">
+          <div>
+            <span className="project-type-pill">{planTypeLabel(project.plan_type)}</span>
+            <h2>{project.name}</h2>
+            <p>
+              The calendar starts with this project&apos;s saved plants selected. Add or remove plants on the right to compare timing.
+            </p>
+          </div>
+
+          <div className="project-focus-side">
+            <div className="project-plant-chips">
+              {projectPlantSummary.length === 0 ? (
+                <small className="text-muted">No saved plants in this project yet.</small>
+              ) : (
+                projectPlantSummary.map((item) => (
+                  <span key={item.name}>
+                    {item.name} x {item.count}
+                  </span>
+                ))
+              )}
+            </div>
+            <div className="project-focus-actions">
+              <Link to={canvasPathForPlan(project)} className="btn btn-success">
+                Open canvas
+              </Link>
+              <Link to="/projects" className="btn btn-outline-primary">
+                Projects
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       <div className="scheduler-grid">
         <section className="chart-panel">

@@ -30,6 +30,9 @@ function MainLayout({ children }) {
 							<NavLink to="/" end className="app-nav-link">
 								Home
 							</NavLink>
+							<NavLink to="/projects" className="app-nav-link">
+								Projects
+							</NavLink>
 							<NavLink to="/database" className="app-nav-link">
 								Plant guide
 							</NavLink>
