@@ -5,6 +5,7 @@ from .api_views import (
     Companion_helpslistItemViewSet,
     Companion_helped_bylistItemViewSet,
     Plants_avoidlistItemViewSet,
+    plant_summary_view,
 )
 from .autosort_api import autosort_view
 from .views import plant_view, plants_views
@@ -18,6 +19,7 @@ router.register(r'avoid', Plants_avoidlistItemViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('api/auto-sort/', autosort_view, name='auto-sort'),
+    path('api/plant-summary/', plant_summary_view, name='plant-summary'),
 
     path('plants/<int:pid>', plant_view, name='index'),
     path('', plants_views, name='index'),

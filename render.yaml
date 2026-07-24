@@ -7,7 +7,7 @@ services:
     buildCommand: pip install -r requirement.txt && python manage.py collectstatic --noinput
     startCommand: >
       sh -c "python -u manage.py migrate &&
-             (python -u manage.py seed --update-existing &) &&
+             python -u manage.py seed --update-existing &&
              exec gunicorn Plant_plotter_settings.wsgi:application --bind 0.0.0.0:$PORT --workers 3 --timeout 180"
     envVars:
       - key: PYTHON_VERSION

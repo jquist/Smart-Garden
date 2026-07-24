@@ -1,5 +1,6 @@
 from .models import Plant, Companion_helpslistItem, Companion_helped_bylistItem, Plants_avoidlistItem
-from django.db.models import Q
+from django.db.models import Count, Q
+from django.http import JsonResponse
 from rest_framework import permissions, viewsets
 
 from .serializers import PlantSerializer, Companion_helpslistItemSerializer, Companion_helped_bylistItemSerializer, Plants_avoidlistItemSerializer
@@ -70,4 +71,28 @@ class Plants_avoidlistItemViewSet(viewsets.ModelViewSet):
         if plant_id:
             qs = qs.filter(plant_id=plant_id)
         return qs
+
+
+def plant_summary_view(request):
+    categories = {
+        row["plant_category"]: row["count"]
+        for row in Plant.objects.values("plant_category")
+        .annotate(count=Count("id"))
+        .order_by("plant_category")
+    }
+    weed_examples = list(
+        Plant.objects.filter(plant_category="weed")
+        .order_by("name")
+        .values_list("name", flat=True)[:50]
+    )
+
+    return JsonResponse(
+        {
+            "total": Plant.objects.count(),
+            "categories": categories,
+            "weed_count": categories.get("weed", 0),
+            "groundsel_exists": Plant.objects.filter(name="Groundsel").exists(),
+            "weed_examples": weed_examples,
+        }
+    )
 

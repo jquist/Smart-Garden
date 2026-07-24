@@ -13,6 +13,25 @@ from ...models import (
 
 
 ROOT_DIR = os.path.dirname(__file__)
+PLANT_FIELDS = [
+    "plant_category",
+    "plant_roles",
+    "weed_suppressors",
+    "weeds_suppressed",
+    "weed_management_notes",
+    "plant_directly",
+    "spacing_between_rows",
+    "spacing_in_rows",
+    "depth",
+    "time_to_germinate_indoors_start",
+    "time_to_germinate_indoors_end",
+    "time_to_germinate_indoors_period",
+    "plant_start",
+    "plant_end",
+    "time_first_harvets",
+    "harest_start",
+    "harest_end",
+]
 
 
 def plant_kwargs(data):
@@ -77,26 +96,38 @@ class Command(BaseCommand):
         if not options["update_existing"]:
             Plant.objects.all().delete()
 
-        plants_by_name = {}
-        created_count = 0
-        updated_count = 0
+        sample_names = [data["name"] for data in sample_plants]
+        existing_plants = Plant.objects.in_bulk(sample_names, field_name="name")
+        plants_to_create = []
+        plants_to_update = []
 
         for data in sample_plants:
             kwargs = plant_kwargs(data)
 
             if options["update_existing"]:
                 name = kwargs.pop("name")
-                plant, created = Plant.objects.update_or_create(
-                    name=name,
-                    defaults=kwargs,
-                )
-                created_count += int(created)
-                updated_count += int(not created)
+                plant = existing_plants.get(name)
+                if plant:
+                    for field, value in kwargs.items():
+                        setattr(plant, field, value)
+                    plants_to_update.append(plant)
+                else:
+                    plants_to_create.append(Plant(name=name, **kwargs))
             else:
-                plant = Plant.objects.create(**kwargs)
-                created_count += 1
+                plants_to_create.append(Plant(**kwargs))
 
-            plants_by_name[plant.name] = plant
+        if plants_to_create:
+            Plant.objects.bulk_create(plants_to_create, batch_size=500)
+        if plants_to_update:
+            Plant.objects.bulk_update(
+                plants_to_update,
+                PLANT_FIELDS,
+                batch_size=500,
+            )
+
+        plants_by_name = Plant.objects.in_bulk(sample_names, field_name="name")
+        created_count = len(plants_to_create)
+        updated_count = len(plants_to_update)
 
         if options["update_existing"]:
             seed_ids = [plant.id for plant in plants_by_name.values()]
@@ -108,34 +139,58 @@ class Command(BaseCommand):
             f"plant seed made: {created_count} created, {updated_count} updated"
         )
 
+        help_items = []
         for data in sample_plants:
             plant_obj = plants_by_name[data["name"]]
             for other_name in data.get("companion_helps", []):
                 other_obj = plants_by_name[other_name]
-                Companion_helpslistItem.objects.get_or_create(
-                    plant=plant_obj,
-                    other_plant=other_obj,
+                help_items.append(
+                    Companion_helpslistItem(
+                        plant=plant_obj,
+                        other_plant=other_obj,
+                    )
                 )
+        Companion_helpslistItem.objects.bulk_create(
+            help_items,
+            batch_size=1000,
+            ignore_conflicts=True,
+        )
         print("companion helps seed made")
 
+        helped_by_items = []
         for data in sample_plants:
             plant_obj = plants_by_name[data["name"]]
             for other_name in data.get("companion_helped_by", []):
                 other_obj = plants_by_name[other_name]
-                Companion_helped_bylistItem.objects.get_or_create(
-                    plant=plant_obj,
-                    other_plant=other_obj,
+                helped_by_items.append(
+                    Companion_helped_bylistItem(
+                        plant=plant_obj,
+                        other_plant=other_obj,
+                    )
                 )
+        Companion_helped_bylistItem.objects.bulk_create(
+            helped_by_items,
+            batch_size=1000,
+            ignore_conflicts=True,
+        )
         print("companion helped by seed made")
 
+        avoid_items = []
         for data in sample_plants:
             plant_obj = plants_by_name[data["name"]]
             for other_name in data.get("plants_avoid", []):
                 other_obj = plants_by_name[other_name]
-                Plants_avoidlistItem.objects.get_or_create(
-                    plant=plant_obj,
-                    other_plant=other_obj,
+                avoid_items.append(
+                    Plants_avoidlistItem(
+                        plant=plant_obj,
+                        other_plant=other_obj,
+                    )
                 )
+        Plants_avoidlistItem.objects.bulk_create(
+            avoid_items,
+            batch_size=1000,
+            ignore_conflicts=True,
+        )
         print("avoid seed made")
 
         category_counts = Counter(
