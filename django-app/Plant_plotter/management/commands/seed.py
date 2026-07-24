@@ -68,6 +68,18 @@ def plants_by_name(names):
     return plants
 
 
+def seed_data_is_current(sample_plants):
+    expected_weed_count = sum(
+        1 for plant in sample_plants if plant.get("plant_category") == "weed"
+    )
+    actual_weed_count = Plant.objects.filter(plant_category="weed").count()
+
+    return (
+        actual_weed_count >= expected_weed_count
+        and Plant.objects.filter(name="Groundsel", plant_category="weed").exists()
+    )
+
+
 class Command(BaseCommand):
     help = "Insert or refresh sample plant data"
 
@@ -87,18 +99,22 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        with open(os.path.join(ROOT_DIR, "sample_data.json"), encoding="utf-8") as json_file:
+            sample_data = json.load(json_file)
+
+        sample_plants = sample_data["plants"]
+
         if (
             options["skip_if_plants_exist"]
             and Plant.objects.exists()
             and not options["update_existing"]
         ):
-            print("plant seed skipped because plants already exist")
-            return
+            if seed_data_is_current(sample_plants):
+                print("plant seed skipped because seed data is already current")
+                return
 
-        with open(os.path.join(ROOT_DIR, "sample_data.json"), encoding="utf-8") as json_file:
-            sample_data = json.load(json_file)
-
-        sample_plants = sample_data["plants"]
+            print("plant seed data is stale; updating existing plants")
+            options["update_existing"] = True
 
         if not options["update_existing"]:
             Plant.objects.all().delete()
