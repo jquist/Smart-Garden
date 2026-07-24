@@ -7,19 +7,22 @@ import Database from './pages/database';
 import Scheduler from './pages/Scheduler'
 import FreeMoveCanvas from './pages/canvas';
 import WeedControlCanvas from './pages/WeedControlCanvas';
+import { AuthProvider } from './auth/AuthContext';
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
-        <Route path="/plant/:id" element={<Plant />} />
-        <Route path="/database" element={<Database />} />
-        <Route path="/canvas" element={<FreeMoveCanvas />} />
-        <Route path="/weed-control" element={<WeedControlCanvas />} />
-        <Route path="/scheduler" element={<Scheduler />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/plant/:id" element={<Plant />} />
+          <Route path="/database" element={<Database />} />
+          <Route path="/canvas" element={<FreeMoveCanvas />} />
+          <Route path="/weed-control" element={<WeedControlCanvas />} />
+          <Route path="/scheduler" element={<Scheduler />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   );
 }
 

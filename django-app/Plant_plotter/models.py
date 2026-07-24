@@ -14,6 +14,9 @@ class Plant(models.Model):
     weed_suppressors = models.JSONField(default=list, blank=True)
     weeds_suppressed = models.JSONField(default=list, blank=True)
     weed_management_notes = models.TextField(blank=True, default="")
+    description = models.TextField(blank=True, default="")
+    planting_tips = models.TextField(blank=True, default="")
+    planting_how_to = models.TextField(blank=True, default="")
     plant_directly= models.BooleanField() #true,
     spacing_between_rows= models.PositiveIntegerField(default=0) #20,
     spacing_in_rows= models.PositiveIntegerField(default=0) #20,
@@ -31,6 +34,27 @@ class Plant(models.Model):
     companion_helped_by = models.ManyToManyField('self', through="Companion_helped_bylistItem",blank=True,related_name="plant_helps_by")
     plants_avoid = models.ManyToManyField('self', through="Plants_avoidlistItem",blank=True,related_name="plant_avoids")
 
+
+class GardenPlan(models.Model):
+    PLAN_TYPES = [
+        ("garden", "Garden planner"),
+        ("weed", "Weed control planner"),
+    ]
+
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="garden_plans")
+    name = models.CharField(max_length=160)
+    plan_type = models.CharField(max_length=16, choices=PLAN_TYPES, default="garden")
+    boxes = models.JSONField(default=list, blank=True)
+    plant_instances = models.JSONField(default=list, blank=True)
+    metadata = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-updated_at", "-created_at"]
+
+    def __str__(self):
+        return f"{self.name} ({self.owner.username})"
 
 
 class Companion_helpslistItem(models.Model):

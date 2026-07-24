@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "react-router-dom";
 import BoxesPanel from "../components/canvas/BoxesPanel";
 import GardenGrid from "../components/canvas/GardenGrid";
+import SavedPlansPanel from "../components/canvas/SavedPlansPanel";
 import PlantBadges from "../components/PlantBadges";
 import {
   CELL_CM,
@@ -601,6 +603,8 @@ function WeedResultPanel({
 }
 
 function WeedControlCanvas() {
+  const [searchParams] = useSearchParams();
+  const initialPlanId = searchParams.get("plan") || "";
   const [boxes, setBoxes] = useState([makeBox("square", 0)]);
   const [selectedBoxId, setSelectedBoxId] = useState(null);
   const [plantInstances, setPlantInstances] = useState([]);
@@ -674,6 +678,17 @@ function WeedControlCanvas() {
     showWeeds ? null : "weed",
     showControlPlants ? null : "weed_control",
   ].filter(Boolean);
+
+  const savedSelectedByWeed = useMemo(
+    () =>
+      Object.fromEntries(
+        Object.entries(selectedByWeed).map(([weedName, names]) => [
+          weedName,
+          Array.from(names || []),
+        ])
+      ),
+    [selectedByWeed]
+  );
 
   function addWeedPlan(weed) {
     setWeedPlans((prev) => ({
@@ -774,6 +789,22 @@ function WeedControlCanvas() {
     setPlantInstances((prev) =>
       prev.filter((plant) => plant.boxIndex !== selectedIndex)
     );
+  }
+
+  function handleLoadSavedPlan(plan) {
+    setBoxes(Array.isArray(plan.boxes) && plan.boxes.length > 0 ? plan.boxes : [makeBox("square", 0)]);
+    setPlantInstances(Array.isArray(plan.plant_instances) ? plan.plant_instances : []);
+    setWeedPlans(plan.metadata?.weedPlans || {});
+    setSelectedByWeed(
+      Object.fromEntries(
+        Object.entries(plan.metadata?.selectedByWeed || {}).map(([weedName, names]) => [
+          weedName,
+          new Set(Array.isArray(names) ? names : []),
+        ])
+      )
+    );
+    setPlacementMessage(plan.metadata?.placementMessage || "");
+    setActiveStep(Math.max(0, Math.min(3, Number(plan.metadata?.activeStep ?? 0))));
   }
 
   function createControlInstance(plant, weedName, boxIndex = 0, localRow = 0, localCol = 0) {
@@ -967,6 +998,20 @@ function WeedControlCanvas() {
             setShowControlPlants={setShowControlPlants}
             weedPatchCount={weedPatchCount}
             controlPlantCount={controlInstances.length}
+          />
+
+          <SavedPlansPanel
+            planType="weed"
+            boxes={boxes}
+            plantInstances={plantInstances}
+            metadata={{
+              weedPlans,
+              selectedByWeed: savedSelectedByWeed,
+              placementMessage,
+              activeStep,
+            }}
+            initialPlanId={initialPlanId}
+            onLoadPlan={handleLoadSavedPlan}
           />
 
           {activeStep === 0 && (

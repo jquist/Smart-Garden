@@ -37,6 +37,9 @@ function Database() {
         return plants.filter((p) => {
             const name = String(p?.name ?? "").toLowerCase();
             const plantCategory = String(p?.plant_category ?? "").toLowerCase();
+            const description = String(p?.description ?? "").toLowerCase();
+            const plantingTips = String(p?.planting_tips ?? "").toLowerCase();
+            const plantingHowTo = String(p?.planting_how_to ?? "").toLowerCase();
             const rawRoles = rolesForPlant(p);
             const roleLabels = rawRoles.map((role) => labelForRole(role).toLowerCase());
             const matchesCategory = !category || plantCategory === category;
@@ -47,6 +50,9 @@ function Database() {
                 !q ||
                 name.indexOf(q) !== -1 ||
                 plantCategory.indexOf(q) !== -1 ||
+                description.indexOf(q) !== -1 ||
+                plantingTips.indexOf(q) !== -1 ||
+                plantingHowTo.indexOf(q) !== -1 ||
                 rawRoles.some((role) => String(role).toLowerCase().indexOf(q) !== -1) ||
                 roleLabels.some((role) => role.indexOf(q) !== -1);
 

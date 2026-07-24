@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import BoxesPanel from "../components/canvas/BoxesPanel";
 import GardenGrid from "../components/canvas/GardenGrid";
 import PlantsPanel from "../components/canvas/PlantsPanel";
+import SavedPlansPanel from "../components/canvas/SavedPlansPanel";
 import SortingPanel from "../components/canvas/SortingPanel";
 import {
   makeBox,
@@ -58,6 +60,8 @@ function getProgressText(baseAlgorithm, maxSpread, maximiseSearch, boxes, plantI
 }
 
 function FreeMoveCanvas() {
+  const [searchParams] = useSearchParams();
+  const initialPlanId = searchParams.get("plan") || "";
   const [boxes, setBoxes] = useState([makeBox("square", 0)]);
   const [selectedBoxId, setSelectedBoxId] = useState(null);
   const [plantsData, setPlantsData] = useState([]);
@@ -705,6 +709,21 @@ function FreeMoveCanvas() {
     );
   }
 
+  function handleLoadSavedPlan(plan) {
+    setBoxes(Array.isArray(plan.boxes) && plan.boxes.length > 0 ? plan.boxes : [makeBox("square", 0)]);
+    setPlantInstances(Array.isArray(plan.plant_instances) ? plan.plant_instances : []);
+    setSortResult(null);
+    setFillMessage("");
+    setFocusedPlantName("");
+
+    if (plan.metadata?.sortOptions) {
+      setSortOptions((prev) => ({
+        ...prev,
+        ...plan.metadata.sortOptions,
+      }));
+    }
+  }
+
   return (
     <div className="canvas-page">
       <header className="page-header">
@@ -768,6 +787,15 @@ function FreeMoveCanvas() {
         </div>
 
         <aside className="planner-sidebar">
+          <SavedPlansPanel
+            planType="garden"
+            boxes={boxes}
+            plantInstances={plantInstances}
+            metadata={{ sortOptions }}
+            initialPlanId={initialPlanId}
+            onLoadPlan={handleLoadSavedPlan}
+          />
+
           <SortingPanel
             sortOptions={sortOptions}
             setSortOptions={setSortOptions}

@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar} from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
+import AuthControls from './AuthControls';
 
 
 function MainLayout({ children }) {
@@ -42,6 +43,7 @@ function MainLayout({ children }) {
 								Weed control
 							</NavLink>
 						</nav>
+						<AuthControls />
 					</Container>
 				</Navbar>
 			</header>

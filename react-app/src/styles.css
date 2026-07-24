@@ -122,6 +122,94 @@ a {
   background: #fff4d6;
 }
 
+.auth-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.75rem;
+}
+
+.auth-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  color: #fff4d6;
+  background: rgba(16, 47, 32, 0.34);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.auth-button {
+  min-height: 36px;
+  padding: 0.42rem 0.65rem;
+  border: 1px solid rgba(255, 244, 214, 0.5);
+  border-radius: 8px;
+  color: #fff8e9;
+  background: transparent;
+  font-weight: 800;
+}
+
+.auth-button:hover,
+.auth-button:focus {
+  color: var(--brand-deep);
+  background: #fff4d6;
+}
+
+.auth-button-primary {
+  color: var(--brand-deep);
+  background: #f3d27c;
+  border-color: #f3d27c;
+}
+
+.auth-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(16, 47, 32, 0.62);
+}
+
+.auth-modal {
+  display: grid;
+  gap: 0.85rem;
+  width: min(100%, 430px);
+  padding: 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.auth-modal-header h2 {
+  margin: 0;
+  color: var(--brand-deep);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.auth-field,
+.saved-plan-field {
+  display: grid;
+  gap: 0.3rem;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
 .app-content {
   width: min(100%, 1640px);
   margin: 0 auto;
@@ -781,6 +869,17 @@ a {
   font-weight: 800;
 }
 
+.plant-card-description {
+  display: -webkit-box;
+  margin: 0.65rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .plant-badges {
   display: flex;
   flex-wrap: wrap;
@@ -870,6 +969,21 @@ a {
   gap: 0.65rem;
   align-items: center;
   min-width: 0;
+}
+
+.saved-plans-card h5 {
+  font-weight: 800;
+}
+
+.saved-plans-card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.saved-plan-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
 }
 
 .plant-type-swatch {
@@ -1302,6 +1416,19 @@ a {
   font-weight: 800;
 }
 
+.plant-info-panel h3 {
+  margin: 0 0 0.65rem;
+  color: var(--brand-deep);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.plant-info-panel p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.62;
+}
+
 .empty-state {
   padding: 2rem;
   border: 1px dashed var(--border-strong);
@@ -1395,6 +1522,11 @@ a {
   .app-nav {
     width: 100%;
     margin-top: 0.75rem;
+  }
+
+  .auth-controls {
+    width: 100%;
+    margin: 0.75rem 0 0;
   }
 
   .app-nav-link {

@@ -10,6 +10,11 @@ from ...models import (
     Plant,
     Plants_avoidlistItem,
 )
+from ...plant_guidance import (
+    default_plant_description,
+    default_planting_how_to,
+    default_planting_tips,
+)
 
 
 ROOT_DIR = os.path.dirname(__file__)
@@ -19,6 +24,9 @@ PLANT_FIELDS = [
     "weed_suppressors",
     "weeds_suppressed",
     "weed_management_notes",
+    "description",
+    "planting_tips",
+    "planting_how_to",
     "plant_directly",
     "spacing_between_rows",
     "spacing_in_rows",
@@ -35,7 +43,7 @@ PLANT_FIELDS = [
 
 
 def plant_kwargs(data):
-    return {
+    kwargs = {
         "name": data["name"],
         "plant_category": data.get("plant_category", "vegetable"),
         "plant_roles": data.get("plant_roles", []),
@@ -59,6 +67,11 @@ def plant_kwargs(data):
         "harest_start": data["harest_start"],
         "harest_end": data["harest_end"],
     }
+    probe = Plant(**kwargs)
+    kwargs["description"] = data.get("description") or default_plant_description(probe)
+    kwargs["planting_tips"] = data.get("planting_tips") or default_planting_tips(probe)
+    kwargs["planting_how_to"] = data.get("planting_how_to") or default_planting_how_to(probe)
+    return kwargs
 
 
 def plants_by_name(names):

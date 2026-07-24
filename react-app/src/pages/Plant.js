@@ -21,6 +21,11 @@ function displayValue(value, fallback = "Not set") {
 	return value ?? fallback;
 }
 
+function infoText(value, fallback) {
+	const text = String(value || "").trim();
+	return text || fallback;
+}
+
 function RelationshipList({ items, emptyText }) {
 	if (items.length === 0) {
 		return <p className="text-muted">{emptyText}</p>;
@@ -133,6 +138,27 @@ function Plant() {
 							</div>
 						))}
 					</dl>
+				</Col>
+			</Row>
+
+			<Row className="g-4 mb-4">
+				<Col md={4}>
+					<div className="content-panel plant-info-panel h-100">
+						<h3>About this plant</h3>
+						<p>{infoText(data?.description, "No plant description has been added yet.")}</p>
+					</div>
+				</Col>
+				<Col md={4}>
+					<div className="content-panel plant-info-panel h-100">
+						<h3>Planting tips</h3>
+						<p>{infoText(data?.planting_tips, "No planting tips have been added yet.")}</p>
+					</div>
+				</Col>
+				<Col md={4}>
+					<div className="content-panel plant-info-panel h-100">
+						<h3>How to plant</h3>
+						<p>{infoText(data?.planting_how_to, "No how-to guidance has been added yet.")}</p>
+					</div>
 				</Col>
 			</Row>
 
