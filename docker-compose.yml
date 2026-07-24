@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+    environment:
+      SECURE_SSL_REDIRECT: "False"
     volumes:
       - static_volume:/app/staticfiles
     ports:
