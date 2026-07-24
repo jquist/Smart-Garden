@@ -5,7 +5,7 @@ services:
     rootDir: django-app
     plan: free
     buildCommand: pip install -r requirement.txt && python manage.py collectstatic --noinput
-    startCommand: python manage.py migrate && python manage.py seed --update-existing && gunicorn Plant_plotter_settings.wsgi:application --bind 0.0.0.0:$PORT --workers 3 --timeout 180
+    startCommand: python -u manage.py migrate && python -u manage.py seed --update-existing && gunicorn Plant_plotter_settings.wsgi:application --bind 0.0.0.0:$PORT --workers 3 --timeout 180
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
