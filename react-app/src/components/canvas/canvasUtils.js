@@ -1,23 +1,21 @@
 export const CELL_SIZE_PX = 32;
 export const CELL_CM = 15;
 
-const PLANT_TYPE_COLOURS = [
-  { label: "Sage green", background: "rgba(83, 143, 91, 0.26)", border: "#4f8f5b", dot: "#315f38" },
-  { label: "Tomato red", background: "rgba(198, 88, 72, 0.23)", border: "#b84f42", dot: "#81352e" },
-  { label: "Golden leaf", background: "rgba(219, 173, 71, 0.28)", border: "#c99a30", dot: "#87631d" },
-  { label: "Sky blue", background: "rgba(74, 137, 183, 0.23)", border: "#4a89b7", dot: "#2f5d82" },
-  { label: "Fig purple", background: "rgba(139, 101, 166, 0.22)", border: "#8460a0", dot: "#5b3c72" },
-  { label: "Mint", background: "rgba(75, 158, 139, 0.22)", border: "#439884", dot: "#2f675b" },
-  { label: "Carrot orange", background: "rgba(222, 139, 71, 0.24)", border: "#c8753a", dot: "#8d4d22" },
-  { label: "Berry rose", background: "rgba(187, 83, 126, 0.21)", border: "#ae4e76", dot: "#77324f" },
-  { label: "Olive", background: "rgba(135, 151, 69, 0.25)", border: "#7f9142", dot: "#59642e" },
-  { label: "Teal", background: "rgba(57, 139, 159, 0.22)", border: "#398b9f", dot: "#285f6e" },
-  { label: "Plum", background: "rgba(126, 83, 139, 0.21)", border: "#7e538b", dot: "#56365f" },
-  { label: "Clover", background: "rgba(62, 128, 83, 0.24)", border: "#3e8053", dot: "#2e5d3e" },
-];
-
 export function normalisePlantTypeName(name) {
   return String(name || "").trim().toLowerCase();
+}
+
+function getPlantColourFamily(hue) {
+  if (hue < 18 || hue >= 342) return "Red";
+  if (hue < 45) return "Orange";
+  if (hue < 72) return "Gold";
+  if (hue < 105) return "Lime";
+  if (hue < 155) return "Green";
+  if (hue < 190) return "Teal";
+  if (hue < 225) return "Blue";
+  if (hue < 260) return "Indigo";
+  if (hue < 300) return "Violet";
+  return "Rose";
 }
 
 export function getPlantTypeColour(name) {
@@ -28,7 +26,18 @@ export function getPlantTypeColour(name) {
     hash = (hash * 31 + key.charCodeAt(index)) >>> 0;
   }
 
-  return PLANT_TYPE_COLOURS[hash % PLANT_TYPE_COLOURS.length];
+  const hue = hash % 360;
+  const saturation = 58 + (hash % 12);
+  const borderLightness = 34 + ((hash >>> 4) % 11);
+  const backgroundLightness = Math.min(borderLightness + 28, 74);
+  const dotLightness = Math.max(borderLightness - 9, 24);
+
+  return {
+    label: `${getPlantColourFamily(hue)} ${hue}`,
+    background: `hsla(${hue}, ${saturation}%, ${backgroundLightness}%, 0.34)`,
+    border: `hsl(${hue}, ${saturation}%, ${borderLightness}%)`,
+    dot: `hsl(${hue}, ${Math.min(saturation + 8, 78)}%, ${dotLightness}%)`,
+  };
 }
 
 export function snapToGrid(value) {

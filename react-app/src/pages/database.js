@@ -19,7 +19,7 @@ function asPlantList(data) {
 function Database() {
     const [search, setSearch] = useState("");
     const [category, setCategory] = useState("");
-    const [roleFilter, setRoleFilter] = useState("");
+    const [roleFilters, setRoleFilters] = useState([]);
 
 	const { isPending, data, error } = useQuery({
 		queryKey: ['plantData'],
@@ -40,7 +40,9 @@ function Database() {
             const rawRoles = rolesForPlant(p);
             const roleLabels = rawRoles.map((role) => labelForRole(role).toLowerCase());
             const matchesCategory = !category || plantCategory === category;
-            const matchesRole = !roleFilter || rawRoles.includes(roleFilter);
+            const matchesRoles =
+                roleFilters.length === 0 ||
+                roleFilters.every((role) => rawRoles.includes(role));
             const matchesSearch =
                 !q ||
                 name.indexOf(q) !== -1 ||
@@ -48,9 +50,17 @@ function Database() {
                 rawRoles.some((role) => String(role).toLowerCase().indexOf(q) !== -1) ||
                 roleLabels.some((role) => role.indexOf(q) !== -1);
 
-            return matchesCategory && matchesRole && matchesSearch;
+            return matchesCategory && matchesRoles && matchesSearch;
         });
-        }, [data, search, category, roleFilter]);
+        }, [data, search, category, roleFilters]);
+
+    function toggleRoleFilter(role) {
+        setRoleFilters((prev) =>
+            prev.includes(role)
+                ? prev.filter((item) => item !== role)
+                : [...prev, role]
+        );
+    }
 
 	if (isPending) return <Loading message="Loading..." />
 
@@ -96,26 +106,39 @@ function Database() {
                     </Form.Select>
                 </Col>
 
-                <Col xs={12} sm={6} lg={3} className="mt-2 mt-lg-0">
-                    <Form.Select
-                        value={roleFilter}
-                        onChange={(e) => setRoleFilter(e.target.value)}
-                        aria-label="Filter by plant use"
-                    >
-                        {ROLE_FILTER_OPTIONS.map((option) => (
-                            <option key={option.value || "all-uses"} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </Form.Select>
-                </Col>
-
                 <Col xs={12} lg={2} className="d-flex align-items-center mt-2 mt-lg-0">
                 <small className="selected-count">
                     Showing {filtered.length} of {asPlantList(data).length}
                 </small>
                 </Col>
             </Row>
+
+            <div className="multi-filter-panel mt-3" aria-label="Filter by plant use">
+                {ROLE_FILTER_OPTIONS.filter((option) => option.value).map((option) => {
+                    const selected = roleFilters.includes(option.value);
+
+                    return (
+                        <button
+                            key={option.value}
+                            type="button"
+                            className={`filter-chip ${selected ? "filter-chip-selected" : ""}`}
+                            onClick={() => toggleRoleFilter(option.value)}
+                        >
+                            {option.label}
+                        </button>
+                    );
+                })}
+
+                {roleFilters.length > 0 && (
+                    <button
+                        type="button"
+                        className="filter-chip filter-chip-clear"
+                        onClick={() => setRoleFilters([])}
+                    >
+                        Clear uses
+                    </button>
+                )}
+            </div>
             </div>
 
             <Row className="g-3">

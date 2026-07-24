@@ -4,13 +4,26 @@ import BoxesPanel from "../components/canvas/BoxesPanel";
 import GardenGrid from "../components/canvas/GardenGrid";
 import PlantBadges from "../components/PlantBadges";
 import {
+  CELL_CM,
   makeBox,
   makePlantInstance,
-  findFirstFitForPlant,
   placedPlantCollidesUsingBoxes,
   withAbsolutePlantPosition,
 } from "../components/canvas/canvasUtils";
 import { API } from "../constants";
+
+const WEED_STEPS = [
+  { key: "layout", label: "Layout" },
+  { key: "weeds", label: "Weeds" },
+  { key: "map", label: "Map" },
+  { key: "controls", label: "Controls" },
+];
+
+const WEED_PATCH_SIZE_OPTIONS = [
+  { value: "small", label: "Small patch", width: 1, height: 1 },
+  { value: "medium", label: "Medium patch", width: 2, height: 2 },
+  { value: "large", label: "Large patch", width: 3, height: 3 },
+];
 
 function normaliseName(name) {
   return String(name || "").trim().toLowerCase();
@@ -39,6 +52,31 @@ function plantMatchesSearch(plant, query) {
 function getPlantByName(plantsData, name) {
   const key = normaliseName(name);
   return plantsData.find((plant) => normaliseName(plant.name) === key);
+}
+
+function getPatchSizeOption(value) {
+  return (
+    WEED_PATCH_SIZE_OPTIONS.find((option) => option.value === value) ||
+    WEED_PATCH_SIZE_OPTIONS[0]
+  );
+}
+
+function sanitisePatchAmount(amount) {
+  return Math.max(1, Math.min(99, Number(amount) || 1));
+}
+
+function getPlanAmount(plan) {
+  return sanitisePatchAmount(plan?.amount);
+}
+
+function getPlanAreaText(plan) {
+  const amount = getPlanAmount(plan);
+  const patch = getPatchSizeOption(plan?.size);
+  const cells = amount * patch.width * patch.height;
+  const squareMeters = (cells * CELL_CM * CELL_CM) / 10000;
+  const rounded = squareMeters >= 1 ? squareMeters.toFixed(1) : squareMeters.toFixed(2);
+
+  return `${cells} grid square${cells === 1 ? "" : "s"} (${rounded} m2 rough coverage)`;
 }
 
 function getSuppressorCandidates(weed, plantsData) {
@@ -80,16 +118,6 @@ function countByPlantId(instances, kind) {
   return counts;
 }
 
-function getUniqueWeedNames(instances) {
-  return Array.from(
-    new Set(
-      instances
-        .filter((plant) => plant.kind === "weed")
-        .map((plant) => plant.name)
-    )
-  ).sort((a, b) => a.localeCompare(b));
-}
-
 function ModalShell({ kicker, title, children, footer, wide = false, onClose }) {
   return (
     <div className="workflow-modal-backdrop" role="dialog" aria-modal="true">
@@ -117,14 +145,76 @@ function ModalShell({ kicker, title, children, footer, wide = false, onClose }) 
   );
 }
 
-function WeedPickerModal({
+function WeedStepNav({ activeStep, setActiveStep, canOpenMap, canOpenControls }) {
+  function canOpenStep(index) {
+    if (index <= 1) return true;
+    if (index === 2) return canOpenMap;
+    return canOpenControls;
+  }
+
+  return (
+    <div className="weed-stepper" aria-label="Weed control steps">
+      {WEED_STEPS.map((step, index) => (
+        <button
+          key={step.key}
+          type="button"
+          className={`weed-step-button ${activeStep === index ? "weed-step-button-active" : ""} ${activeStep > index ? "weed-step-button-done" : ""}`}
+          onClick={() => canOpenStep(index) && setActiveStep(index)}
+          disabled={!canOpenStep(index)}
+        >
+          <span>{index + 1}</span>
+          {step.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function WeedLayerTogglePanel({
+  showWeeds,
+  setShowWeeds,
+  showControlPlants,
+  setShowControlPlants,
+  weedPatchCount,
+  controlPlantCount,
+}) {
+  return (
+    <div className="card p-3 mb-3 weed-workflow-card">
+      <h5 className="mb-2">Visual layers</h5>
+      <div className="d-grid gap-2">
+        <label className="form-check form-switch weed-layer-toggle">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            checked={showWeeds}
+            onChange={(event) => setShowWeeds(event.target.checked)}
+          />
+          <span className="form-check-label">Weed patches ({weedPatchCount})</span>
+        </label>
+        <label className="form-check form-switch weed-layer-toggle">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            checked={showControlPlants}
+            onChange={(event) => setShowControlPlants(event.target.checked)}
+          />
+          <span className="form-check-label">Suppressor plants ({controlPlantCount})</span>
+        </label>
+      </div>
+    </div>
+  );
+}
+
+function WeedSelectionPanel({
   weeds,
-  selectedWeedIds,
-  setSelectedWeedIds,
+  weedPlans,
   loading,
   error,
-  onContinue,
-  onClose,
+  onAddWeedPlan,
+  onRemoveWeedPlan,
+  onSetWeedAmount,
+  onSetWeedSize,
+  onNext,
 }) {
   const [search, setSearch] = useState("");
 
@@ -134,37 +224,19 @@ function WeedPickerModal({
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [weeds, search]);
 
-  function toggleWeed(weedId) {
-    setSelectedWeedIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(weedId)) next.delete(weedId);
-      else next.add(weedId);
-      return next;
-    });
-  }
+  const selectedCount = Object.keys(weedPlans).length;
+  const plannedPatchCount = Object.values(weedPlans).reduce(
+    (total, plan) => total + getPlanAmount(plan),
+    0
+  );
 
   return (
-    <ModalShell
-      kicker="Weed control"
-      title="What weeds do you have?"
-      wide
-      onClose={onClose}
-      footer={
-        <>
-          <span className="small text-muted">
-            {selectedWeedIds.size} weed{selectedWeedIds.size === 1 ? "" : "s"} selected
-          </span>
-          <button
-            type="button"
-            className="btn btn-success"
-            disabled={selectedWeedIds.size === 0 || loading}
-            onClick={onContinue}
-          >
-            Next
-          </button>
-        </>
-      }
-    >
+    <div className="card p-3 mb-3 weed-workflow-card">
+      <h5 className="mb-2">Select weeds</h5>
+      <div className="selected-count mb-3">
+        {selectedCount} weed type{selectedCount === 1 ? "" : "s"}, {plannedPatchCount} patch{plannedPatchCount === 1 ? "" : "es"}
+      </div>
+
       <input
         type="text"
         className="form-control mb-3"
@@ -176,41 +248,107 @@ function WeedPickerModal({
       {loading && <p>Loading weeds...</p>}
       {error && <p>Could not load weed data.</p>}
 
-      <div className="weed-picker-list">
-        {filteredWeeds.map((weed) => (
-          <label key={weed.id} className="weed-check-row">
-            <input
-              type="checkbox"
-              checked={selectedWeedIds.has(weed.id)}
-              onChange={() => toggleWeed(weed.id)}
-            />
-            <span>
-              <strong>{weed.name}</strong>
-              {weed.weed_management_notes && (
-                <small>{weed.weed_management_notes}</small>
+      <div className="weed-picker-list weed-plan-list">
+        {filteredWeeds.map((weed) => {
+          const plan = weedPlans[weed.id];
+          const selected = Boolean(plan);
+
+          return (
+            <div
+              key={weed.id}
+              className={`weed-plan-row ${selected ? "weed-plan-row-selected" : ""}`}
+            >
+              <label className="weed-plan-check">
+                <input
+                  type="checkbox"
+                  checked={selected}
+                  onChange={(event) =>
+                    event.target.checked ? onAddWeedPlan(weed) : onRemoveWeedPlan(weed)
+                  }
+                />
+                <span>
+                  <strong>{weed.name}</strong>
+                  {weed.weed_management_notes && <small>{weed.weed_management_notes}</small>}
+                </span>
+              </label>
+
+              {selected && (
+                <div className="weed-plan-controls">
+                  <label>
+                    <span>Amount</span>
+                    <input
+                      type="number"
+                      className="form-control"
+                      min="1"
+                      max="99"
+                      value={getPlanAmount(plan)}
+                      onChange={(event) => onSetWeedAmount(weed, event.target.value)}
+                    />
+                  </label>
+
+                  <label>
+                    <span>Patch size</span>
+                    <select
+                      className="form-select"
+                      value={plan.size}
+                      onChange={(event) => onSetWeedSize(weed, event.target.value)}
+                    >
+                      {WEED_PATCH_SIZE_OPTIONS.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+
+                  <small className="text-muted">{getPlanAreaText(plan)}</small>
+                </div>
               )}
-            </span>
-          </label>
-        ))}
+            </div>
+          );
+        })}
       </div>
-    </ModalShell>
+
+      <button
+        type="button"
+        className="btn btn-success w-100 mt-3"
+        onClick={onNext}
+        disabled={selectedCount === 0}
+      >
+        Next: map weeds
+      </button>
+    </div>
   );
 }
 
 function WeedMappingPanel({
-  selectedWeeds,
+  plannedWeeds,
   plantInstances,
-  onAddWeed,
-  onRemoveWeed,
-  onChangeWeeds,
+  onBackToWeeds,
   onReviewControls,
+  canReviewControls,
 }) {
   const countsById = useMemo(
     () => countByPlantId(plantInstances, "weed"),
     [plantInstances]
   );
 
+  const remainingTotal = plannedWeeds.reduce((total, weed) => {
+    const planned = getPlanAmount(weed.weedPlan);
+    const placed = countsById[weed.id] || 0;
+    return total + Math.max(planned - placed, 0);
+  }, 0);
+
   function handleDragStart(event, weed) {
+    const placed = countsById[weed.id] || 0;
+    const planned = getPlanAmount(weed.weedPlan);
+    if (placed >= planned) {
+      event.preventDefault();
+      return;
+    }
+
+    const patch = getPatchSizeOption(weed.weedPlan?.size);
+
     event.dataTransfer.setData(
       "application/json",
       JSON.stringify({
@@ -218,6 +356,9 @@ function WeedMappingPanel({
         plantId: weed.id,
         name: weed.name,
         kind: "weed",
+        width: patch.width,
+        height: patch.height,
+        sizeSame: Math.min(patch.width, patch.height),
       })
     );
     event.dataTransfer.effectAllowed = "copy";
@@ -225,51 +366,39 @@ function WeedMappingPanel({
 
   return (
     <div className="card p-3 mb-3 weed-workflow-card">
-      <h5 className="mb-2">Weeds on this plan</h5>
-      <p className="small text-muted">
-        Drag each weed into the bed where it appears, or use + to add another patch.
-      </p>
-
+      <h5 className="mb-2">Map weed patches</h5>
       <div className="weed-control-legend mb-3">
         <span><i className="legend-swatch legend-swatch-weed" /> Weed patch</span>
-        <span><i className="legend-swatch legend-swatch-control" /> Control plant</span>
+        <span><i className="legend-swatch legend-swatch-control" /> Suppressor plant</span>
       </div>
 
       <div className="weed-panel-list">
-        {selectedWeeds.map((weed) => {
-          const count = countsById[weed.id] || 0;
+        {plannedWeeds.map((weed) => {
+          const planned = getPlanAmount(weed.weedPlan);
+          const placed = countsById[weed.id] || 0;
+          const remaining = Math.max(planned - placed, 0);
+          const patch = getPatchSizeOption(weed.weedPlan?.size);
 
           return (
             <div
               key={weed.id}
-              className={`panel-section p-2 mb-2 ${count > 0 ? "border-danger bg-light" : ""}`}
-              draggable
+              className={`panel-section p-2 mb-2 ${remaining === 0 ? "weed-plan-complete" : ""}`}
+              draggable={remaining > 0}
               onDragStart={(event) => handleDragStart(event, weed)}
             >
-              <div className="d-flex justify-content-between align-items-center gap-2">
+              <div className="d-flex justify-content-between align-items-start gap-2">
                 <div>
                   <strong>{weed.name}</strong>
-                  <div className="small text-muted">Patches: {count}</div>
+                  <div className="small text-muted">
+                    Placed {placed} of {planned}
+                  </div>
+                  <div className="small text-muted">
+                    {patch.label}: {patch.width} x {patch.height} grid
+                  </div>
                 </div>
-
-                <div className="d-flex align-items-center gap-2">
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                    onClick={() => onRemoveWeed(weed)}
-                    disabled={count === 0}
-                  >
-                    -
-                  </button>
-                  <span style={{ minWidth: "24px", textAlign: "center" }}>{count}</span>
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                    onClick={() => onAddWeed(weed)}
-                  >
-                    +
-                  </button>
-                </div>
+                <span className={`weed-remaining-pill ${remaining === 0 ? "weed-remaining-pill-done" : ""}`}>
+                  {remaining} left
+                </span>
               </div>
             </div>
           );
@@ -280,16 +409,21 @@ function WeedMappingPanel({
         type="button"
         className="btn btn-success w-100 mt-2"
         onClick={onReviewControls}
-        disabled={getUniqueWeedNames(plantInstances).length === 0}
+        disabled={!canReviewControls}
       >
-        Done placing weeds
+        Choose suppressor plants
       </button>
+      {remainingTotal > 0 && (
+        <small className="text-muted d-block mt-2">
+          {remainingTotal} planned weed patch{remainingTotal === 1 ? "" : "es"} still need placing.
+        </small>
+      )}
       <button
         type="button"
         className="btn btn-outline-secondary w-100 mt-2"
-        onClick={onChangeWeeds}
+        onClick={onBackToWeeds}
       >
-        {selectedWeeds.length === 0 ? "Add weed modifier" : "Change weed list"}
+        Change weed list
       </button>
     </div>
   );
@@ -395,7 +529,13 @@ function WeedRecommendationModal({
   );
 }
 
-function WeedResultPanel({ controlInstances, placementMessage, selectedByWeed, onReviewControls }) {
+function WeedResultPanel({
+  controlInstances,
+  placementMessage,
+  selectedByWeed,
+  onReviewControls,
+  onBackToMap,
+}) {
   const selectedPairs = Object.entries(selectedByWeed)
     .flatMap(([weedName, names]) =>
       Array.from(names || []).map((plantName) => ({ weedName, plantName }))
@@ -409,7 +549,7 @@ function WeedResultPanel({ controlInstances, placementMessage, selectedByWeed, o
 
   return (
     <div className="card p-3 mb-3 weed-workflow-card">
-      <h5 className="mb-2">Control plan</h5>
+      <h5 className="mb-2">Suppressor plan</h5>
       {placementMessage && (
         <div className="alert alert-info py-2 small mb-3">
           {placementMessage}
@@ -417,7 +557,7 @@ function WeedResultPanel({ controlInstances, placementMessage, selectedByWeed, o
       )}
 
       {controlInstances.length === 0 ? (
-        <small className="text-muted">No control plants have been added yet.</small>
+        <small className="text-muted">No suppressor plants have been added yet.</small>
       ) : (
         <div className="d-grid gap-2 mb-3">
           {Object.entries(controlsByName)
@@ -447,7 +587,14 @@ function WeedResultPanel({ controlInstances, placementMessage, selectedByWeed, o
         className="btn btn-outline-success w-100 mt-3"
         onClick={onReviewControls}
       >
-        Review weed controls
+        Review suppressor choices
+      </button>
+      <button
+        type="button"
+        className="btn btn-outline-secondary w-100 mt-2"
+        onClick={onBackToMap}
+      >
+        Back to weed map
       </button>
     </div>
   );
@@ -457,8 +604,10 @@ function WeedControlCanvas() {
   const [boxes, setBoxes] = useState([makeBox("square", 0)]);
   const [selectedBoxId, setSelectedBoxId] = useState(null);
   const [plantInstances, setPlantInstances] = useState([]);
-  const [selectedWeedIds, setSelectedWeedIds] = useState(() => new Set());
-  const [showWeedPicker, setShowWeedPicker] = useState(true);
+  const [weedPlans, setWeedPlans] = useState({});
+  const [activeStep, setActiveStep] = useState(0);
+  const [showWeeds, setShowWeeds] = useState(true);
+  const [showControlPlants, setShowControlPlants] = useState(true);
   const [showRecommendations, setShowRecommendations] = useState(false);
   const [recommendationStepIndex, setRecommendationStepIndex] = useState(0);
   const [selectedByWeed, setSelectedByWeed] = useState({});
@@ -480,13 +629,26 @@ function WeedControlCanvas() {
     [plantsData]
   );
 
-  const selectedWeeds = useMemo(
-    () => weeds.filter((weed) => selectedWeedIds.has(weed.id)),
-    [weeds, selectedWeedIds]
+  const plannedWeeds = useMemo(
+    () =>
+      weeds
+        .filter((weed) => weedPlans[weed.id])
+        .map((weed) => ({ ...weed, weedPlan: weedPlans[weed.id] })),
+    [weeds, weedPlans]
   );
 
-  const weedNamesOnCanvas = useMemo(
-    () => getUniqueWeedNames(plantInstances),
+  const plannedWeedNames = useMemo(
+    () => plannedWeeds.map((weed) => weed.name),
+    [plannedWeeds]
+  );
+
+  const weedPatchCountsById = useMemo(
+    () => countByPlantId(plantInstances, "weed"),
+    [plantInstances]
+  );
+
+  const weedPatchCount = useMemo(
+    () => plantInstances.filter((plant) => plant.kind === "weed").length,
     [plantInstances]
   );
 
@@ -495,85 +657,99 @@ function WeedControlCanvas() {
     [plantInstances]
   );
 
-  function createWeedInstance(weed, boxIndex = 0, localRow = 0, localCol = 0) {
-    return {
-      ...makePlantInstance(weed, boxIndex, localRow, localCol),
-      kind: "weed",
-    };
+  const plannedPatchCount = useMemo(
+    () =>
+      plannedWeeds.reduce(
+        (total, weed) => total + getPlanAmount(weed.weedPlan),
+        0
+      ),
+    [plannedWeeds]
+  );
+
+  const allPlannedPatchesMapped =
+    plannedPatchCount > 0 &&
+    plannedWeeds.every((weed) => (weedPatchCountsById[weed.id] || 0) >= getPlanAmount(weed.weedPlan));
+
+  const hiddenPlantKinds = [
+    showWeeds ? null : "weed",
+    showControlPlants ? null : "weed_control",
+  ].filter(Boolean);
+
+  function addWeedPlan(weed) {
+    setWeedPlans((prev) => ({
+      ...prev,
+      [weed.id]: prev[weed.id] || {
+        weedId: weed.id,
+        amount: 1,
+        size: "small",
+      },
+    }));
   }
 
-  function createControlInstance(plant, weedName, boxIndex = 0, localRow = 0, localCol = 0) {
-    return {
-      ...makePlantInstance(plant, boxIndex, localRow, localCol),
-      kind: "weed_control",
-      controlsWeed: weedName,
-    };
-  }
-
-  function placeWeedInList(currentPlants, weed) {
-    const newWeed = createWeedInstance(weed);
-    const fit = findFirstFitForPlant(newWeed, boxes, currentPlants, plantsData, false);
-    if (!fit) return null;
-
-    return {
-      ...newWeed,
-      boxIndex: fit.boxIndex,
-      localRow: fit.localRow,
-      localCol: fit.localCol,
-    };
-  }
-
-  function handleStartMapping() {
-    const selectedIdSet = new Set(selectedWeedIds);
-
-    setPlantInstances((prev) => {
-      const next = prev.filter(
-        (plant) => plant.kind === "weed" && selectedIdSet.has(plant.plantId)
-      );
-
-      for (const weed of selectedWeeds) {
-        const alreadyPlaced = next.some((plant) => plant.plantId === weed.id);
-        if (alreadyPlaced) continue;
-
-        const placedWeed = placeWeedInList(next, weed);
-        if (placedWeed) next.push(placedWeed);
-      }
-
+  function removeWeedPlan(weed) {
+    setWeedPlans((prev) => {
+      const next = { ...prev };
+      delete next[weed.id];
       return next;
     });
-
+    setPlantInstances((prev) =>
+      prev.filter(
+        (plant) =>
+          !(plant.kind === "weed" && plant.plantId === weed.id) &&
+          !(plant.kind === "weed_control" && normaliseName(plant.controlsWeed) === normaliseName(weed.name))
+      )
+    );
+    setSelectedByWeed((prev) => {
+      const next = { ...prev };
+      delete next[weed.name];
+      return next;
+    });
     setPlacementMessage("");
-    setShowWeedPicker(false);
   }
 
-  function handleAddWeed(weed) {
-    let placed = false;
+  function trimWeedInstancesToAmount(instances, weed, amount) {
+    let seen = 0;
 
-    setPlantInstances((prev) => {
-      const placedWeed = placeWeedInList(prev, weed);
-      if (!placedWeed) return prev;
-      placed = true;
-      return [...prev, placedWeed];
+    return instances.filter((plant) => {
+      if (plant.kind !== "weed" || plant.plantId !== weed.id) return true;
+      seen += 1;
+      return seen <= amount;
     });
-
-    setTimeout(() => {
-      if (!placed) alert("No space found in the current boxes for that weed patch.");
-    }, 0);
   }
 
-  function handleRemoveWeed(weed) {
-    setPlantInstances((prev) => {
-      const lastIndex = [...prev]
-        .reverse()
-        .findIndex((instance) => instance.kind === "weed" && instance.plantId === weed.id);
+  function setWeedAmount(weed, amountRaw) {
+    const amount = sanitisePatchAmount(amountRaw);
+    setWeedPlans((prev) => ({
+      ...prev,
+      [weed.id]: {
+        ...(prev[weed.id] || { weedId: weed.id, size: "small" }),
+        amount,
+      },
+    }));
+    setPlantInstances((prev) =>
+      trimWeedInstancesToAmount(prev, weed, amount).filter(
+        (plant) =>
+          !(plant.kind === "weed_control" && normaliseName(plant.controlsWeed) === normaliseName(weed.name))
+      )
+    );
+    setPlacementMessage("");
+  }
 
-      if (lastIndex === -1) return prev;
-
-      const actualIndex = prev.length - 1 - lastIndex;
-      const next = [...prev];
-      next.splice(actualIndex, 1);
-      return next;
-    });
+  function setWeedSize(weed, size) {
+    setWeedPlans((prev) => ({
+      ...prev,
+      [weed.id]: {
+        ...(prev[weed.id] || { weedId: weed.id, amount: 1 }),
+        size,
+      },
+    }));
+    setPlantInstances((prev) =>
+      prev.filter(
+        (plant) =>
+          !(plant.kind === "weed_control" && normaliseName(plant.controlsWeed) === normaliseName(weed.name))
+      )
+    );
+    setPlacementMessage("");
   }
 
   function handleRemoveSelectedBox() {
@@ -598,6 +774,14 @@ function WeedControlCanvas() {
     setPlantInstances((prev) =>
       prev.filter((plant) => plant.boxIndex !== selectedIndex)
     );
+  }
+
+  function createControlInstance(plant, weedName, boxIndex = 0, localRow = 0, localCol = 0) {
+    return {
+      ...makePlantInstance(plant, boxIndex, localRow, localCol),
+      kind: "weed_control",
+      controlsWeed: weedName,
+    };
   }
 
   function getDistanceToWeed(candidate, weedName, currentPlants) {
@@ -668,9 +852,13 @@ function WeedControlCanvas() {
   }
 
   function handleReviewControls() {
-    const names = getUniqueWeedNames(plantInstances);
-    if (names.length === 0) {
-      alert("Place at least one weed patch first.");
+    if (plannedWeeds.length === 0) {
+      alert("Select at least one weed first.");
+      return;
+    }
+
+    if (!allPlannedPatchesMapped) {
+      alert("Place every planned weed patch on the canvas first.");
       return;
     }
 
@@ -683,7 +871,7 @@ function WeedControlCanvas() {
     let placedCount = 0;
     const nextPlants = plantInstances.filter((plant) => plant.kind !== "weed_control");
 
-    for (const weedName of weedNamesOnCanvas) {
+    for (const weedName of plannedWeedNames) {
       const selectedNames = Array.from(selectedByWeed[weedName] || []);
 
       for (const plantName of selectedNames) {
@@ -711,10 +899,24 @@ function WeedControlCanvas() {
       : "";
     setPlacementMessage(
       placedCount === 0
-        ? "No control plants were added. Choose at least one plant in the recommendation pop-up."
-        : `Added ${placedCount} weed-control plant${placedCount === 1 ? "" : "s"} to the canvas.${failedText}`
+        ? "No suppressor plants were added. Choose at least one plant in the recommendation pop-up."
+        : `Added ${placedCount} suppressor plant${placedCount === 1 ? "" : "s"} to the canvas.${failedText}`
     );
     setShowRecommendations(false);
+    setActiveStep(3);
+  }
+
+  function getBoardTip() {
+    if (activeStep === 0) {
+      return "Step 1: shape the garden beds first. Use the box controls on the right to add, clear, or remove beds.";
+    }
+    if (activeStep === 1) {
+      return "Step 2: select weeds and set rough patch amount and size. Nothing is placed until the mapping step.";
+    }
+    if (activeStep === 2) {
+      return "Step 3: drag planned weed patches from the right onto the matching places in the garden.";
+    }
+    return "Step 4: suppressor plants are shown near the weed patches they were chosen for.";
   }
 
   return (
@@ -722,15 +924,22 @@ function WeedControlCanvas() {
       <header className="page-header">
         <div>
           <p className="page-kicker">Weed control canvas</p>
-          <h1 className="page-title">Map weeds, then place plants that suppress them.</h1>
+          <h1 className="page-title">Plan weeds first, then place suppressor plants.</h1>
           <p className="page-subtitle">
-            This planner is only for weed-control planting. Pick the weeds you have, place their patches, then choose suppressor plants for each weed.
+            Build the garden layout, estimate the weed patches, map them onto the beds, then choose plants that help suppress those weeds.
           </p>
         </div>
         <div className="selected-count">
-          {weedNamesOnCanvas.length} weed type{weedNamesOnCanvas.length === 1 ? "" : "s"} mapped
+          {weedPatchCount} of {plannedPatchCount} weed patch{plannedPatchCount === 1 ? "" : "es"} mapped
         </div>
       </header>
+
+      <WeedStepNav
+        activeStep={activeStep}
+        setActiveStep={setActiveStep}
+        canOpenMap={plannedWeeds.length > 0}
+        canOpenControls={controlInstances.length > 0 || allPlannedPatchesMapped}
+      />
 
       <div className="planner-layout">
         <div className="garden-panel">
@@ -743,59 +952,82 @@ function WeedControlCanvas() {
             plantInstances={plantInstances}
             setPlantInstances={setPlantInstances}
             plantsData={plantsData}
-            acceptedDropSources={["weed-panel"]}
+            acceptedDropSources={activeStep === 2 ? ["weed-panel"] : []}
+            hiddenPlantKinds={hiddenPlantKinds}
             itemLabel="item"
-            boardTip={
-              <>
-                Tip: drag weed patches from the weed list into a bed, then press <strong>Done placing weeds</strong>. The final blue tiles are the weed-control plants you picked in the recommendation steps.
-              </>
-            }
+            boardTip={getBoardTip()}
           />
         </div>
 
         <aside className="planner-sidebar">
-          <BoxesPanel
-            boxes={boxes}
-            setBoxes={setBoxes}
-            selectedBoxId={selectedBoxId}
-            setSelectedBoxId={setSelectedBoxId}
-            onRemoveSelected={handleRemoveSelectedBox}
-            onClearSelected={handleClearSelectedBox}
+          <WeedLayerTogglePanel
+            showWeeds={showWeeds}
+            setShowWeeds={setShowWeeds}
+            showControlPlants={showControlPlants}
+            setShowControlPlants={setShowControlPlants}
+            weedPatchCount={weedPatchCount}
+            controlPlantCount={controlInstances.length}
           />
 
-          <WeedMappingPanel
-            selectedWeeds={selectedWeeds}
-            plantInstances={plantInstances}
-            onAddWeed={handleAddWeed}
-            onRemoveWeed={handleRemoveWeed}
-            onChangeWeeds={() => setShowWeedPicker(true)}
-            onReviewControls={handleReviewControls}
-          />
+          {activeStep === 0 && (
+            <>
+              <BoxesPanel
+                boxes={boxes}
+                setBoxes={setBoxes}
+                selectedBoxId={selectedBoxId}
+                setSelectedBoxId={setSelectedBoxId}
+                onRemoveSelected={handleRemoveSelectedBox}
+                onClearSelected={handleClearSelectedBox}
+              />
+              <button
+                type="button"
+                className="btn btn-success w-100 mb-3"
+                onClick={() => setActiveStep(1)}
+              >
+                Next: select weeds
+              </button>
+            </>
+          )}
 
-          <WeedResultPanel
-            controlInstances={controlInstances}
-            placementMessage={placementMessage}
-            selectedByWeed={selectedByWeed}
-            onReviewControls={handleReviewControls}
-          />
+          {activeStep === 1 && (
+            <WeedSelectionPanel
+              weeds={weeds}
+              weedPlans={weedPlans}
+              loading={isPending}
+              error={error}
+              onAddWeedPlan={addWeedPlan}
+              onRemoveWeedPlan={removeWeedPlan}
+              onSetWeedAmount={setWeedAmount}
+              onSetWeedSize={setWeedSize}
+              onNext={() => setActiveStep(2)}
+            />
+          )}
+
+          {activeStep === 2 && (
+            <WeedMappingPanel
+              plannedWeeds={plannedWeeds}
+              plantInstances={plantInstances}
+              onBackToWeeds={() => setActiveStep(1)}
+              onReviewControls={handleReviewControls}
+              canReviewControls={allPlannedPatchesMapped}
+            />
+          )}
+
+          {activeStep === 3 && (
+            <WeedResultPanel
+              controlInstances={controlInstances}
+              placementMessage={placementMessage}
+              selectedByWeed={selectedByWeed}
+              onReviewControls={handleReviewControls}
+              onBackToMap={() => setActiveStep(2)}
+            />
+          )}
         </aside>
       </div>
 
-      {showWeedPicker && (
-        <WeedPickerModal
-          weeds={weeds}
-          selectedWeedIds={selectedWeedIds}
-          setSelectedWeedIds={setSelectedWeedIds}
-          loading={isPending}
-          error={error}
-          onContinue={handleStartMapping}
-          onClose={() => setShowWeedPicker(false)}
-        />
-      )}
-
       {showRecommendations && (
         <WeedRecommendationModal
-          weedNames={weedNamesOnCanvas}
+          weedNames={plannedWeedNames}
           plantsData={plantsData}
           selectedByWeed={selectedByWeed}
           setSelectedByWeed={setSelectedByWeed}

@@ -659,6 +659,40 @@ a {
   margin-bottom: 1.25rem;
 }
 
+.multi-filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  min-height: 36px;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.filter-chip:hover,
+.filter-chip:focus {
+  border-color: var(--border-strong);
+  color: var(--brand-dark);
+}
+
+.filter-chip-selected {
+  border-color: var(--brand);
+  color: var(--brand-dark);
+  background: var(--brand-soft);
+}
+
+.filter-chip-clear {
+  border-color: #d9c7a6;
+  color: var(--earth);
+  background: #fff7e6;
+}
+
 .content-panel,
 .chart-panel,
 .garden-panel {
@@ -895,7 +929,65 @@ a {
   background: #fffdf8;
 }
 
+.weed-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.weed-step-button {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 46px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.92);
+  font-weight: 800;
+  text-align: left;
+}
+
+.weed-step-button span {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--text-muted);
+  background: var(--surface-muted);
+  font-size: 0.86rem;
+}
+
+.weed-step-button-active {
+  border-color: var(--brand);
+  color: var(--brand-dark);
+  background: var(--brand-soft);
+}
+
+.weed-step-button-active span,
+.weed-step-button-done span {
+  color: #ffffff;
+  background: var(--brand);
+}
+
+.weed-step-button:disabled {
+  opacity: 0.58;
+}
+
 .weed-workflow-card h5 {
+  font-weight: 800;
+}
+
+.weed-layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 34px;
+  margin: 0;
   font-weight: 800;
 }
 
@@ -911,6 +1003,85 @@ a {
 
 .weed-picker-list {
   max-height: min(58vh, 560px);
+}
+
+.weed-plan-list {
+  max-height: min(54vh, 560px);
+}
+
+.weed-plan-row {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.weed-plan-row-selected {
+  border-color: rgba(143, 45, 45, 0.58);
+  background: #fff8f6;
+}
+
+.weed-plan-check {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  cursor: pointer;
+}
+
+.weed-plan-check input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.18rem;
+}
+
+.weed-plan-check small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.weed-plan-controls {
+  display: grid;
+  grid-template-columns: minmax(84px, 0.45fr) minmax(140px, 1fr);
+  gap: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+}
+
+.weed-plan-controls label {
+  display: grid;
+  gap: 0.25rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.weed-plan-controls small {
+  grid-column: 1 / -1;
+}
+
+.weed-plan-complete {
+  border-color: rgba(47, 111, 78, 0.42);
+  background: var(--brand-soft);
+}
+
+.weed-remaining-pill {
+  flex: 0 0 auto;
+  padding: 0.28rem 0.5rem;
+  border-radius: 999px;
+  color: #8f2d2d;
+  background: var(--danger-soft);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.weed-remaining-pill-done {
+  color: var(--brand-dark);
+  background: #dff0e5;
 }
 
 .weed-check-row,
@@ -1166,6 +1337,7 @@ a {
   .example-story,
   .friendly-panel,
   .home-hero-detailed,
+  .weed-stepper,
   .planner-layout,
   .scheduler-grid {
     grid-template-columns: 1fr;

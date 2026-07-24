@@ -28,6 +28,7 @@ function GardenGrid({
   itemLabel = "plant",
   boardTip = null,
   focusedPlantName = "",
+  hiddenPlantKinds = [],
 }) {
   const bounds = useMemo(() => getBoardBounds(boxes), [boxes]);
 
@@ -42,10 +43,23 @@ function GardenGrid({
   const boardRef = useRef(null);
 
   const scaledCellSize = CELL_SIZE_PX * zoom;
+  const hiddenPlantKindSet = useMemo(
+    () => new Set(hiddenPlantKinds),
+    [hiddenPlantKinds]
+  );
 
   const absolutePlantInstances = useMemo(
     () => plantInstances.map((plant) => withAbsolutePlantPosition(plant, boxes)),
     [plantInstances, boxes]
+  );
+
+  const visiblePlantInstances = useMemo(
+    () =>
+      absolutePlantInstances.filter((plant) => {
+        const kind = plant.kind || "plant";
+        return !hiddenPlantKindSet.has(kind);
+      }),
+    [absolutePlantInstances, hiddenPlantKindSet]
   );
 
   const selectedPlant = useMemo(
@@ -264,7 +278,24 @@ function GardenGrid({
     const newPlant = {
       ...makePlantInstance(plantData, boxIndex, row - box.y, col - box.x),
       ...(parsed.kind ? { kind: parsed.kind } : {}),
+      ...(parsed.controlsWeed ? { controlsWeed: parsed.controlsWeed } : {}),
     };
+
+    if (Number(parsed.width) > 0) {
+      newPlant.width = Number(parsed.width);
+    }
+
+    if (Number(parsed.height) > 0) {
+      newPlant.height = Number(parsed.height);
+    }
+
+    if (Number(parsed.sizeSame) > 0) {
+      newPlant.sizeSame = Number(parsed.sizeSame);
+    }
+
+    if (newPlant.width > box.w || newPlant.height > box.h) {
+      return;
+    }
 
     const clamped = clampPlantLocalToBox(
       newPlant,
@@ -414,7 +445,7 @@ function GardenGrid({
             </div>
           ))}
 
-          {absolutePlantInstances.map((plant) => {
+          {visiblePlantInstances.map((plant) => {
             const isWeedPatch = plant.kind === "weed";
             const isWeedControl = plant.kind === "weed_control";
             const typeColour = getPlantTypeColour(plant.name);
@@ -430,21 +461,17 @@ function GardenGrid({
             );
             const tileBackground = isWeedPatch
               ? "rgba(143,45,45,0.2)"
-              : isWeedControl
-                ? "rgba(52,103,166,0.2)"
-                : typeColour.background;
+              : typeColour.background;
             const tileBorder = plant.locked
               ? "3px solid #d9a616"
               : isWeedPatch
                 ? "2px solid rgba(143,45,45,0.78)"
                 : isWeedControl
-                  ? "2px solid rgba(52,103,166,0.78)"
+                  ? `2px dashed ${typeColour.border}`
                   : `2px solid ${typeColour.border}`;
             const seedBackground = isWeedPatch
               ? "rgba(117,33,33,0.86)"
-              : isWeedControl
-                ? "rgba(36,79,131,0.86)"
-                : typeColour.dot;
+              : typeColour.dot;
             const statusLabel = plant.locked
               ? "Locked"
               : isWeedPatch
