@@ -2,9 +2,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar} from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
 import AuthControls from './AuthControls';
+import { useAuth } from '../auth/AuthContext';
 
 
 function MainLayout({ children }) {
+	const { user } = useAuth();
+	const showDevLink = Boolean(user?.is_staff || user?.is_superuser);
+
 	return (
 		<div className="app-shell">
 			<header className="site-header">
@@ -45,6 +49,11 @@ function MainLayout({ children }) {
 							<NavLink to="/weed-control" className="app-nav-link">
 								Weed control
 							</NavLink>
+							{showDevLink && (
+								<NavLink to="/dev" className="app-nav-link">
+									Dev
+								</NavLink>
+							)}
 						</nav>
 						<AuthControls />
 					</Container>

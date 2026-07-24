@@ -22,5 +22,17 @@ services:
         sync: false
       - key: CORS_ALLOWED_ORIGINS
         sync: false
+      - key: CORS_ALLOW_CREDENTIALS
+        value: "True"
       - key: CSRF_TRUSTED_ORIGINS
         sync: false
+      - key: SECURE_SSL_REDIRECT
+        value: "True"
+      - key: SESSION_COOKIE_SECURE
+        value: "True"
+      - key: CSRF_COOKIE_SECURE
+        value: "True"
+      - key: SESSION_COOKIE_SAMESITE
+        value: "Lax"
+      - key: CSRF_COOKIE_SAMESITE
+        value: "Lax"

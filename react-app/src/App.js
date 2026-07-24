@@ -4,6 +4,7 @@ import Plant from './pages/Plant';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Database from './pages/database';
+import Dev from './pages/Dev';
 import Profile from './pages/Profile';
 import Projects from './pages/Projects';
 import Scheduler from './pages/Scheduler'
@@ -18,6 +19,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/plant/:id" element={<Plant />} />
           <Route path="/database" element={<Database />} />
+          <Route path="/dev" element={<Dev />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/canvas" element={<FreeMoveCanvas />} />
