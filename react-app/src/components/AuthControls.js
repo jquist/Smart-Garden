@@ -82,7 +82,7 @@ function AuthControls() {
             </div>
 
             <label className="auth-field">
-              <span>Username</span>
+              <span>Username or email</span>
               <input
                 type="text"
                 className="form-control"

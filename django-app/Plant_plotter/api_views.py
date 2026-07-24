@@ -102,12 +102,20 @@ def login_view(request):
     if data is None:
         return JsonResponse({"error": "Invalid request."}, status=400)
 
-    username = str(data.get("username", "")).strip()
+    username_or_email = str(data.get("username", "")).strip()
     password = str(data.get("password", ""))
+    username = username_or_email
+
+    User = get_user_model()
+    if "@" in username_or_email:
+        matched_user = User.objects.filter(email__iexact=username_or_email).first()
+        if matched_user:
+            username = matched_user.get_username()
+
     user = authenticate(request, username=username, password=password)
 
     if user is None:
-        return JsonResponse({"error": "Username or password was not recognised."}, status=400)
+        return JsonResponse({"error": "Username, email, or password was not recognised."}, status=400)
 
     login(request, user)
     return JsonResponse(user_payload(user))

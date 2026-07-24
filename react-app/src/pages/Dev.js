@@ -24,13 +24,9 @@ function Dev() {
   const backendBaseUrl = getBackendBaseUrl();
   const isDevUser = Boolean(user?.is_staff || user?.is_superuser);
   const liveAccountCommand =
-    `python manage.py shell -c "from django.contrib.auth import get_user_model; ` +
-    `User=get_user_model(); ` +
-    `u, created=User.objects.get_or_create(username='${DEV_USERNAME}', defaults={'email':'${DEV_EMAIL}'}); ` +
-    `u.email='${DEV_EMAIL}'; ` +
-    `u.is_staff=True; u.is_superuser=True; u.is_active=True; ` +
-    `u.set_password('PASTE_A_NEW_STRONG_PASSWORD_HERE'); ` +
-    `u.save(); print('created' if created else 'updated')"`;
+    `python manage.py ensure_dev_user --username ${DEV_USERNAME} --email ${DEV_EMAIL}`;
+  const liveAccountWithPasswordCommand =
+    `python manage.py ensure_dev_user --username ${DEV_USERNAME} --email ${DEV_EMAIL} --password "PASTE_A_NEW_STRONG_PASSWORD_HERE"`;
 
   if (loading) return <Loading message="Checking account..." />;
 
@@ -139,6 +135,9 @@ function Dev() {
 
           <h3>Update this exact dev account</h3>
           <DevCommandBlock>{liveAccountCommand}</DevCommandBlock>
+
+          <h3>Choose the password yourself</h3>
+          <DevCommandBlock>{liveAccountWithPasswordCommand}</DevCommandBlock>
         </section>
 
         <section className="account-panel dev-panel-wide">

@@ -15,9 +15,19 @@ function getCookie(name) {
 }
 
 export async function ensureCsrfCookie() {
-  await fetch(`${API}auth/csrf/`, {
-    credentials: "include",
-  });
+  let response;
+
+  try {
+    response = await fetch(`${API}auth/csrf/`, {
+      credentials: "include",
+    });
+  } catch (error) {
+    throw new Error(`Could not reach the backend at ${API}. Check the API URL and that the backend is running.`);
+  }
+
+  if (!response.ok) {
+    throw new Error("Could not prepare a secure login. Check the backend API URL and CORS/CSRF settings.");
+  }
 }
 
 export async function apiFetch(path, options = {}) {
@@ -35,16 +45,22 @@ export async function apiFetch(path, options = {}) {
     headers["X-CSRFToken"] = getCookie("csrftoken");
   }
 
-  const response = await fetch(`${API}${path}`, {
-    ...options,
-    method,
-    headers,
-    credentials: "include",
-  });
+  let response;
+
+  try {
+    response = await fetch(`${API}${path}`, {
+      ...options,
+      method,
+      headers,
+      credentials: "include",
+    });
+  } catch (error) {
+    throw new Error(`Could not reach the backend at ${API}. Check the API URL and that the backend is running.`);
+  }
 
   const data = await response.json().catch(() => null);
   if (!response.ok) {
-    throw new Error(data?.error || data?.detail || "Something went wrong.");
+    throw new Error(data?.error || data?.detail || `Request failed with status ${response.status}.`);
   }
 
   return data;
