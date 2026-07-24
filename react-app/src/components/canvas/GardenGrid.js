@@ -22,6 +22,9 @@ function GardenGrid({
   plantInstances,
   setPlantInstances,
   plantsData,
+  acceptedDropSources = ["plants-panel"],
+  itemLabel = "plant",
+  boardTip = null,
 }) {
   const bounds = useMemo(() => getBoardBounds(boxes), [boxes]);
 
@@ -235,7 +238,7 @@ function GardenGrid({
       return;
     }
 
-    if (parsed?.source !== "plants-panel") return;
+    if (!acceptedDropSources.includes(parsed?.source)) return;
     if (!boardRef.current) return;
 
     const plantData = plantsData.find((plant) => plant.id === parsed.plantId);
@@ -255,7 +258,10 @@ function GardenGrid({
     if (boxIndex === -1) return;
 
     const box = boxes[boxIndex];
-    const newPlant = makePlantInstance(plantData, boxIndex, row - box.y, col - box.x);
+    const newPlant = {
+      ...makePlantInstance(plantData, boxIndex, row - box.y, col - box.x),
+      ...(parsed.kind ? { kind: parsed.kind } : {}),
+    };
 
     const clamped = clampPlantLocalToBox(
       newPlant,
@@ -406,12 +412,40 @@ function GardenGrid({
           ))}
 
           {absolutePlantInstances.map((plant) => {
+            const isWeedPatch = plant.kind === "weed";
+            const isWeedControl = plant.kind === "weed_control";
             const widthPx = plant.width * scaledCellSize;
             const heightPx = plant.height * scaledCellSize;
             const seedSize = Math.max(
               10,
               Math.min(22, Math.round(Math.min(widthPx, heightPx) * 0.2))
             );
+            const tileBackground = plant.locked
+              ? "rgba(255,194,62,0.35)"
+              : isWeedPatch
+                ? "rgba(143,45,45,0.2)"
+                : isWeedControl
+                  ? "rgba(52,103,166,0.2)"
+                  : "rgba(47,111,78,0.22)";
+            const tileBorder = plant.locked
+              ? "3px solid #d9a616"
+              : isWeedPatch
+                ? "2px solid rgba(143,45,45,0.78)"
+                : isWeedControl
+                  ? "2px solid rgba(52,103,166,0.78)"
+                  : "2px solid rgba(47,111,78,0.72)";
+            const seedBackground = isWeedPatch
+              ? "rgba(117,33,33,0.86)"
+              : isWeedControl
+                ? "rgba(36,79,131,0.86)"
+                : "rgba(70,45,20,0.85)";
+            const statusLabel = plant.locked
+              ? "Locked"
+              : isWeedPatch
+                ? "Weed"
+                : isWeedControl
+                  ? "Control"
+                  : "";
 
             return (
               <div
@@ -431,19 +465,15 @@ function GardenGrid({
                   e.stopPropagation();
                   removePlantInstance(plant.id);
                 }}
-                title={`${plant.name}${plant.locked ? " (locked)" : ""} - left click lock/unlock and select for delete, right click remove`}
+                title={`${plant.name}${plant.locked ? " (locked)" : ""}${isWeedControl && plant.controlsWeed ? ` - controls ${plant.controlsWeed}` : ""} - left click lock/unlock and select for delete, right click remove`}
                 style={{
                   position: "absolute",
                   left: plant.col * scaledCellSize,
                   top: plant.row * scaledCellSize,
                   width: widthPx,
                   height: heightPx,
-                  background: plant.locked
-                    ? "rgba(255,194,62,0.35)"
-                    : "rgba(47,111,78,0.22)",
-                  border: plant.locked
-                    ? "3px solid #d9a616"
-                    : "2px solid rgba(47,111,78,0.72)",
+                  background: tileBackground,
+                  border: tileBorder,
                   outline: selectedPlantId === plant.id ? "3px solid #3467a6" : "none",
                   outlineOffset: "2px",
                   borderRadius: "6px",
@@ -463,7 +493,7 @@ function GardenGrid({
                     width: seedSize,
                     height: seedSize,
                     borderRadius: "50%",
-                    background: "rgba(70,45,20,0.85)",
+                    background: seedBackground,
                     border: "2px solid rgba(255,255,255,0.9)",
                     boxShadow: "0 1px 4px rgba(0,0,0,0.2)",
                   }}
@@ -492,7 +522,7 @@ function GardenGrid({
                   {shortLabel(plant.name)}
                 </div>
 
-                {plant.locked && (
+                {statusLabel && (
                   <div
                     className="locked-pill"
                     style={{
@@ -504,7 +534,7 @@ function GardenGrid({
                       lineHeight: 1.2,
                     }}
                   >
-                    Locked
+                    {statusLabel}
                   </div>
                 )}
               </div>
@@ -529,14 +559,18 @@ function GardenGrid({
           onClick={deleteSelectedPlant}
           disabled={!selectedPlant}
         >
-          Delete plant
+          Delete {itemLabel}
         </button>
       </div>
 
       <div className="small text-muted mt-2">
-        Tip: drag a plant from the list into a box or use + to add one. Left click a plant to
-        lock/unlock it and make it the active plant for delete. Press <strong>Delete</strong> or <strong>Backspace</strong> to remove the active plant. Right click a plant to remove it. Hold <strong>Ctrl</strong> and use the mouse wheel to zoom.
-        You can drag plants between boxes as long as the new box has room.
+        {boardTip || (
+          <>
+            Tip: drag a plant from the list into a box or use + to add one. Left click a plant to
+            lock/unlock it and make it the active plant for delete. Press <strong>Delete</strong> or <strong>Backspace</strong> to remove the active plant. Right click a plant to remove it. Hold <strong>Ctrl</strong> and use the mouse wheel to zoom.
+            You can drag plants between boxes as long as the new box has room.
+          </>
+        )}
       </div>
     </div>
   );

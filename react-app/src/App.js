@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound';
 import Database from './pages/database';
 import Scheduler from './pages/Scheduler'
 import FreeMoveCanvas from './pages/canvas';
+import WeedControlCanvas from './pages/WeedControlCanvas';
 function App() {
   return (
     <Routes>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/plant/:id" element={<Plant />} />
         <Route path="/database" element={<Database />} />
         <Route path="/canvas" element={<FreeMoveCanvas />} />
+        <Route path="/weed-control" element={<WeedControlCanvas />} />
         <Route path="/scheduler" element={<Scheduler />} />
         <Route path="*" element={<NotFound />} />
       </Route>

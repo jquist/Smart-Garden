@@ -25,9 +25,14 @@ function PlantsPanel({
     },
   });
 
+  const plantList = useMemo(() => {
+    if (Array.isArray(data)) return data;
+    return data?.results ?? [];
+  }, [data]);
+
   useEffect(() => {
-    onPlantsLoaded?.(data);
-  }, [data, onPlantsLoaded]);
+    onPlantsLoaded?.(plantList);
+  }, [plantList, onPlantsLoaded]);
 
   function handleDragStart(e, plant) {
     e.dataTransfer.setData(
@@ -52,7 +57,7 @@ function PlantsPanel({
   const filteredPlants = useMemo(() => {
     const q = search.trim().toLowerCase();
 
-    return data
+    return plantList
       .filter((plant) =>
         (!category || plant.plant_category === category) &&
         (!q ||
@@ -63,7 +68,7 @@ function PlantsPanel({
           ))
       )
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [data, search, category]);
+  }, [plantList, search, category]);
 
   return (
     <div className="card p-3 mb-3">

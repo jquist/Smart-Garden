@@ -11,6 +11,11 @@ import { API } from "../constants";
 import { useMemo, useState } from "react";
 import { CATEGORY_OPTIONS, labelForRole, rolesForPlant } from "../components/plantLabels";
 
+function asPlantList(data) {
+    if (Array.isArray(data)) return data;
+    return data?.results ?? [];
+}
+
 function Database() {
     const [search, setSearch] = useState("");
     const [category, setCategory] = useState("");
@@ -24,11 +29,11 @@ function Database() {
 	})
 
     const filtered = useMemo(() => {
-        if (!Array.isArray(data)) return [];
+        const plants = asPlantList(data);
 
         const q = String(search || "").trim().toLowerCase();
 
-        return data.filter((p) => {
+        return plants.filter((p) => {
             const name = String(p?.name ?? "").toLowerCase();
             const plantCategory = String(p?.plant_category ?? "");
             const roles = rolesForPlant(p).map((role) => labelForRole(role).toLowerCase());
@@ -89,7 +94,7 @@ function Database() {
 
                 <Col xs={12} md={3} className="d-flex align-items-center mt-2 mt-md-0">
                 <small className="selected-count">
-                    Showing {filtered.length} of {data?.length ?? 0}
+                    Showing {filtered.length} of {asPlantList(data).length}
                 </small>
                 </Col>
             </Row>

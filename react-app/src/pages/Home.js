@@ -16,6 +16,9 @@ function Home() {
 						<Link className="btn btn-success btn-lg" to="/canvas">
 							Start my garden plan
 						</Link>
+						<Link className="btn btn-light btn-lg" to="/weed-control">
+							Plan weed control
+						</Link>
 						<Link className="btn btn-light btn-lg" to="/database">
 							Explore the plant guide
 						</Link>
@@ -161,6 +164,15 @@ function Home() {
 							<p>Use this when you want to draw beds, add plants, drag crops around, and test a layout.</p>
 						</div>
 						<span className="action-link">Open garden planner</span>
+					</Link>
+
+					<Link className="action-card" to="/weed-control">
+						<div>
+							<span className="action-label">What handles my weeds?</span>
+							<h3>Weed control canvas</h3>
+							<p>Use this when you want to map weeds first, then add plants chosen only for weed control.</p>
+						</div>
+						<span className="action-link">Open weed control</span>
 					</Link>
 
 					<Link className="action-card" to="/database">

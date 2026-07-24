@@ -38,6 +38,9 @@ function MainLayout({ children }) {
 							<NavLink to="/canvas" className="app-nav-link">
 								Garden planner
 							</NavLink>
+							<NavLink to="/weed-control" className="app-nav-link">
+								Weed control
+							</NavLink>
 						</nav>
 					</Container>
 				</Navbar>

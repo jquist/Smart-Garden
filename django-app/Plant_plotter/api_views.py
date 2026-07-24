@@ -1,4 +1,5 @@
 from .models import Plant, Companion_helpslistItem, Companion_helped_bylistItem, Plants_avoidlistItem
+from django.db.models import Q
 from rest_framework import permissions, viewsets
 
 from .serializers import PlantSerializer, Companion_helpslistItemSerializer, Companion_helped_bylistItemSerializer, Plants_avoidlistItemSerializer
@@ -13,6 +14,21 @@ class PlantViewSet(viewsets.ModelViewSet):
         "plants_avoid",
     ).all()
     serializer_class = PlantSerializer
+
+    def get_queryset(self):
+        qs = super().get_queryset().order_by("plant_category", "name")
+        category = self.request.query_params.get("category")
+        search = self.request.query_params.get("search")
+
+        if category:
+            qs = qs.filter(plant_category=category)
+        if search:
+            qs = qs.filter(
+                Q(name__icontains=search)
+                | Q(plant_category__icontains=search)
+            )
+
+        return qs
 
 
 class Companion_helpslistItemViewSet(viewsets.ModelViewSet):
