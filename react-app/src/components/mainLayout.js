@@ -6,13 +6,22 @@ import { NavLink, Outlet } from 'react-router-dom';
 function MainLayout({ children }) {
 	return (
 		<div className="app-shell">
+			<header className="site-header">
+				<div className="garden-strip">
+					<Container fluid className="px-3 px-lg-4">
+						<span>Plan your beds, learn your plants, grow with confidence</span>
+					</Container>
+				</div>
+
 			<Navbar expand="md" className="app-navbar py-3">
-				<Container fluid className="px-3 px-lg-4">
+				<Container fluid className="px-3 px-lg-4 align-items-center">
 					<NavLink to="/" className="brand-lockup text-decoration-none">
-						<span className="brand-mark">SG</span>
+						<span className="brand-mark">
+							<img src="/logo192.png" alt="" />
+						</span>
 						<span>
-							Smart Garden
-							<span className="brand-subtitle">Planning workspace</span>
+							Smart Garden Planner
+							<span className="brand-subtitle">A friendly guide for every grower</span>
 						</span>
 					</NavLink>
 
@@ -21,17 +30,18 @@ function MainLayout({ children }) {
 							Home
 						</NavLink>
 						<NavLink to="/database" className="app-nav-link">
-							Plants
+							Plant guide
 						</NavLink>
 						<NavLink to="/scheduler" className="app-nav-link">
-							Schedule
+							Growing calendar
 						</NavLink>
 						<NavLink to="/canvas" className="app-nav-link">
-							Canvas
+							Garden planner
 						</NavLink>
 					</nav>
 				</Container>
 			</Navbar>
+			</header>
 
 			<Container fluid as="main" className="app-content">
 				<Outlet />
