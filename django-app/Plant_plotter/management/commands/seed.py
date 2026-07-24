@@ -1,5 +1,6 @@
 import json
 import os
+from collections import Counter
 
 from django.core.management.base import BaseCommand
 
@@ -136,3 +137,10 @@ class Command(BaseCommand):
                     other_plant=other_obj,
                 )
         print("avoid seed made")
+
+        category_counts = Counter(
+            Plant.objects.values_list("plant_category", flat=True)
+        )
+        weed_count = category_counts.get("weed", 0)
+        print(f"plant categories: {dict(sorted(category_counts.items()))}")
+        print(f"weed plants in database: {weed_count}")
