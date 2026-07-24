@@ -11,6 +11,8 @@ import {
   CELL_CM,
   makePlantInstance,
   findFirstFitForPlant,
+  getPlantTypeColour,
+  normalisePlantTypeName,
 } from "../components/canvas/canvasUtils";
 import { API } from "../constants";
 import CRpanel from "../components/canvas/CompRecPanel";
@@ -78,6 +80,8 @@ function FreeMoveCanvas() {
   const [progressLabel, setProgressLabel] = useState("");
   const [estimatedTimeText, setEstimatedTimeText] = useState("");
   const [fillMessage, setFillMessage] = useState("");
+  const [selectedPlantsOpen, setSelectedPlantsOpen] = useState(true);
+  const [focusedPlantName, setFocusedPlantName] = useState("");
 
   const progressTimerRef = useRef(null);
   const abortControllerRef = useRef(null);
@@ -121,6 +125,24 @@ function FreeMoveCanvas() {
       .sort((a, b) => a[0].localeCompare(b[0]))
       .map(([name, count]) => ({ name, count }));
   }, [sortResult]);
+
+  useEffect(() => {
+    if (focusedPlantName && !countsByName[focusedPlantName]) {
+      setFocusedPlantName("");
+    }
+  }, [countsByName, focusedPlantName]);
+
+  function toggleFocusedPlantName(name) {
+    setFocusedPlantName((prev) =>
+      normalisePlantTypeName(prev) === normalisePlantTypeName(name) ? "" : name
+    );
+  }
+
+  function handlePlantSummaryKeyDown(event, name) {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    toggleFocusedPlantName(name);
+  }
 
   function placeOnePlantInList(currentPlants, plantData, options = {}) {
     if (!plantData || boxes.length === 0) return null;
@@ -709,6 +731,7 @@ function FreeMoveCanvas() {
             plantInstances={plantInstances}
             setPlantInstances={setPlantInstances}
             plantsData={plantsData}
+            focusedPlantName={focusedPlantName}
           />
 
           {notPlacedSummary.length > 0 && (
@@ -775,68 +798,113 @@ function FreeMoveCanvas() {
             isSorting={isSorting}
           />
 
-          <div className="card p-3 my-3">
-            <h5 className="mb-2">Selected plants</h5>
+          <div className="card p-3 my-3 selected-plants-card">
             <button
               type="button"
-              className="btn btn-outline-success w-100 mb-2"
-              onClick={handleEqualFillSelectedTypes}
-              disabled={isSorting || fillablePlantSummary.length === 0}
+              className="btn btn-link panel-toggle text-decoration-none p-0 d-flex justify-content-between align-items-center w-100"
+              onClick={() => setSelectedPlantsOpen((prev) => !prev)}
             >
-              Fill equally with current plant types
+              <h5 className="mb-0">Selected plants</h5>
+              <span>{selectedPlantsOpen ? "Hide" : "Show"}</span>
             </button>
-            <small className="text-muted d-block mb-2">
-              Adds more unlocked plant types already on the canvas, aiming for equal space per type. It tries companion overlap unless No companion overlap is enabled. Locked plants stay where they are and are not counted in the equal-space share.
-            </small>
-            {fillMessage && (
-              <div className="alert alert-info py-2 small mb-3">
-                {fillMessage}
-              </div>
-            )}
-            {plantSummary.length === 0 ? (
-              <small className="text-muted">No plants selected yet.</small>
-            ) : (
-              <div className="d-grid gap-2">
-                {plantSummary.map((item) => {
-                  const plant = plantsData.find((p) => p.name === item.name);
 
-                  return (
-                    <div
-                      key={item.name}
-                      className="panel-section p-2 d-flex justify-content-between align-items-center gap-2"
-                    >
-                      <div>
-                        <strong>{item.name}</strong>
-                        <div className="small text-muted">On canvas: {item.count}</div>
-                      </div>
+            {selectedPlantsOpen && (
+              <>
+                <button
+                  type="button"
+                  className="btn btn-outline-success w-100 my-2"
+                  onClick={handleEqualFillSelectedTypes}
+                  disabled={isSorting || fillablePlantSummary.length === 0}
+                >
+                  Fill equally with current plant types
+                </button>
+                <small className="text-muted d-block mb-2">
+                  Adds more unlocked plant types already on the canvas, aiming for equal space per type. It tries companion overlap unless No companion overlap is enabled. Locked plants stay where they are and are not counted in the equal-space share.
+                </small>
+                {focusedPlantName && (
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-secondary w-100 mb-2"
+                    onClick={() => setFocusedPlantName("")}
+                  >
+                    Clear highlight
+                  </button>
+                )}
+                {fillMessage && (
+                  <div className="alert alert-info py-2 small mb-3">
+                    {fillMessage}
+                  </div>
+                )}
+                {plantSummary.length === 0 ? (
+                  <small className="text-muted">No plants selected yet.</small>
+                ) : (
+                  <div className="d-grid gap-2">
+                    {plantSummary.map((item) => {
+                      const plant = plantsData.find((p) => p.name === item.name);
+                      const colour = getPlantTypeColour(item.name);
+                      const isFocused =
+                        normalisePlantTypeName(focusedPlantName) === normalisePlantTypeName(item.name);
 
-                      <div className="d-flex align-items-center gap-2">
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          onClick={() => plant && handleRemovePlant(plant)}
-                          disabled={!plant}
+                      return (
+                        <div
+                          key={item.name}
+                          className={`panel-section selected-plant-row p-2 d-flex justify-content-between align-items-center gap-2 ${isFocused ? "selected-plant-row-active" : ""}`}
+                          role="button"
+                          tabIndex={0}
+                          onClick={() => toggleFocusedPlantName(item.name)}
+                          onKeyDown={(event) => handlePlantSummaryKeyDown(event, item.name)}
                         >
-                          -
-                        </button>
+                          <div className="selected-plant-main">
+                            <span
+                              className="plant-type-swatch"
+                              style={{
+                                background: colour.background,
+                                borderColor: colour.border,
+                              }}
+                              title={`${colour.label} tile colour`}
+                            />
+                            <div>
+                              <strong>{item.name}</strong>
+                              <div className="small text-muted">On canvas: {item.count}</div>
+                              <div className="small text-muted">Colour: {colour.label}</div>
+                            </div>
+                          </div>
 
-                        <span style={{ minWidth: "24px", textAlign: "center" }}>
-                          {item.count}
-                        </span>
+                          <div className="d-flex align-items-center gap-2">
+                            <button
+                              type="button"
+                              className="btn btn-sm btn-outline-secondary"
+                              onClick={(event) => {
+                                event.stopPropagation();
+                                plant && handleRemovePlant(plant);
+                              }}
+                              disabled={!plant}
+                            >
+                              -
+                            </button>
 
-                        <button
-                          type="button"
-                          className="btn btn-sm btn-outline-secondary"
-                          onClick={() => plant && handleAddPlant(plant)}
-                          disabled={!plant}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+                            <span style={{ minWidth: "24px", textAlign: "center" }}>
+                              {item.count}
+                            </span>
+
+                            <button
+                              type="button"
+                              className="btn btn-sm btn-outline-secondary"
+                              onClick={(event) => {
+                                event.stopPropagation();
+                                plant && handleAddPlant(plant);
+                              }}
+                              disabled={!plant}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </>
             )}
           </div>
           <PlantsPanel

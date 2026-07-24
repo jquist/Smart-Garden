@@ -9,6 +9,8 @@ import {
   clampPlantLocalToBox,
   placedPlantCollidesUsingBoxes,
   makePlantInstance,
+  getPlantTypeColour,
+  normalisePlantTypeName,
 } from "./canvasUtils";
 
 const CELL_SIZE_CM = 15;
@@ -25,6 +27,7 @@ function GardenGrid({
   acceptedDropSources = ["plants-panel"],
   itemLabel = "plant",
   boardTip = null,
+  focusedPlantName = "",
 }) {
   const bounds = useMemo(() => getBoardBounds(boxes), [boxes]);
 
@@ -414,31 +417,34 @@ function GardenGrid({
           {absolutePlantInstances.map((plant) => {
             const isWeedPatch = plant.kind === "weed";
             const isWeedControl = plant.kind === "weed_control";
+            const typeColour = getPlantTypeColour(plant.name);
+            const hasFocusedPlantType = Boolean(focusedPlantName);
+            const isFocusedPlantType =
+              hasFocusedPlantType &&
+              normalisePlantTypeName(plant.name) === normalisePlantTypeName(focusedPlantName);
             const widthPx = plant.width * scaledCellSize;
             const heightPx = plant.height * scaledCellSize;
             const seedSize = Math.max(
               10,
               Math.min(22, Math.round(Math.min(widthPx, heightPx) * 0.2))
             );
-            const tileBackground = plant.locked
-              ? "rgba(255,194,62,0.35)"
-              : isWeedPatch
-                ? "rgba(143,45,45,0.2)"
-                : isWeedControl
-                  ? "rgba(52,103,166,0.2)"
-                  : "rgba(47,111,78,0.22)";
+            const tileBackground = isWeedPatch
+              ? "rgba(143,45,45,0.2)"
+              : isWeedControl
+                ? "rgba(52,103,166,0.2)"
+                : typeColour.background;
             const tileBorder = plant.locked
               ? "3px solid #d9a616"
               : isWeedPatch
                 ? "2px solid rgba(143,45,45,0.78)"
                 : isWeedControl
                   ? "2px solid rgba(52,103,166,0.78)"
-                  : "2px solid rgba(47,111,78,0.72)";
+                  : `2px solid ${typeColour.border}`;
             const seedBackground = isWeedPatch
               ? "rgba(117,33,33,0.86)"
               : isWeedControl
                 ? "rgba(36,79,131,0.86)"
-                : "rgba(70,45,20,0.85)";
+                : typeColour.dot;
             const statusLabel = plant.locked
               ? "Locked"
               : isWeedPatch
@@ -476,12 +482,17 @@ function GardenGrid({
                   border: tileBorder,
                   outline: selectedPlantId === plant.id ? "3px solid #3467a6" : "none",
                   outlineOffset: "2px",
+                  opacity: hasFocusedPlantType && !isFocusedPlantType ? 0.24 : 1,
+                  filter: hasFocusedPlantType && !isFocusedPlantType ? "grayscale(0.7)" : "saturate(1.05)",
+                  boxShadow: isFocusedPlantType
+                    ? `0 0 0 4px ${typeColour.background}, 0 8px 22px rgba(31,42,36,0.18)`
+                    : "none",
                   borderRadius: "6px",
                   boxSizing: "border-box",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  zIndex: 4,
+                  zIndex: isFocusedPlantType ? 6 : 4,
                   cursor: draggingPlantId === plant.id ? "grabbing" : "grab",
                   overflow: "hidden",
                   userSelect: "none",

@@ -52,6 +52,26 @@ export const ROLE_LABELS = {
   wildlife_support: "Wildlife support",
 };
 
+export const ROLE_FILTER_OPTIONS = [
+  { value: "", label: "All uses" },
+  { value: "edible", label: "Edible" },
+  { value: "weed_suppressor", label: "Weed suppressor" },
+  { value: "pollinator", label: "Pollinator" },
+  { value: "beneficial_insect_plant", label: "Beneficial insects" },
+  { value: "aromatic_pest_confuser", label: "Aromatic pest support" },
+  { value: "nitrogen_fixer", label: "Nitrogen fixer" },
+  { value: "soil_improver", label: "Soil improver" },
+  { value: "ground_cover", label: "Ground cover" },
+  { value: "living_mulch", label: "Living mulch" },
+  { value: "cover_crop", label: "Cover crop" },
+  { value: "green_manure", label: "Green manure" },
+  { value: "flowering", label: "Flowering" },
+  { value: "wildlife_support", label: "Wildlife support" },
+  { value: "perennial_plant", label: "Perennial" },
+  { value: "toxic", label: "Toxic" },
+  { value: "invasive", label: "Invasive" },
+];
+
 export function labelForCategory(category) {
   return CATEGORY_LABELS[category] || "Unlabelled";
 }

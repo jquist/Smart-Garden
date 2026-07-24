@@ -9,7 +9,7 @@ import Error from "../components/Error";
 import Loading from "../components/Loading";
 import { API } from "../constants";
 import { useMemo, useState } from "react";
-import { CATEGORY_OPTIONS, labelForRole, rolesForPlant } from "../components/plantLabels";
+import { CATEGORY_OPTIONS, ROLE_FILTER_OPTIONS, labelForRole, rolesForPlant } from "../components/plantLabels";
 
 function asPlantList(data) {
     if (Array.isArray(data)) return data;
@@ -19,6 +19,7 @@ function asPlantList(data) {
 function Database() {
     const [search, setSearch] = useState("");
     const [category, setCategory] = useState("");
+    const [roleFilter, setRoleFilter] = useState("");
 
 	const { isPending, data, error } = useQuery({
 		queryKey: ['plantData'],
@@ -35,18 +36,21 @@ function Database() {
 
         return plants.filter((p) => {
             const name = String(p?.name ?? "").toLowerCase();
-            const plantCategory = String(p?.plant_category ?? "");
-            const roles = rolesForPlant(p).map((role) => labelForRole(role).toLowerCase());
+            const plantCategory = String(p?.plant_category ?? "").toLowerCase();
+            const rawRoles = rolesForPlant(p);
+            const roleLabels = rawRoles.map((role) => labelForRole(role).toLowerCase());
             const matchesCategory = !category || plantCategory === category;
+            const matchesRole = !roleFilter || rawRoles.includes(roleFilter);
             const matchesSearch =
                 !q ||
                 name.indexOf(q) !== -1 ||
                 plantCategory.indexOf(q) !== -1 ||
-                roles.some((role) => role.indexOf(q) !== -1);
+                rawRoles.some((role) => String(role).toLowerCase().indexOf(q) !== -1) ||
+                roleLabels.some((role) => role.indexOf(q) !== -1);
 
-            return matchesCategory && matchesSearch;
+            return matchesCategory && matchesRole && matchesSearch;
         });
-        }, [data, search, category]);
+        }, [data, search, category, roleFilter]);
 
 	if (isPending) return <Loading message="Loading..." />
 
@@ -67,7 +71,7 @@ function Database() {
 
             <div className="toolbar-panel">
             <Row className="g-3 align-items-center">
-                <Col xs={12} md={5}>
+                <Col xs={12} lg={4}>
                 <InputGroup>
                     <Form.Control
                     type="text"
@@ -78,7 +82,7 @@ function Database() {
                 </InputGroup>
                 </Col>
 
-                <Col xs={12} md={4} className="mt-2 mt-md-0">
+                <Col xs={12} sm={6} lg={3} className="mt-2 mt-lg-0">
                     <Form.Select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
@@ -92,7 +96,21 @@ function Database() {
                     </Form.Select>
                 </Col>
 
-                <Col xs={12} md={3} className="d-flex align-items-center mt-2 mt-md-0">
+                <Col xs={12} sm={6} lg={3} className="mt-2 mt-lg-0">
+                    <Form.Select
+                        value={roleFilter}
+                        onChange={(e) => setRoleFilter(e.target.value)}
+                        aria-label="Filter by plant use"
+                    >
+                        {ROLE_FILTER_OPTIONS.map((option) => (
+                            <option key={option.value || "all-uses"} value={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
+                    </Form.Select>
+                </Col>
+
+                <Col xs={12} lg={2} className="d-flex align-items-center mt-2 mt-lg-0">
                 <small className="selected-count">
                     Showing {filtered.length} of {asPlantList(data).length}
                 </small>

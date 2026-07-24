@@ -90,13 +90,25 @@ function getUniqueWeedNames(instances) {
   ).sort((a, b) => a.localeCompare(b));
 }
 
-function ModalShell({ kicker, title, children, footer, wide = false }) {
+function ModalShell({ kicker, title, children, footer, wide = false, onClose }) {
   return (
     <div className="workflow-modal-backdrop" role="dialog" aria-modal="true">
       <div className={`workflow-modal ${wide ? "workflow-modal-wide" : ""}`}>
         <div className="workflow-modal-header">
-          {kicker && <p className="page-kicker">{kicker}</p>}
-          <h2>{title}</h2>
+          <div className="workflow-modal-title">
+            {kicker && <p className="page-kicker">{kicker}</p>}
+            <h2>{title}</h2>
+          </div>
+          {onClose && (
+            <button
+              type="button"
+              className="workflow-modal-close"
+              onClick={onClose}
+              aria-label="Close pop-up"
+            >
+              X
+            </button>
+          )}
         </div>
         <div className="workflow-modal-body">{children}</div>
         {footer && <div className="workflow-modal-footer">{footer}</div>}
@@ -112,6 +124,7 @@ function WeedPickerModal({
   loading,
   error,
   onContinue,
+  onClose,
 }) {
   const [search, setSearch] = useState("");
 
@@ -135,6 +148,7 @@ function WeedPickerModal({
       kicker="Weed control"
       title="What weeds do you have?"
       wide
+      onClose={onClose}
       footer={
         <>
           <span className="small text-muted">
@@ -275,7 +289,7 @@ function WeedMappingPanel({
         className="btn btn-outline-secondary w-100 mt-2"
         onClick={onChangeWeeds}
       >
-        Change weed list
+        {selectedWeeds.length === 0 ? "Add weed modifier" : "Change weed list"}
       </button>
     </div>
   );
@@ -322,6 +336,7 @@ function WeedRecommendationModal({
       kicker={`Weed ${stepIndex + 1} of ${weedNames.length}`}
       title={`Plants that can help with ${weedName}`}
       wide
+      onClose={onClose}
       footer={
         <>
           <button type="button" className="btn btn-outline-secondary" onClick={onClose}>
@@ -774,6 +789,7 @@ function WeedControlCanvas() {
           loading={isPending}
           error={error}
           onContinue={handleStartMapping}
+          onClose={() => setShowWeedPicker(false)}
         />
       )}
 
