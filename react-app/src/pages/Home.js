@@ -65,32 +65,32 @@ function Home() {
 				</div>
 
 				<div className="home-actions" aria-label="Main tools">
-				<Link className="action-card action-card-primary" to="/canvas">
-					<div>
-						<span className="action-label">Best first step</span>
-						<h3>Garden planner</h3>
-						<p>Build your garden bed layout, add plants, move crops around, and let autosort suggest a tidy plan.</p>
-					</div>
-					<span className="action-link">Open garden planner</span>
-				</Link>
+					<Link className="action-card action-card-primary" to="/canvas">
+						<div>
+							<span className="action-label">Best first step</span>
+							<h3>Garden planner</h3>
+							<p>Build your garden bed layout, add plants, move crops around, and let autosort suggest a tidy plan.</p>
+						</div>
+						<span className="action-link">Open garden planner</span>
+					</Link>
 
-				<Link className="action-card" to="/database">
-					<div>
-						<span className="action-label">Learn first</span>
-						<h3>Plant guide</h3>
-						<p>Look up plants, see their labels, and understand basic details before adding them to your plan.</p>
-					</div>
-					<span className="action-link">Browse plant guide</span>
-				</Link>
+					<Link className="action-card" to="/database">
+						<div>
+							<span className="action-label">Learn first</span>
+							<h3>Plant guide</h3>
+							<p>Look up plants, see their labels, and understand basic details before adding them to your plan.</p>
+						</div>
+						<span className="action-link">Browse plant guide</span>
+					</Link>
 
-				<Link className="action-card" to="/scheduler">
-					<div>
-						<span className="action-label">Check timing</span>
-						<h3>Growing calendar</h3>
-						<p>Compare when plants can be started, planted outside, and harvested through the year.</p>
-					</div>
-					<span className="action-link">View growing calendar</span>
-				</Link>
+					<Link className="action-card" to="/scheduler">
+						<div>
+							<span className="action-label">Check timing</span>
+							<h3>Growing calendar</h3>
+							<p>Compare when plants can be started, planted outside, and harvested through the year.</p>
+						</div>
+						<span className="action-link">View growing calendar</span>
+					</Link>
 				</div>
 			</section>
 
